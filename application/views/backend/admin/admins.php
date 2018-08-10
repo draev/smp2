@@ -12,15 +12,15 @@
 				<li class="nav-item">
 				  <a class="nav-link" href="<?php echo base_url();?>admin/teachers"><i class="os-icon picons-thin-icon-thin-0704_users_profile_group_couple_man_woman"></i><span><?php echo get_phrase('teachers');?></span></a>
 				</li>
-				<li class="nav-item">
-				  <a class="nav-link" href="<?php echo base_url();?>admin/parents"><i class="os-icon picons-thin-icon-thin-0703_users_profile_group_two"></i><span><?php echo get_phrase('parents');?></span></a>
-				</li>
+<!--				<li class="nav-item">-->
+<!--				  <a class="nav-link" href="--><?php //echo base_url();?><!--admin/parents"><i class="os-icon picons-thin-icon-thin-0703_users_profile_group_two"></i><span>--><?php //echo get_phrase('parents');?><!--</span></a>-->
+<!--				</li>-->
 				<li class="nav-item">
 				  <a class="nav-link" href="<?php echo base_url();?>admin/add_student"><i class="os-icon picons-thin-icon-thin-0729_student_degree_science_university_school_graduate"></i><span><?php echo get_phrase('students');?></span></a>
 				</li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url();?>admin/admissions"><i class="os-icon picons-thin-icon-thin-0706_user_profile_add_new"></i><span><?php echo get_phrase('admissions');?></span></a>
-        </li>
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="--><?php //echo base_url();?><!--admin/admissions"><i class="os-icon picons-thin-icon-thin-0706_user_profile_add_new"></i><span>--><?php //echo get_phrase('admissions');?><!--</span></a>-->
+<!--        </li>-->
 			  </ul>
 			</div>
 		  </div>
@@ -208,15 +208,15 @@
         <h3><?php echo get_phrase('user_permissions');?></h3><br>
 
         <div class="row">
-          <div class="col-sm-6">
-        <div class="form-group">
-          <div class="input-group">
-          <div class="form-check">
-            <label class="form-check-label"><input class="form-check-input" name="messages" value="1" type="checkbox"><?php echo get_phrase('messages');?></label>
-          </div>
-          </div>
-        </div>
-        </div>
+<!--          <div class="col-sm-6">-->
+<!--        <div class="form-group">-->
+<!--          <div class="input-group">-->
+<!--          <div class="form-check">-->
+<!--            <label class="form-check-label"><input class="form-check-input" name="messages" value="1" type="checkbox">--><?php //echo get_phrase('messages');?><!--</label>-->
+<!--          </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
         <div class="col-sm-6">
              <div class="form-group">
           <div class="input-group">
@@ -229,15 +229,15 @@
       </div>
 
       <div class="row">
-        <div class="col-sm-6">
-        <div class="form-group">
-          <div class="input-group">
-          <div class="form-check">
-            <label class="form-check-label"><input class="form-check-input" name="notify" value="1" type="checkbox"><?php echo get_phrase('notifications');?></label>
-          </div>
-          </div>
-        </div>
-        </div>
+<!--        <div class="col-sm-6">-->
+<!--        <div class="form-group">-->
+<!--          <div class="input-group">-->
+<!--          <div class="form-check">-->
+<!--            <label class="form-check-label"><input class="form-check-input" name="notify" value="1" type="checkbox">--><?php //echo get_phrase('notifications');?><!--</label>-->
+<!--          </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
         <div class="col-sm-6">
         <div class="form-group">
           <div class="input-group">
@@ -259,15 +259,15 @@
           </div>
         </div>
         </div>
-        <div class="col-sm-6">
-        <div class="form-group">
-          <div class="input-group">
-          <div class="form-check">
-            <label class="form-check-label"><input class="form-check-input" name="academic" value="1" type="checkbox"><?php echo get_phrase('academic');?></label>
-          </div>
-          </div>
-        </div>
-        </div>
+<!--        <div class="col-sm-6">-->
+<!--        <div class="form-group">-->
+<!--          <div class="input-group">-->
+<!--          <div class="form-check">-->
+<!--            <label class="form-check-label"><input class="form-check-input" name="academic" value="1" type="checkbox">--><?php //echo get_phrase('academic');?><!--</label>-->
+<!--          </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
       </div>
       <div class="row">
         <div class="col-sm-6">
@@ -279,67 +279,67 @@
           </div>
         </div>
         </div>
-        <div class="col-sm-6">
-        <div class="form-group">
-          <div class="input-group">
-          <div class="form-check">
-            <label class="form-check-label"><input class="form-check-input" name="schedules" value="1" type="checkbox"><?php echo get_phrase('schedules');?></label>
-          </div>
-          </div>
-        </div>
-        </div>
+<!--        <div class="col-sm-6">-->
+<!--        <div class="form-group">-->
+<!--          <div class="input-group">-->
+<!--          <div class="form-check">-->
+<!--            <label class="form-check-label"><input class="form-check-input" name="schedules" value="1" type="checkbox">--><?php //echo get_phrase('schedules');?><!--</label>-->
+<!--          </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
       </div>
-      <div class="row">
-        <div class="col-sm-6">
-        <div class="form-group">
-          <div class="input-group">
-          <div class="form-check">
-            <label class="form-check-label"><input class="form-check-input" name="noticeboard" value="1" type="checkbox"><?php echo get_phrase('noticeboard');?></label>
-          </div>
-          </div>
-        </div>
-        </div>
-        <div class="col-sm-6">
-        <div class="form-group">
-          <div class="input-group">
-          <div class="form-check">
-            <label class="form-check-label"><input class="form-check-input" name="library" value="1" type="checkbox"><?php echo get_phrase('library');?></label>
-          </div>
-          </div>
-        </div>
-        </div>
-      </div>
-      <div class="row">
-      <div class="col-sm-6">
-        <div class="form-group">
-          <div class="input-group">
-          <div class="form-check">
-            <label class="form-check-label"><input class="form-check-input" name="behavior" value="1" type="checkbox"><?php echo get_phrase('behavior');?></label>
-          </div>
-          </div>
-        </div>
-        </div>
-        <div class="col-sm-6">
-        <div class="form-group">
-          <div class="input-group">
-          <div class="form-check">
-            <label class="form-check-label"><input class="form-check-input" name="accounting" value="1" type="checkbox"><?php echo get_phrase('accounting');?></label>
-          </div>
-          </div>
-        </div>
-        </div>
-      </div>
+<!--      <div class="row">-->
+<!--        <div class="col-sm-6">-->
+<!--        <div class="form-group">-->
+<!--          <div class="input-group">-->
+<!--          <div class="form-check">-->
+<!--            <label class="form-check-label"><input class="form-check-input" name="noticeboard" value="1" type="checkbox">--><?php //echo get_phrase('noticeboard');?><!--</label>-->
+<!--          </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--        <div class="col-sm-6">-->
+<!--        <div class="form-group">-->
+<!--          <div class="input-group">-->
+<!--          <div class="form-check">-->
+<!--            <label class="form-check-label"><input class="form-check-input" name="library" value="1" type="checkbox">--><?php //echo get_phrase('library');?><!--</label>-->
+<!--          </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="row">-->
+<!--      <div class="col-sm-6">-->
+<!--        <div class="form-group">-->
+<!--          <div class="input-group">-->
+<!--          <div class="form-check">-->
+<!--            <label class="form-check-label"><input class="form-check-input" name="behavior" value="1" type="checkbox">--><?php //echo get_phrase('behavior');?><!--</label>-->
+<!--          </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--        <div class="col-sm-6">-->
+<!--        <div class="form-group">-->
+<!--          <div class="input-group">-->
+<!--          <div class="form-check">-->
+<!--            <label class="form-check-label"><input class="form-check-input" name="accounting" value="1" type="checkbox">--><?php //echo get_phrase('accounting');?><!--</label>-->
+<!--          </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
         <div class="row">
-        <div class="col-sm-6">
-        <div class="form-group">
-          <div class="input-group">
-          <div class="form-check">
-            <label class="form-check-label"><input class="form-check-input" name="teacher_files" value="1" type="checkbox"><?php echo get_phrase('teacher_files');?></label>
-          </div>
-          </div>
-        </div>
-        </div>
+<!--        <div class="col-sm-6">-->
+<!--        <div class="form-group">-->
+<!--          <div class="input-group">-->
+<!--          <div class="form-check">-->
+<!--            <label class="form-check-label"><input class="form-check-input" name="teacher_files" value="1" type="checkbox">--><?php //echo get_phrase('teacher_files');?><!--</label>-->
+<!--          </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
         <div class="col-sm-6">
         <div class="form-group">
           <div class="input-group">
@@ -351,38 +351,38 @@
         </div>
       </div>
 
-        <div class="row">
-          <div class="col-sm-6">
-        <div class="form-group">
-          <div class="input-group">
-          <div class="form-check">
-            <label class="form-check-label"><input class="form-check-input" name="school_bus" value="1" type="checkbox"><?php echo get_phrase('school_bus');?></label>
-          </div>
-          </div>
-        </div>
-        </div>
+<!--        <div class="row">-->
+<!--          <div class="col-sm-6">-->
+<!--        <div class="form-group">-->
+<!--          <div class="input-group">-->
+<!--          <div class="form-check">-->
+<!--            <label class="form-check-label"><input class="form-check-input" name="school_bus" value="1" type="checkbox">--><?php //echo get_phrase('school_bus');?><!--</label>-->
+<!--          </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
 
-      <div class="col-sm-6">
-        <div class="form-group">
-          <div class="input-group">
-          <div class="form-check">
-            <label class="form-check-label"><input class="form-check-input" name="polls" value="1" type="checkbox"><?php echo get_phrase('polls');?></label>
-          </div>
-          </div>
-        </div>
-        </div>
-      </div>
+<!--      <div class="col-sm-6">-->
+<!--        <div class="form-group">-->
+<!--          <div class="input-group">-->
+<!--          <div class="form-check">-->
+<!--            <label class="form-check-label"><input class="form-check-input" name="polls" value="1" type="checkbox">--><?php //echo get_phrase('polls');?><!--</label>-->
+<!--          </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
         <div class="row">
-          <div class="col-sm-6">
-         <div class="form-group">
-          <div class="input-group">
-          <div class="form-check">
-            <label class="form-check-label"><input class="form-check-input" name="system_settings" value="1" type="checkbox"><?php echo get_phrase('system_settings');?></label>
-          </div>
-          </div>
-        </div>
-        </div>
+<!--          <div class="col-sm-6">-->
+<!--         <div class="form-group">-->
+<!--          <div class="input-group">-->
+<!--          <div class="form-check">-->
+<!--            <label class="form-check-label"><input class="form-check-input" name="system_settings" value="1" type="checkbox">--><?php //echo get_phrase('system_settings');?><!--</label>-->
+<!--          </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
 
         <div class="col-sm-6">
         <div class="form-group">

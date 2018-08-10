@@ -404,7 +404,7 @@
                   <span><?php echo get_phrase('marks');?></span></a>
               </li>
             <?php endif;?>
-            <?php if($academic == 1):?>
+            <?php if($academic == 1 && false):?>
               <li class="main-menu <?php if($page_name == 'online_exams' || $page_name == 'exam_room' || $page_name == 'exam_questions' || $page_name == 'exam_results' || $page_name == 'exam_edit' ||$page_name == 'homework' || $page_name == 'forum' || $page_name == 'study_material' || $page_name == 'unit_content' || $page_name == 'edit_forum' || $page_name == 'forum_room' || $page_name == 'homework_details' || $page_name == 'homework_edit' || $page_name == 'homework_room') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/online_exams/">
                   <div class="icon-w">
@@ -422,7 +422,7 @@
                   <span><?php echo get_phrase('attendance');?></span></a>
               </li>
             <?php endif;?>
-            <?php if($schedules == 1):?>
+            <?php if($schedules == 1 && false):?>
               <li class="main-menu <?php if($page_name == 'class_routine_view' || $page_name == 'teacher_routine' || $page_name == 'looking_routine') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/class_routine_view/">
                   <div class="icon-w">
@@ -431,7 +431,7 @@
                   <span><?php echo get_phrase('schedules');?></span></a>
               </li>
             <?php endif;?>
-            <?php if($news == 1):?>
+            <?php if($news == 1 && false):?>
                <li class="main-menu <?php if($page_name == 'news' || $page_name == 'send_news' || $page_name == 'events' || $page_name == 'read' || $page_name == 'update_news') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/news/">
                   <div class="icon-w">
@@ -440,7 +440,7 @@
                   <span><?php echo get_phrase('noticeboard');?></span></a>
               </li>
             <?php endif;?>
-            <?php if($library == 1):?>
+            <?php if($library == 1 && false):?>
               <li class="main-menu <?php if($page_name == 'library' || $page_name == 'update_book') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/library/">
                   <div class="icon-w">
@@ -449,7 +449,7 @@
                   <span><?php echo get_phrase('library');?></span></a>
               </li>
               <?php endif;?>
-              <?php if($be == 1):?>
+              <?php if($be == 1 && false):?>
               <li class="main-menu <?php if($page_name == 'request_student' || $page_name == 'request' || $page_name == 'looking_report') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/request_student/">
                   <div class="icon-w">
@@ -458,7 +458,7 @@
                   <span><?php echo get_phrase('behavior');?></span></a>
               </li>
             <?php endif;?>
-            <?php if($acc == 1):?>
+            <?php if($acc == 1 && false):?>
                <li class="main-menu <?php if($page_name == 'payments' || $page_name == 'students_payments' || $page_name == 'expense') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/payments/">
                   <div class="icon-w">
@@ -467,7 +467,7 @@
                   <span><?php echo get_phrase('accounting');?></span></a>
               </li>
             <?php endif;?>
-            <?php if($files == 1):?>
+            <?php if($files == 1 && false):?>
               <li class="main-menu <?php if($page_name == 'files') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/files/">
                   <div class="icon-w">
@@ -485,7 +485,7 @@
                   <span><?php echo get_phrase('classrooms');?></span></a>
               </li>
             <?php endif;?>
-            <?php if($school == 1):?>
+            <?php if($school == 1 && false):?>
                <li class="main-menu <?php if($page_name == 'school_bus') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/school_bus/">
                   <div class="icon-w">
@@ -494,7 +494,7 @@
                   <span><?php echo get_phrase('school_bus');?></span></a>
               </li>
             <?php endif;?>
-            <?php if($polls == 1):?>
+            <?php if($polls == 1 && false):?>
               <li class="main-menu <?php if($page_name == 'polls' || $page_name == 'view_poll') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/polls/">
                   <div class="icon-w">

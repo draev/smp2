@@ -12,15 +12,15 @@
 				<li class="nav-item">
 				  <a class="nav-link active" href="<?php echo base_url();?>admin/teachers/"><i class="os-icon picons-thin-icon-thin-0704_users_profile_group_couple_man_woman"></i><span><?php echo get_phrase('teachers');?></span></a>
 				</li>
-				<li class="nav-item">
-				  <a class="nav-link" href="<?php echo base_url();?>admin/parents/"><i class="os-icon picons-thin-icon-thin-0703_users_profile_group_two"></i><span><?php echo get_phrase('parents');?></span></a>
-				</li>
+<!--				<li class="nav-item">-->
+<!--				  <a class="nav-link" href="--><?php //echo base_url();?><!--admin/parents/"><i class="os-icon picons-thin-icon-thin-0703_users_profile_group_two"></i><span>--><?php //echo get_phrase('parents');?><!--</span></a>-->
+<!--				</li>-->
 				<li class="nav-item">
 				  <a class="nav-link" href="<?php echo base_url();?>admin/add_student/"><i class="os-icon picons-thin-icon-thin-0729_student_degree_science_university_school_graduate"></i><span><?php echo get_phrase('students');?></span></a>
 				</li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url();?>admin/admissions/"><i class="os-icon picons-thin-icon-thin-0706_user_profile_add_new"></i><span><?php echo get_phrase('admissions');?></span></a>
-        </li>
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="--><?php //echo base_url();?><!--admin/admissions/"><i class="os-icon picons-thin-icon-thin-0706_user_profile_add_new"></i><span>--><?php //echo get_phrase('admissions');?><!--</span></a>-->
+<!--        </li>-->
 			  </ul>
 			</div>
 		  </div>

@@ -9,10 +9,10 @@
           <span><?php echo $this->db->get_where('settings', array('type' => 'system_name'))->row()->description;?></span>
       </div>
       <div class="logout">
-      <?php 
-        $count = $this->db->get_where('notification', array('user_id' => $this->session->userdata('login_user_id'), 'user_type' => $this->session->userdata('login_type'), 'status' => '0'));
-      ?>
-        <span  class="badge1" <?php if($count->num_rows() > 0):?> data-badge="<?php echo $count->num_rows();?>" <?php endif;?> onclick="openNav()"><img src="<?php echo base_url();?>style/cms/img/fb.png" style="width: 25px;"></span>
+<!--      --><?php //
+//        $count = $this->db->get_where('notification', array('user_id' => $this->session->userdata('login_user_id'), 'user_type' => $this->session->userdata('login_type'), 'status' => '0'));
+//      ?>
+<!--        <span  class="badge1" --><?php //if($count->num_rows() > 0):?><!-- data-badge="--><?php //echo $count->num_rows();?><!--" --><?php //endif;?><!-- onclick="openNav()"><img src="--><?php //echo base_url();?><!--style/cms/img/fb.png" style="width: 25px;"></span>-->
       </div>
     </ul>
   </div>
@@ -24,7 +24,7 @@
       <div class="activity-boxes-w users-list-w">
 
       <?php 
-        $this->db->order_by('id', desc);
+        $this->db->order_by('id', 'desc');
         $notifications = $this->db->get_where('notification', array('user_id' => $this->session->userdata('login_user_id'), 'user_type' => $this->session->userdata('login_type')))->result_array();
 
         foreach($notifications as $notify):

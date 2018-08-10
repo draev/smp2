@@ -2020,8 +2020,8 @@ class Admin extends CI_Controller
             $data['phone']          = $this->input->post('phone');
             $data['email']          = $this->input->post('email');
             $data['password']       = sha1($this->input->post('password'));
-            $data['parent_id']      = $this->input->post('parent_id');
-            $data['dormitory_id']  = $this->input->post('dormitory_id');
+            $data['parent_id']      = 0;//$this->input->post('parent_id');
+            $data['dormitory_id']  = 0; //$this->input->post('dormitory_id');
             $data['transport_id']  = $this->input->post('transport_id');
             $this->db->insert('student', $data);
             $student_id = $this->db->insert_id();
