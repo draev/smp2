@@ -380,13 +380,13 @@
               </li>
             <?php endif;?>
             <?php if($information == 1):?>
-               <li class="main-menu <?php if($page_name == 'students_area' || $page_name == 'student_portal' || $page_name == 'marks') echo 'active';?>">
-                <a href="<?php echo base_url();?>admin/students_area/">
-                  <div class="icon-w">
-                    <div class="os-icon picons-thin-icon-thin-0714_identity_card_photo_user_profile"></div>
-                  </div>
-                  <span><?php echo get_phrase('information');?></span></a>
-              </li>
+<!--               <li class="main-menu --><?php //if($page_name == 'students_area' || $page_name == 'student_portal' || $page_name == 'marks') echo 'active';?><!--">-->
+<!--                <a href="--><?php //echo base_url();?><!--admin/students_area/">-->
+<!--                  <div class="icon-w">-->
+<!--                    <div class="os-icon picons-thin-icon-thin-0714_identity_card_photo_user_profile"></div>-->
+<!--                  </div>-->
+<!--                  <span>--><?php //echo get_phrase('information');?><!--</span></a>-->
+<!--              </li>-->
               <li class="main-menu <?php if($page_name == 'students') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/students/">
                   <div class="icon-w">

@@ -55,10 +55,10 @@
           <thead>
             <tr>
               <th><?php echo get_phrase('name');?></th>
-              <th><?php echo get_phrase('roll');?></th>
+<!--              <th>--><?php //echo get_phrase('roll');?><!--</th>-->
               <th><?php echo get_phrase('class');?></th>
               <th><?php echo get_phrase('section');?></th>
-              <th><?php echo get_phrase('profile');?></th>
+<!--              <th>--><?php //echo get_phrase('profile');?><!--</th>-->
               <th><?php echo get_phrase('options');?></th>
             </tr>
           </thead>
@@ -67,7 +67,7 @@
                foreach($students as $row):?>
             <tr>
               <td><img alt="" src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" width="25px" style="border-radius: 10px;margin-right:5px;"> <?php echo $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->name;?></td>
-              <td style="text-align: center;"><?php echo $this->db->get_where('enroll' , array('student_id' => $row['student_id']))->row()->roll;?></td>
+<!--              <td style="text-align: center;">--><?php //echo $this->db->get_where('enroll' , array('student_id' => $row['student_id']))->row()->roll;?><!--</td>-->
               <td style="text-align: center;">
                 <div class="pt-btn">
                   <a class="btn nc btn-secondary btn-sm btn-rounded"><font color="white"><?php echo $this->db->get_where('class' , array('class_id' => $id))->row()->name;?></font></a>
@@ -78,9 +78,9 @@
                   <a class="btn nc btn-success btn-sm btn-rounded"><font color="white"><?php echo $this->db->get_where('section' , array('section_id' => $row['section_id']))->row()->name;?></font></a>
                 </div>
               </td>
-              <td><a href="<?php echo base_url();?>admin/student_portal/<?php echo $row['student_id'];?>/"><button class="btn btn-primary btn-rounded btn-sm"><i class="os-icon os-icon-user-male-circle"></i> <?php echo get_phrase('profile');?></button></a></td>
+<!--              <td><a href="--><?php //echo base_url();?><!--admin/student_portal/--><?php //echo $row['student_id'];?><!--/"><button class="btn btn-primary btn-rounded btn-sm"><i class="os-icon os-icon-user-male-circle"></i> --><?php //echo get_phrase('profile');?><!--</button></a></td>-->
               <td>
-              	<a onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_estudiante/<?php echo $row['student_id'];?>');" href="#"><button class="btn btn-primary btn-sm btn-rounded"><i class="picons-thin-icon-thin-0001_compose_write_pencil_new"></i> <?php echo get_phrase('edit');?></button></a>
+                  <a href="<?php echo base_url();?>admin/student_portal/<?php echo $row['student_id'];?>/"><button class="btn btn-primary btn-rounded btn-sm"><i class="os-icon os-icon-user-male-circle"></i> <?php echo get_phrase('edit');?></button></a>
 
                 <a onClick="return confirm('<?php echo get_phrase('confirm_delete_student');?>')" href="<?php echo base_url();?>admin/delete_student/<?php echo $row['student_id'];?>/"><button class="btn btn-danger btn-sm btn-rounded"><i class="picons-thin-icon-thin-0056_bin_trash_recycle_delete_garbage_empty"></i> <?php echo get_phrase('delete');?></button></a>
               </td>
@@ -98,7 +98,7 @@
           <thead>
             <tr>
               <th><?php echo get_phrase('name');?></th>
-              <th><?php echo get_phrase('roll');?></th>
+<!--              <th>--><?php //echo get_phrase('roll');?><!--</th>-->
               <th><?php echo get_phrase('class');?></th>
               <th><?php echo get_phrase('section');?></th>
               <th><?php echo get_phrase('profile');?></th>
@@ -110,7 +110,7 @@
                 foreach($students as $row2):?>
             <tr>
               <td><img alt="" src="<?php echo $this->crud_model->get_image_url('student',$row2['student_id']);?>" width="25px" style="border-radius: 10px;margin-right:5px;"> <?php echo $this->db->get_where('student' , array('student_id' => $row2['student_id']))->row()->name;?></td>
-              <td style="text-align: center;"><?php echo $this->db->get_where('enroll' , array('student_id' => $row2['student_id']))->row()->roll;?></td>
+<!--              <td style="text-align: center;">--><?php //echo $this->db->get_where('enroll' , array('student_id' => $row2['student_id']))->row()->roll;?><!--</td>-->
               <td style="text-align: center;">
                 <div class="pt-btn">
                   <a class="btn nc btn-secondary btn-sm btn-rounded"><font color="white"><?php echo $this->db->get_where('class' , array('class_id' => $id))->row()->name;?></font></a>

@@ -32,12 +32,12 @@
             <li class="nav-item">
               <a class="nav-link active" data-toggle="tab" href="#students"><?php echo get_phrase('single_student');?></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#bulk"><?php echo get_phrase('student_bulk');?></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#import"><?php echo get_phrase('excel_import');?></a>
-            </li>
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link" data-toggle="tab" href="#bulk">--><?php //echo get_phrase('student_bulk');?><!--</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link" data-toggle="tab" href="#import">--><?php //echo get_phrase('excel_import');?><!--</a>-->
+<!--            </li>-->
            </ul>
          </div>
         </div>
@@ -123,24 +123,24 @@
               </div>
             </div>
            </div>
-           <div class="form-group row">
-            <label class="col-form-label col-sm-3" for=""> <?php echo get_phrase('parent');?></label>
-            <div class="col-sm-9">
-               <div class="input-group">
-               <div class="input-group-addon">
-                  <i class="picons-thin-icon-thin-0703_users_profile_group_two"></i>
-               </div>
-              <select class="form-control" name="parent_id">
-              <option value=""><?php echo get_phrase('select');?></option>
-              <?php $parents = $this->db->get('parent')->result_array();
-              foreach($parents as $parent):
-              ?>
-               <option value="<?php echo $parent['parent_id'];?>"><?php echo $parent['name'];?></option>
-               <?php endforeach;?>
-              </select>
-              </div>
-            </div>
-           </div>
+<!--           <div class="form-group row">-->
+<!--            <label class="col-form-label col-sm-3" for=""> --><?php //echo get_phrase('parent');?><!--</label>-->
+<!--            <div class="col-sm-9">-->
+<!--               <div class="input-group">-->
+<!--               <div class="input-group-addon">-->
+<!--                  <i class="picons-thin-icon-thin-0703_users_profile_group_two"></i>-->
+<!--               </div>-->
+<!--              <select class="form-control" name="parent_id">-->
+<!--              <option value="">--><?php //echo get_phrase('select');?><!--</option>-->
+<!--              --><?php //$parents = $this->db->get('parent')->result_array();
+//              foreach($parents as $parent):
+//              ?>
+<!--               <option value="--><?php //echo $parent['parent_id'];?><!--">--><?php //echo $parent['name'];?><!--</option>-->
+<!--               --><?php //endforeach;?>
+<!--              </select>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--           </div>-->
            <div class="form-group row">
             <label class="col-form-label col-sm-3" for=""> <?php echo get_phrase('password');?></label>
             <div class="col-sm-9">
@@ -152,14 +152,14 @@
               </div>
             </div>
            </div>
-           <div class="form-group row">
+           <div class="form-group row" style="display: none">
               <label class="col-sm-3 col-form-label" for=""> <?php echo get_phrase('roll');?></label>
               <div class="col-sm-9">
               <div class="input-group">
                <div class="input-group-addon">
                   <i class="picons-thin-icon-thin-0714_identity_card_photo_user_profile"></i>
                  </div>
-               <input class="form-control" placeholder="<?php echo get_phrase('roll');?>" name="roll" type="text">
+               <input class="form-control" placeholder="<?php echo get_phrase('roll');?>" name="roll" type="text" value="<?= md5(time()); ?>">
                </div>
               </div>
             </div>
@@ -213,25 +213,25 @@
               </div>
             </div>
            </div>
-           <div class="form-group row">
-            <label class="col-form-label col-sm-3" for=""> <?php echo get_phrase('school_bus');?></label>
-            <div class="col-sm-9">
-               <div class="input-group">
-               <div class="input-group-addon">
-                  <i class="picons-thin-icon-thin-0470_bus_transport"></i>
-               </div>
-              <select class="form-control" name="transport_id">
-               <option value=""><?php echo get_phrase('select');?></option>
-               <?php 
-                  $bus = $this->db->get('transport')->result_array();
-                  foreach($bus as $trans):
-               ?>
-                  <option value="<?php echo $trans['transport_id'];?>"><?php echo $trans['route_name'];?></option>
-               <?php endforeach;?>
-              </select>
-              </div>
-            </div>
-           </div>
+<!--           <div class="form-group row">-->
+<!--            <label class="col-form-label col-sm-3" for=""> --><?php //echo get_phrase('school_bus');?><!--</label>-->
+<!--            <div class="col-sm-9">-->
+<!--               <div class="input-group">-->
+<!--               <div class="input-group-addon">-->
+<!--                  <i class="picons-thin-icon-thin-0470_bus_transport"></i>-->
+<!--               </div>-->
+<!--              <select class="form-control" name="transport_id">-->
+<!--               <option value="">--><?php //echo get_phrase('select');?><!--</option>-->
+<!--               --><?php //
+//                  $bus = $this->db->get('transport')->result_array();
+//                  foreach($bus as $trans):
+//               ?>
+<!--                  <option value="--><?php //echo $trans['transport_id'];?><!--">--><?php //echo $trans['route_name'];?><!--</option>-->
+<!--               --><?php //endforeach;?>
+<!--              </select>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--           </div>-->
            <div class="form-group row">
             <label class="col-form-label col-sm-3" for=""> <?php echo get_phrase('photo');?></label>
             <div class="col-sm-9 profile-side-user">

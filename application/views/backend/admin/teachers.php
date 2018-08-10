@@ -51,7 +51,7 @@
                      <th><?php echo get_phrase('username');?></th>
                      <th><?php echo get_phrase('email');?></th>
                      <th><?php echo get_phrase('birthday');?></th>
-                     <th><?php echo get_phrase('salary');?></th>
+<!--                     <th>--><?php //echo get_phrase('salary');?><!--</th>-->
                      <th><?php echo get_phrase('options');?></th>
                   </tr>
                </thead>
@@ -66,7 +66,7 @@
                      <td><?php echo $row['username']; ?></td>
                      <td><?php echo $row['email']; ?></td>
                      <td><?php echo $row['birthday']; ?></td>
-                     <td><div class="pt-btn"><a class="btn nc btn-success btn-sm btn-rounded"><font color="white">$<?php echo $row['salary']; ?></font></a></div></td>
+<!--                     <td><div class="pt-btn"><a class="btn nc btn-success btn-sm btn-rounded"><font color="white">$--><?php //echo $row['salary']; ?><!--</font></a></div></td>-->
                      <td><a href="<?php echo base_url();?>admin/teacher_profile/<?php echo $row['teacher_id'];?>/"><button class="btn btn-primary btn-rounded btn-sm"><i class="os-icon os-icon-user-male-circle"></i> <?php echo get_phrase('profile');?></button></a> <a onClick="return confirm('<?php echo get_phrase('confirm_delete');?>')" href="<?php echo base_url();?>admin/teachers/delete/<?php echo $row['teacher_id'];?>"><button class="btn btn-danger btn-rounded btn-sm"><i class="picons-thin-icon-thin-0056_bin_trash_recycle_delete_garbage_empty"></i> <?php echo get_phrase('delete');?></button></a></td>
                   </tr>
                <?php endforeach;?>
@@ -151,17 +151,17 @@
                </div>
               </div>
             </div>
-           <div class="form-group row">
-            <label class="col-form-label col-sm-3" for=""> <?php echo get_phrase('salary');?></label>
-            <div class="col-sm-9">
-               <div class="input-group">
-               <div class="input-group-addon">
-                  <i class="picons-thin-icon-thin-0424_money_payment_dollar_cash"></i>
-               </div>
-              <input class="form-control" placeholder="<?php echo get_phrase('salary');?>" name="salary" type="text">
-              </div>
-            </div>
-           </div>
+<!--           <div class="form-group row">-->
+<!--            <label class="col-form-label col-sm-3" for=""> --><?php //echo get_phrase('salary');?><!--</label>-->
+<!--            <div class="col-sm-9">-->
+<!--               <div class="input-group">-->
+<!--               <div class="input-group-addon">-->
+<!--                  <i class="picons-thin-icon-thin-0424_money_payment_dollar_cash"></i>-->
+<!--               </div>-->
+<!--              <input class="form-control" placeholder="--><?php //echo get_phrase('salary');?><!--" name="salary" type="text">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--           </div>-->
            <div class="form-group row">
             <label class="col-form-label col-sm-3" for=""> <?php echo get_phrase('password');?></label>
             <div class="col-sm-9">

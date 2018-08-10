@@ -2,7 +2,7 @@
 <div class="content-w">
 <ul class="breadcrumb hidden-xs-down hidden-sm-down">
 <div class="back">
-	<a href="<?php echo base_url();?>admin/students_area/"><i class="os-icon os-icon-common-07"></i></a>
+	<a href="<?php echo base_url();?>admin/students/"><i class="os-icon os-icon-common-07"></i></a>
 </div>
 </ul>
   <div class="content-i">
@@ -21,9 +21,9 @@
           <h2 class="up-header">
             <?php echo $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->name; ?>
           </h2>
-          <h6 class="up-sub-header">
-            <?php echo get_phrase('roll');?>: <?php echo $row['roll'];?>
-          </h6>
+<!--          <h6 class="up-sub-header">-->
+<!--            --><?php //echo get_phrase('roll');?><!--: --><?php //echo $row['roll'];?>
+<!--          </h6>-->
         </div>
         <svg class="decor" width="842px" height="219px" viewBox="0 0 842 219" preserveAspectRatio="xMaxYMax meet" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(-381.000000, -362.000000)" fill="#FFFFFF"><path class="decor-path" d="M1223,362 L1223,581 L381,581 C868.912802,575.666667 1149.57947,502.666667 1223,362 Z"></path></g></svg>
       </div>
@@ -64,11 +64,11 @@
         <div class="infopadd row"><div class="infogi col-sm-2"><?php echo get_phrase('address');?>:</div> <div class="infogg col-sm-9"> <?php echo $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->address; ?></div></div>
         <div class="infopadd row"><div class="infogi col-sm-2"><?php echo get_phrase('birthday');?>:</div> <div class="infogg col-sm-9"> <?php echo $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->birthday; ?></div></div>
         <div class="infopadd row"><div class="infogi col-sm-2"><?php echo get_phrase('gender');?>:</div> <div class="infogg col-sm-9"> <?php echo $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->sex; ?></div></div>
-        <div class="infopadd row"><div class="infogi col-sm-2"><?php echo get_phrase('parent');?>:</div> <div class="infogg col-sm-9"> <?php echo $this->db->get_where('parent' , array('parent_id' => $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->parent_id))->row()->name; ?></div></div>
+<!--        <div class="infopadd row"><div class="infogi col-sm-2">--><?php //echo get_phrase('parent');?><!--:</div> <div class="infogg col-sm-9"> --><?php //echo $this->db->get_where('parent' , array('parent_id' => $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->parent_id))->row()->name; ?><!--</div></div>-->
         <div class="infopadd row"><div class="infogi col-sm-2"><?php echo get_phrase('class');?>:</div> <div class="infogg col-sm-9"> <?php echo $this->db->get_where('class' , array('class_id' => $row['class_id']))->row()->name; ?></div></div>
         <div class="infopadd row"><div class="infogi col-sm-2"><?php echo get_phrase('section');?>:</div> <div class="infogg col-sm-9"> <?php echo $this->db->get_where('section' , array('section_id' => $row['section_id']))->row()->name; ?></div></div>
         <div class="infopadd row"><div class="infogi col-sm-2"><?php echo get_phrase('classroom');?>:</div> <div class="infogg col-sm-9"> <?php echo $this->db->get_where('dormitory' , array('dormitory_id' => $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->dormitory_id))->row()->number; ?></div></div>
-        <div class="infopadd row"><div class="infogi col-sm-2"><?php echo get_phrase('school_bus');?>:</div> <div class="infogg col-sm-9"> <?php echo $this->db->get_where('transport' , array('transport_id' => $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->transport_id))->row()->route_name; ?></div></div>
+<!--        <div class="infopadd row"><div class="infogi col-sm-2">--><?php //echo get_phrase('school_bus');?><!--:</div> <div class="infogg col-sm-9"> --><?php //echo $this->db->get_where('transport' , array('transport_id' => $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->transport_id))->row()->route_name; ?><!--</div></div>-->
           </div></div>
       </div> 
     </div>
@@ -171,26 +171,26 @@
         </div>
         </div>
         </div>
-        <div class="row">
-        <div class="col-sm-12">
-        <div class="form-group">
-        <label class="col-form-label" for=""> <?php echo get_phrase('parent');?></label>
-          <div class="input-group">
-          <div class="input-group-addon">
-            <i class="picons-thin-icon-thin-0703_users_profile_group_two"></i>
-          </div>
-          <select class="form-control" name="parent_id">
-              <option value=""><?php echo get_phrase('select');?></option>
-              <?php $parents = $this->db->get('parent')->result_array();
-                foreach($parents as $rows):
-              ?>
-                <option value="<?php echo $rows['parent_id'];?>" <?php if($rows['parent_id'] == $row3['parent_id']) echo 'selected';?>><?php echo $rows['name'];?></option>
-            <?php endforeach;?>
-          </select>
-          </div>
-        </div>
-        </div>
-        </div>
+<!--        <div class="row">-->
+<!--        <div class="col-sm-12">-->
+<!--        <div class="form-group">-->
+<!--        <label class="col-form-label" for=""> --><?php //echo get_phrase('parent');?><!--</label>-->
+<!--          <div class="input-group">-->
+<!--          <div class="input-group-addon">-->
+<!--            <i class="picons-thin-icon-thin-0703_users_profile_group_two"></i>-->
+<!--          </div>-->
+<!--          <select class="form-control" name="parent_id">-->
+<!--              <option value="">--><?php //echo get_phrase('select');?><!--</option>-->
+<!--              --><?php //$parents = $this->db->get('parent')->result_array();
+//                foreach($parents as $rows):
+//              ?>
+<!--                <option value="--><?php //echo $rows['parent_id'];?><!--" --><?php //if($rows['parent_id'] == $row3['parent_id']) echo 'selected';?><!--><?php //echo $rows['name'];?><!--</option>-->
+<!--            --><?php //endforeach;?>
+<!--          </select>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--        </div>-->
         <div class="row">
         <div class="col-sm-12">
         <div class="form-group">
@@ -208,43 +208,43 @@
         </div>
         </div>
         </div>
-                <div class="row">
-        <div class="col-sm-6">
-        <div class="form-group">
-        <label class="col-form-label" for=""> <?php echo get_phrase('classroom');?></label>
-          <div class="input-group">
-          <div class="input-group-addon">
-            <i class="picons-thin-icon-thin-0047_home_flat"></i>
-          </div>
-          <select class="form-control" name="dormitory_id">
-            <option value=""><?php echo get_phrase('select');?></option>
-            <?php $dorms = $this->db->get('dormitory')->result_array();
-            foreach($dorms as $dorm):
-            ?>
-            <option value="<?php echo $dorm['dormitory_id'];?>" <?php if($dorm['dormitory_id'] == $row3['dormitory_id']) echo 'selected';?>><?php echo $dorm['number'];?></option>
-          <?php endforeach;?>
-          </select>
-          </div>
-        </div>
-        </div>
-        <div class="col-sm-6">
-        <div class="form-group">
-        <label class="col-form-label" for=""> <?php echo get_phrase('school_bus');?></label>
-          <div class="input-group">
-          <div class="input-group-addon">
-            <i class="picons-thin-icon-thin-0470_bus_transport"></i>
-          </div>
-          <select class="form-control" name="transport_id">
-          <option value=""><?php echo get_phrase('select');?></option>
-            <?php $trans = $this->db->get('transport')->result_array();
-            foreach($trans as $bus):
-            ?>
-            <option value="<?php echo $bus['transport_id'];?>" <?php if($bus['transport_id'] == $row3['transport_id']) echo 'selected';?>><?php echo $bus['route_name'];?></option>
-          <?php endforeach;?>
-          </select>
-          </div>
-        </div>
-        </div></div>
+<!--        <div class="row">-->
+<!--        <div class="col-sm-6">-->
+<!--        <div class="form-group">-->
+<!--        <label class="col-form-label" for=""> --><?php //echo get_phrase('classroom');?><!--</label>-->
+<!--          <div class="input-group">-->
+<!--          <div class="input-group-addon">-->
+<!--            <i class="picons-thin-icon-thin-0047_home_flat"></i>-->
+<!--          </div>-->
+<!--          <select class="form-control" name="dormitory_id">-->
+<!--            <option value="">--><?php //echo get_phrase('select');?><!--</option>-->
+<!--            --><?php //$dorms = $this->db->get('dormitory')->result_array();
+//            foreach($dorms as $dorm):
+//            ?>
+<!--            <option value="--><?php //echo $dorm['dormitory_id'];?><!--" --><?php //if($dorm['dormitory_id'] == $row3['dormitory_id']) echo 'selected';?><!--><?php //echo $dorm['number'];?><!--</option>-->
+<!--          --><?php //endforeach;?>
+<!--          </select>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--        <div class="col-sm-6">-->
+<!--        <div class="form-group">-->
+<!--        <label class="col-form-label" for=""> --><?php //echo get_phrase('school_bus');?><!--</label>-->
+<!--          <div class="input-group">-->
+<!--          <div class="input-group-addon">-->
+<!--            <i class="picons-thin-icon-thin-0470_bus_transport"></i>-->
+<!--          </div>-->
+<!--          <select class="form-control" name="transport_id">-->
+<!--          <option value="">--><?php //echo get_phrase('select');?><!--</option>-->
+<!--            --><?php //$trans = $this->db->get('transport')->result_array();
+//            foreach($trans as $bus):
+//            ?>
+<!--            <option value="--><?php //echo $bus['transport_id'];?><!--" --><?php //if($bus['transport_id'] == $row3['transport_id']) echo 'selected';?><!--><?php //echo $bus['route_name'];?><!--</option>-->
+<!--          --><?php //endforeach;?>
+<!--          </select>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        </div></div>-->
         <div class="row">
         <div class="col-sm-12">  
         <div class="form-group">

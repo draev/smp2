@@ -41,7 +41,7 @@
           <div class="infopadd row"><div class="infogi col-sm-2"><?php echo get_phrase('phone');?>:</div> <div class="infogg col-sm-9"> <?php echo $row['phone']; ?></div></div>
           <div class="infopadd row"><div class="infogi col-sm-2"><?php echo get_phrase('address');?>:</div> <div class="infogg col-sm-9"> <?php echo $row['address']; ?></div></div>
           <div class="infopadd row"><div class="infogi col-sm-2"><?php echo get_phrase('birthday');?>:</div> <div class="infogg col-sm-9"> <?php echo $row['birthday']; ?></div></div>
-          <div class="infopadd row"><div class="infogi col-sm-2"><?php echo get_phrase('salary');?>:</div> <div class="infogg col-sm-9"> <?php echo $row['salary']; ?></div></div>
+<!--          <div class="infopadd row"><div class="infogi col-sm-2">--><?php //echo get_phrase('salary');?><!--:</div> <div class="infogg col-sm-9"> --><?php //echo $row['salary']; ?><!--</div></div>-->
         </div>
       </div>
     </div> 
@@ -154,13 +154,13 @@
         <div class="row">
          <div class="col-sm-6">
         <div class="form-group">
-        <label class="col-form-label" for=""> <?php echo get_phrase('salary');?></label>
-          <div class="input-group">
-           <div class="input-group-addon">
-              <i class="picons-thin-icon-thin-0424_money_payment_dollar_cash"></i>
-            </div>
-          <input class="form-control" value="<?php echo $row3['salary'];?>" name="salary" type="text">
-        </div>
+<!--        <label class="col-form-label" for=""> --><?php //echo get_phrase('salary');?><!--</label>-->
+<!--          <div class="input-group">-->
+<!--           <div class="input-group-addon">-->
+<!--              <i class="picons-thin-icon-thin-0424_money_payment_dollar_cash"></i>-->
+<!--            </div>-->
+<!--          <input class="form-control" value="--><?php //echo $row3['salary'];?><!--" name="salary" type="text">-->
+<!--        </div>-->
         </div></div>
 		<div class="col-sm-6">
 		<div class="form-group">

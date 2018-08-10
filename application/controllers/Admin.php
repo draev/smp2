@@ -2020,9 +2020,9 @@ class Admin extends CI_Controller
             $data['phone']          = $this->input->post('phone');
             $data['email']          = $this->input->post('email');
             $data['password']       = sha1($this->input->post('password'));
-            $data['parent_id']      = 0;//$this->input->post('parent_id');
+            $data['parent_id']      = 0;//(int)$this->input->post('parent_id');
             $data['dormitory_id']  = 0; //$this->input->post('dormitory_id');
-            $data['transport_id']  = $this->input->post('transport_id');
+            $data['transport_id']  = (int)$this->input->post('transport_id');
             $this->db->insert('student', $data);
             $student_id = $this->db->insert_id();
             $data2['student_id']     = $student_id;
@@ -2032,10 +2032,13 @@ class Admin extends CI_Controller
             {
                 $data2['section_id'] = $this->input->post('section_id');
             }
-            $data2['roll']           = $this->input->post('roll');
-            $data2['date_added']     = strtotime(date("Y-m-d H:i:s"));
-            $data2['year']           = $running_year;
-            $this->db->insert('enroll', $data2);
+            if ($this->input->post('roll'))
+            {
+                $data2['roll']           = $this->input->post('roll');
+                $data2['date_added']     = strtotime(date("Y-m-d H:i:s"));
+                $data2['year']           = $running_year;
+                $this->db->insert('enroll', $data2);
+            }
             move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $student_id . '.jpg');
             $this->session->set_flashdata('flash_message' , get_phrase('successfully_added'));
             redirect(base_url() . 'admin/add_student/', 'refresh');
@@ -2046,10 +2049,10 @@ class Admin extends CI_Controller
             $data['username']        = $this->input->post('username');
             $data['phone']           = $this->input->post('phone');
             $data['address']         = $this->input->post('address');
-            $data['parent_id']       = $this->input->post('parent_id');
+            $data['parent_id']       = (int)$this->input->post('parent_id');
             $data['birthday']        = $this->input->post('birthday');
             $data['dormitory_id']    = $this->input->post('dormitory_id');
-            $data['transport_id']    = $this->input->post('transport_id');
+            $data['transport_id']    = (int)$this->input->post('transport_id');
             $data['student_session'] = $this->input->post('student_session');
             $data['email']           = $this->input->post('email');
             $data['sex']           = $this->input->post('sex');
@@ -2071,10 +2074,10 @@ class Admin extends CI_Controller
             $data['username']        = $this->input->post('username');
             $data['phone']           = $this->input->post('phone');
             $data['address']         = $this->input->post('address');
-            $data['parent_id']       = $this->input->post('parent_id');
+            $data['parent_id']       = (int)$this->input->post('parent_id');
             $data['birthday']        = $this->input->post('birthday');
             $data['dormitory_id']    = $this->input->post('dormitory_id');
-            $data['transport_id']    = $this->input->post('transport_id');
+            $data['transport_id']    = (int)$this->input->post('transport_id');
             $data['student_session'] = $this->input->post('student_session');
             $data['email']           = $this->input->post('email');
             $data['sex']           = $this->input->post('sex');
