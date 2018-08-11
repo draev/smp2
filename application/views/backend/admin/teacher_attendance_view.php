@@ -56,8 +56,8 @@
               <td style="text-align: center;" nowrap>
               <div class="form-check">
                <label class="form-check-label"><input checked class="form-check-input" name="status_<?php echo $row['attendance_id']; ?>" type="radio" <?php if ($row['status'] == 1) echo 'checked'; ?> value="1"  style="margin-left:5px"><?php echo get_phrase('present');?></label>
-               <label class="form-check-label"><input class="form-check-input" name="status_<?php echo $row['attendance_id']; ?>" type="radio" <?php if ($row['status'] == 3) echo 'checked'; ?> value="3" style="margin-left:5px"><?php echo get_phrase('late');?></label>
-               <label class="form-check-label"><input class="form-check-input" name="status_<?php echo $row['attendance_id']; ?>" type="radio" <?php if ($row['status'] == 2) echo 'checked'; ?> value="2" style="margin-left:5px"><?php echo get_phrase('absent');?></label>
+               <label class="form-check-label"><input class="form-check-input" name="status_<?php echo $row['attendance_id']; ?>" type="radio" <?php if ($row['status'] == 3) echo 'checked'; ?> value="3" style="margin-left:5px"><?php echo get_phrase('motivated');?></label>
+               <label class="form-check-label"><input class="form-check-input" name="status_<?php echo $row['attendance_id']; ?>" type="radio" <?php if ($row['status'] == 2) echo 'checked'; ?> value="2" style="margin-left:5px"><?php echo get_phrase('unmotivated');?></label>
               </div>
               </td>
             </tr>
