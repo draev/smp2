@@ -6,15 +6,15 @@
 			<li class="nav-item">
 			  <a class="nav-link" href="<?php echo base_url();?>admin/attendance/"><i class="os-icon picons-thin-icon-thin-0729_student_degree_science_university_school_graduate"></i><span><?php echo get_phrase('students');?></span></a>
 			</li>
-			<li class="nav-item">
-			  <a class="nav-link" href="<?php echo base_url();?>admin/teacher_attendance/"><i class="os-icon picons-thin-icon-thin-0704_users_profile_group_couple_man_woman"></i><span><?php echo get_phrase('teachers');?></span></a>
-			</li>
+<!--			<li class="nav-item">-->
+<!--			  <a class="nav-link" href="--><?php //echo base_url();?><!--admin/teacher_attendance/"><i class="os-icon picons-thin-icon-thin-0704_users_profile_group_couple_man_woman"></i><span>--><?php //echo get_phrase('teachers');?><!--</span></a>-->
+<!--			</li>-->
 			<li class="nav-item">
 			  <a class="nav-link active" href="<?php echo base_url();?>admin/attendance_report/"><i class="os-icon picons-thin-icon-thin-0386_graph_line_chart_statistics"></i><span><?php echo get_phrase('student_attendance_report');?></span></a>
 			</li>
-			<li class="nav-item">
-			  <a class="nav-link" href="<?php echo base_url();?>admin/teacher_attendance_report/"><i class="os-icon picons-thin-icon-thin-0386_graph_line_chart_statistics"></i><span><?php echo get_phrase('teacher_attendance_report');?></span></a>
-			</li>
+<!--			<li class="nav-item">-->
+<!--			  <a class="nav-link" href="--><?php //echo base_url();?><!--admin/teacher_attendance_report/"><i class="os-icon picons-thin-icon-thin-0386_graph_line_chart_statistics"></i><span>--><?php //echo get_phrase('teacher_attendance_report');?><!--</span></a>-->
+<!--			</li>-->
 		  </ul>
 		</div>
 	  </div>

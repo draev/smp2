@@ -6,15 +6,15 @@
             <li class="nav-item">
               <a class="nav-link active" href="<?php echo base_url();?>admin/attendance/"><i class="os-icon picons-thin-icon-thin-0729_student_degree_science_university_school_graduate"></i><span><?php echo get_phrase('students');?></span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url();?>admin/teacher_attendance/"><i class="os-icon picons-thin-icon-thin-0704_users_profile_group_couple_man_woman"></i><span><?php echo get_phrase('teachers');?></span></a>
-            </li>
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link" href="--><?php //echo base_url();?><!--admin/teacher_attendance/"><i class="os-icon picons-thin-icon-thin-0704_users_profile_group_couple_man_woman"></i><span>--><?php //echo get_phrase('teachers');?><!--</span></a>-->
+<!--            </li>-->
             <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url();?>admin/attendance_report/"><i class="os-icon picons-thin-icon-thin-0386_graph_line_chart_statistics"></i><span><?php echo get_phrase('student_attendance_report');?></span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url();?>admin/teacher_attendance_report/"><i class="os-icon picons-thin-icon-thin-0386_graph_line_chart_statistics"></i><span><?php echo get_phrase('teacher_attendance_report');?></span></a>
-            </li>
+<!--            <li class="nav-item">-->
+<!--              <a class="nav-link" href="--><?php //echo base_url();?><!--admin/teacher_attendance_report/"><i class="os-icon picons-thin-icon-thin-0386_graph_line_chart_statistics"></i><span>--><?php //echo get_phrase('teacher_attendance_report');?><!--</span></a>-->
+<!--            </li>-->
           </ul>
         </div>
       </div>
@@ -66,7 +66,7 @@
           <thead>
             <tr>
               <th style="text-align: center;"><?php echo get_phrase('student');?></th>
-              <th style="text-align: center;"><?php echo get_phrase('roll');?></th>
+<!--              <th style="text-align: center;">--><?php //echo get_phrase('roll');?><!--</th>-->
               <th style="text-align: center;"><?php echo get_phrase('status');?></th>
             </tr>
           </thead>
@@ -85,7 +85,7 @@
               <td style="min-width:170px;">
                 <img alt="" src="<?php echo $this->crud_model->get_image_url('student', $row['student_id']);?>" width="25px" style="border-radius: 10px;margin-right:5px;"> <?php echo $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->name; ?>
               </td>
-              <td style="text-align: center;"><?php echo $this->db->get_where('enroll', array('student_id' => $row['student_id']))->row()->roll; ?></td>
+<!--              <td style="text-align: center;">--><?php //echo $this->db->get_where('enroll', array('student_id' => $row['student_id']))->row()->roll; ?><!--</td>-->
               <td style="text-align: center;" nowrap>
                 <div class="form-check">
                     <label class="form-check-label"><input checked class="form-check-input" <?php if ($row['status'] == 1) echo 'checked'; ?> name="status_<?php echo $row['attendance_id']; ?>" type="radio" value="1"  style="margin-left:5px"><?php echo get_phrase('present');?></label>
