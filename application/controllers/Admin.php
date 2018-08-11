@@ -2032,13 +2032,10 @@ class Admin extends CI_Controller
             {
                 $data2['section_id'] = $this->input->post('section_id');
             }
-            if ($this->input->post('roll'))
-            {
-                $data2['roll']           = $this->input->post('roll');
-                $data2['date_added']     = strtotime(date("Y-m-d H:i:s"));
-                $data2['year']           = $running_year;
-                $this->db->insert('enroll', $data2);
-            }
+            $data2['roll']           = $this->input->post('roll');
+            $data2['date_added']     = strtotime(date("Y-m-d H:i:s"));
+            $data2['year']           = $running_year;
+            $this->db->insert('enroll', $data2);
             move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $student_id . '.jpg');
             $this->session->set_flashdata('flash_message' , get_phrase('successfully_added'));
             redirect(base_url() . 'admin/add_student/', 'refresh');

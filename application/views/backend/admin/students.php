@@ -55,7 +55,7 @@
           <thead>
             <tr>
               <th><?php echo get_phrase('name');?></th>
-<!--              <th>--><?php //echo get_phrase('roll');?><!--</th>-->
+              <th><?php echo get_phrase('roll');?></th>
               <th><?php echo get_phrase('class');?></th>
               <th><?php echo get_phrase('section');?></th>
 <!--              <th>--><?php //echo get_phrase('profile');?><!--</th>-->
@@ -67,7 +67,7 @@
                foreach($students as $row):?>
             <tr>
               <td><img alt="" src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" width="25px" style="border-radius: 10px;margin-right:5px;"> <?php echo $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->name;?></td>
-<!--              <td style="text-align: center;">--><?php //echo $this->db->get_where('enroll' , array('student_id' => $row['student_id']))->row()->roll;?><!--</td>-->
+              <td style="text-align: center;"><?php echo $this->db->get_where('enroll' , array('student_id' => $row['student_id']))->row()->roll;?></td>
               <td style="text-align: center;">
                 <div class="pt-btn">
                   <a class="btn nc btn-secondary btn-sm btn-rounded"><font color="white"><?php echo $this->db->get_where('class' , array('class_id' => $id))->row()->name;?></font></a>
@@ -98,7 +98,7 @@
           <thead>
             <tr>
               <th><?php echo get_phrase('name');?></th>
-<!--              <th>--><?php //echo get_phrase('roll');?><!--</th>-->
+              <th><?php echo get_phrase('roll');?></th>
               <th><?php echo get_phrase('class');?></th>
               <th><?php echo get_phrase('section');?></th>
               <th><?php echo get_phrase('profile');?></th>
@@ -110,7 +110,7 @@
                 foreach($students as $row2):?>
             <tr>
               <td><img alt="" src="<?php echo $this->crud_model->get_image_url('student',$row2['student_id']);?>" width="25px" style="border-radius: 10px;margin-right:5px;"> <?php echo $this->db->get_where('student' , array('student_id' => $row2['student_id']))->row()->name;?></td>
-<!--              <td style="text-align: center;">--><?php //echo $this->db->get_where('enroll' , array('student_id' => $row2['student_id']))->row()->roll;?><!--</td>-->
+              <td style="text-align: center;"><?php echo $this->db->get_where('enroll' , array('student_id' => $row2['student_id']))->row()->roll;?></td>
               <td style="text-align: center;">
                 <div class="pt-btn">
                   <a class="btn nc btn-secondary btn-sm btn-rounded"><font color="white"><?php echo $this->db->get_where('class' , array('class_id' => $id))->row()->name;?></font></a>

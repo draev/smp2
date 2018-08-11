@@ -152,14 +152,14 @@
               </div>
             </div>
            </div>
-           <div class="form-group row" style="display: none">
+           <div class="form-group row">
               <label class="col-sm-3 col-form-label" for=""> <?php echo get_phrase('roll');?></label>
               <div class="col-sm-9">
               <div class="input-group">
                <div class="input-group-addon">
                   <i class="picons-thin-icon-thin-0714_identity_card_photo_user_profile"></i>
                  </div>
-               <input class="form-control" placeholder="<?php echo get_phrase('roll');?>" name="roll" type="text" value="<?= md5(time()); ?>">
+                  <input class="form-control" placeholder="<?php echo get_phrase('roll');?>" name="roll" type="text">
                </div>
               </div>
             </div>
