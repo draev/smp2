@@ -93,11 +93,11 @@
                                 <a class="btn btn-block g-login" href="<?php echo $loginURL2;?>"><img class="mr-3" style="width: 32px;" src="<?php echo base_url();?>uploads/icon-facebook.png"><?php echo get_phrase('login_facebook');?></a>
                           </div><?php endif;?><hr>
                           <?php if($this->db->get_where('settings', array('type' => 'register'))->row()->description == 1):?>
-                            <ul class="auth-footer">
-                              <li><a href="<?php echo base_url();?>register/" style="color: #000; font-weight: bold;"><?php echo get_phrase('register');?></a></li>                              
-                          </ul>
+<!--                            <ul class="auth-footer">-->
+<!--                              <li><a href="--><?php //echo base_url();?><!--register/" style="color: #000; font-weight: bold;">--><?php //echo get_phrase('register');?><!--</a></li>                              -->
+<!--                          </ul>-->
                           <?php endif;?>
-                          <hr>
+<!--                          <hr>-->
                           <p class="footer-text text-center" style="color: #000;"><b>&copy;</b> Copyright all rights reserved.</p>
                     </div>
                   </div>

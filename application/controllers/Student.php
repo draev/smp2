@@ -23,7 +23,7 @@ class Student extends CI_Controller
         }
         if ($this->session->userdata('student_login') == 1)
         {
-            redirect(base_url() . 'student/panel/', 'refresh');
+            redirect(base_url() . 'student/my_marks/', 'refresh');
         }
     }
 
@@ -1070,7 +1070,7 @@ class Student extends CI_Controller
             $this->db->where('id', $param2);
             $this->db->delete('notification');
             $this->session->set_flashdata('flash_message', get_phrase('successfully_deleted'));
-            redirect(base_url() . 'student/panel/', 'refresh');
+            redirect(base_url() . 'student/my_marks/', 'refresh');
         }
     }
 

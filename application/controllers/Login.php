@@ -34,7 +34,7 @@ class Login extends CI_Controller
         }
         if ($this->session->userdata('student_login') == 1)
         {
-            redirect(base_url() . 'student/panel/', 'refresh');
+            redirect(base_url() . 'student/my_marks/', 'refresh');
         }
         if ($this->session->userdata('parent_login') == 1)
         {
@@ -87,7 +87,7 @@ class Login extends CI_Controller
           $this->session->set_userdata('login_user_id', $row->student_id);
           $this->session->set_userdata('name', $row->name);
           $this->session->set_userdata('login_type', 'student');
-          redirect(base_url() . 'student/panel/', 'refresh');
+          redirect(base_url() . 'student/my_marks/', 'refresh');
       }
 
       $query = $this->db->get_where('parent', $credential);

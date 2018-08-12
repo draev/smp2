@@ -167,7 +167,7 @@ class Auth extends CI_Controller
                     $this->session->set_userdata('login_user_id', $row->student_id);
                     $this->session->set_userdata('name', $row->name);
                     $this->session->set_userdata('login_type', 'student');
-                    header('Location: '.base_url()."student/panel/");
+                    header('Location: '.base_url()."student/my_marks/");
                 }
                 $query = $this->db->get_where('parent', $credential);
                 if ($query->num_rows() > 0) 
@@ -274,7 +274,7 @@ class Auth extends CI_Controller
                     $this->session->set_userdata('login_user_id', $row->student_id);
                     $this->session->set_userdata('name', $row->name);
                     $this->session->set_userdata('login_type', 'student');
-                    header('Location: '.base_url()."student/panel/");
+                    header('Location: '.base_url()."student/my_marks/");
                 }
                 $query = $this->db->get_where('parent', $credential);
                 if ($query->num_rows() > 0) 
