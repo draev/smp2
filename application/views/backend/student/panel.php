@@ -60,28 +60,28 @@
             <div class="content-box">			
               <div class="row">
                 <div class="col-sm-12">
-				  <div id="myCarousel" class="carousel slide m-b" data-ride="carousel">
-					<ol class="carousel-indicators hidden-xs-down">
-					  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					  <li data-target="#myCarousel" data-slide-to="1"></li>
-					  <li data-target="#myCarousel" data-slide-to="2"></li>
-					</ol>
-					<div class="carousel-inner">
-					  <div class="item active">
-						<img src="<?php echo base_url();?>uploads/slider/slider1.png" alt="Slider 1" style="width:100%;">
-					  </div>
-					  <div class="item">
-						<img src="<?php echo base_url();?>uploads/slider/slider2.png" alt="Slider 2" style="width:100%;">
-					  </div>
-					  <div class="item">
-						<img src="<?php echo base_url();?>uploads/slider/slider3.png" alt="Slider 3" style="width:100%;">
-					  </div>					  
-					<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-					</a>
-					<a class="right carousel-control" href="#myCarousel" data-slide="next">
-					</a>
-					</div>
-				  </div>
+<!--				  <div id="myCarousel" class="carousel slide m-b" data-ride="carousel">-->
+<!--					<ol class="carousel-indicators hidden-xs-down">-->
+<!--					  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
+<!--					  <li data-target="#myCarousel" data-slide-to="1"></li>-->
+<!--					  <li data-target="#myCarousel" data-slide-to="2"></li>-->
+<!--					</ol>-->
+<!--					<div class="carousel-inner">-->
+<!--					  <div class="item active">-->
+<!--						<img src="--><?php //echo base_url();?><!--uploads/slider/slider1.png" alt="Slider 1" style="width:100%;">-->
+<!--					  </div>-->
+<!--					  <div class="item">-->
+<!--						<img src="--><?php //echo base_url();?><!--uploads/slider/slider2.png" alt="Slider 2" style="width:100%;">-->
+<!--					  </div>-->
+<!--					  <div class="item">-->
+<!--						<img src="--><?php //echo base_url();?><!--uploads/slider/slider3.png" alt="Slider 3" style="width:100%;">-->
+<!--					  </div>					  -->
+<!--					<a class="left carousel-control" href="#myCarousel" data-slide="prev">-->
+<!--					</a>-->
+<!--					<a class="right carousel-control" href="#myCarousel" data-slide="next">-->
+<!--					</a>-->
+<!--					</div>-->
+<!--				  </div>-->
 				  
                       <div class="row">
 						<div class="col-sm-3">
@@ -129,10 +129,10 @@
 							<i class="os-icon picons-thin-icon-thin-0703_users_profile_group_two"></i>
 							</div>
                             <div class="value">
-                              <?php echo $this->db->count_all_results('parent');?>
+                              <?php echo $this->db->count_all_results('class');?>
                             </div>
 							<div class="label">
-                              <?php echo get_phrase('parents');?>
+                              <?php echo get_phrase('classes');?>
                             </div>
                           </div>
                         </div>
@@ -302,9 +302,9 @@
                   </div>
                 <?php endfor;?>
               </div>
-              <div class="form-buttons-w">
-                <button class="btn btn-primary" type="button" id="add"> <?php echo get_phrase('send');?></button>
-              </div>        
+<!--              <div class="form-buttons-w">-->
+<!--                <button class="btn btn-primary" type="button" id="add"> --><?php //echo get_phrase('send');?><!--</button>-->
+<!--              </div>        -->
             </div>
           </div>
             <?php endif;?>

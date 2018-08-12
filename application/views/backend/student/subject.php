@@ -28,7 +28,7 @@
 					<th>#</th>
 					<th><?php echo get_phrase('subject');?></th>
 					<th><?php echo get_phrase('teacher');?></th>
-					<th><?php echo get_phrase('send_message');?></th>
+<!--					<th>--><?php //echo get_phrase('send_message');?><!--</th>-->
 				</tr>
 			</thead>
 			<tbody>
@@ -45,7 +45,7 @@
 					<td><?php echo $n++;?></td>
 					<td><?php echo $row['name'];?></td>
 					<td><img alt="" src="<?php echo $this->crud_model->get_image_url('teacher', $row['teacher_id']);?>" width="25px" style="border-radius: 10px;margin-right:5px;"> <?php echo $this->db->get_where('teacher', array('teacher_id' => $row['teacher_id']))->row()->name;?></td>
-					<td><a class="btn btn-rounded btn-sm btn-success" style="color:white" href="<?php echo base_url();?>student/message/message_new/<?php echo $send_data;?>"><i class="picons-thin-icon-thin-0317_send_post_paper_plane"></i> <?php echo get_phrase('send_message');?></a></td>
+<!--					<td><a class="btn btn-rounded btn-sm btn-success" style="color:white" href="--><?php //echo base_url();?><!--student/message/message_new/--><?php //echo $send_data;?><!--"><i class="picons-thin-icon-thin-0317_send_post_paper_plane"></i> --><?php //echo get_phrase('send_message');?><!--</a></td>-->
 				</tr>
 			<?php endforeach;?>
 			</tbody>

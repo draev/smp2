@@ -66,67 +66,67 @@
           </div></div>
       </div>
       
-       <hr>
-    <h5 class="text-center">Your linked accounts</h5>
-    <?php $photo = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->fb_photo;?>
-    <?php $name = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->fb_name;?>
-    <?php $id = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->fb_id;?>
-    <?php $salir = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->logoutURL;?>
+<!--       <hr>-->
+<!--    <h5 class="text-center">Your linked accounts</h5>-->
+<!--    --><?php //$photo = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->fb_photo;?>
+<!--    --><?php //$name = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->fb_name;?>
+<!--    --><?php //$id = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->fb_id;?>
+<!--    --><?php //$salir = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->logoutURL;?>
+<!---->
+<!--    --><?php //$gid = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->g_oauth;?>
+<!--    --><?php //$fname = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->g_fname;?>
+<!--    --><?php //$lname = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->g_lname;?>
+<!--    --><?php //$gphoto = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->g_picture;?>
+<!--    --><?php //$gemail = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->g_email;?>
 
-    <?php $gid = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->g_oauth;?>
-    <?php $fname = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->g_fname;?>
-    <?php $lname = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->g_lname;?>
-    <?php $gphoto = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->g_picture;?>
-    <?php $gemail = $this->db->get_where('student', array('student_id' => $this->session->userdata('login_user_id')))->row()->g_email;?>
-
-    <div class="pricing-plans row no-gutters">
-      <div class="pricing-plan col-sm-6">
-        <div class="plan-head">
-          <div class="plan-image">
-            <?php if($photo != ""):?>
-              <img alt="" src="<?php echo $photo;?>">
-            <?php else:?>
-              <img src="<?php echo base_url();?>uploads/facebook.png">
-            <?php endif;?>
-          </div>
-          <div class="plan-name">
-            Facebook<?php if($name != ""):?><br><small><?php echo $name;?></small><?php endif;?>
-          </div>
-        </div>
-        <div class="plan-body"><br><br>
-          <div class="plan-btn-w">
-            <?php if($id == ""):?>
-              <a class="btn btn-success btn-rounded" href="<?php echo $loginURL;?>">Link</a>
-            <?php else:?>
-              <a class="btn btn-danger btn-rounded" href="<?php echo base_url();?>student/my_profile/remove_facebook/">Unlink</a>
-            <?php endif;?>
-          </div>
-        </div>
-      </div>
-      <div class="pricing-plan col-sm-6">
-        <div class="plan-head">
-          <div class="plan-image">
-            <?php if($gid != ""):?>
-              <img alt="" src="<?php echo $gphoto;?>">
-            <?php else:?>
-              <img src="<?php echo base_url();?>uploads/google.png">
-            <?php endif;?>
-          </div>
-          <div class="plan-name">
-            <?php if($gid != ""):?><?php echo $fname ." ". $lname;?><br><span style="font-size:10px;"><?php echo $gemail;?></span><?php else:?>Google<?php endif;?>
-          </div>
-        </div>
-        <div class="plan-body"><br><br>
-          <div class="plan-btn-w">
-            <?php if($gid == ""):?>
-              <a class="btn btn-success btn-rounded" href="<?php echo $output;?>">Link</a>
-            <?php else:?>
-              <a class="btn btn-danger btn-rounded" href="<?php echo base_url();?>student/my_profile/remove_google/">Unlink</a>
-            <?php endif;?>
-          </div>
-        </div>
-      </div>
-    </div>
+<!--    <div class="pricing-plans row no-gutters">-->
+<!--      <div class="pricing-plan col-sm-6">-->
+<!--        <div class="plan-head">-->
+<!--          <div class="plan-image">-->
+<!--            --><?php //if($photo != ""):?>
+<!--              <img alt="" src="--><?php //echo $photo;?><!--">-->
+<!--            --><?php //else:?>
+<!--              <img src="--><?php //echo base_url();?><!--uploads/facebook.png">-->
+<!--            --><?php //endif;?>
+<!--          </div>-->
+<!--          <div class="plan-name">-->
+<!--            Facebook--><?php //if($name != ""):?><!--<br><small>--><?php //echo $name;?><!--</small>--><?php //endif;?>
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="plan-body"><br><br>-->
+<!--          <div class="plan-btn-w">-->
+<!--            --><?php //if($id == ""):?>
+<!--              <a class="btn btn-success btn-rounded" href="--><?php //echo $loginURL;?><!--">Link</a>-->
+<!--            --><?php //else:?>
+<!--              <a class="btn btn-danger btn-rounded" href="--><?php //echo base_url();?><!--student/my_profile/remove_facebook/">Unlink</a>-->
+<!--            --><?php //endif;?>
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="pricing-plan col-sm-6">-->
+<!--        <div class="plan-head">-->
+<!--          <div class="plan-image">-->
+<!--            --><?php //if($gid != ""):?>
+<!--              <img alt="" src="--><?php //echo $gphoto;?><!--">-->
+<!--            --><?php //else:?>
+<!--              <img src="--><?php //echo base_url();?><!--uploads/google.png">-->
+<!--            --><?php //endif;?>
+<!--          </div>-->
+<!--          <div class="plan-name">-->
+<!--            --><?php //if($gid != ""):?><!----><?php //echo $fname ." ". $lname;?><!--<br><span style="font-size:10px;">--><?php //echo $gemail;?><!--</span>--><?php //else:?><!--Google--><?php //endif;?>
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="plan-body"><br><br>-->
+<!--          <div class="plan-btn-w">-->
+<!--            --><?php //if($gid == ""):?>
+<!--              <a class="btn btn-success btn-rounded" href="--><?php //echo $output;?><!--">Link</a>-->
+<!--            --><?php //else:?>
+<!--              <a class="btn btn-danger btn-rounded" href="--><?php //echo base_url();?><!--student/my_profile/remove_google/">Unlink</a>-->
+<!--            --><?php //endif;?>
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
 
 
