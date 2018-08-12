@@ -21,7 +21,7 @@
                      <th><?php echo get_phrase('name');?></th>
                      <th><?php echo get_phrase('email');?></th>
                      <th><?php echo get_phrase('birthday');?></th>
-                     <th><?php echo get_phrase('send_message');?></th>
+<!--                     <th>--><?php //echo get_phrase('send_message');?><!--</th>-->
                   </tr>
                </thead>
                <tbody>
@@ -37,7 +37,7 @@
                           $send_data = base64_encode($data);
                       ?>
                      <td><div class="pt-btn"><a class="btn nc btn-purple btn-sm btn-rounded" style="color:white"><i class="os-icon picons-thin-icon-thin-0447_gift_wrapping"></i> <?php echo $row['birthday']; ?></div></td>
-                     <td><div class="pt-btn"><a class="btn btn-success btn-sm btn-rounded" style="color:white" href="<?php echo base_url();?>teacher/message/message_new/<?php echo $send_data;?>"><i class="os-icon picons-thin-icon-thin-0317_send_post_paper_plane"></i>  <?php echo get_phrase('send_message');?></a></div></td>
+<!--                     <td><div class="pt-btn"><a class="btn btn-success btn-sm btn-rounded" style="color:white" href="--><?php //echo base_url();?><!--teacher/message/message_new/--><?php //echo $send_data;?><!--"><i class="os-icon picons-thin-icon-thin-0317_send_post_paper_plane"></i>  --><?php //echo get_phrase('send_message');?><!--</a></div></td>-->
                   </tr>
                <?php endforeach;?>
                </tbody>

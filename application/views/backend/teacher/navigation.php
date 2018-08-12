@@ -230,13 +230,13 @@
                   </div>
                   <span><?php echo get_phrase('dashboard');?></span></a>
               </li>
-              <li class="main-menu <?php if($page_name == 'message' || $page_name == 'group') echo 'active';?>">
-                <a href="<?php echo base_url();?>teacher/message/">
-                  <div class="icon-w">
-                    <div class="os-icon picons-thin-icon-thin-0322_mail_post_box"></div>
-                  </div>
-                  <span><?php echo get_phrase('messages');?></span></a>
-              </li>
+<!--              <li class="main-menu --><?php //if($page_name == 'message' || $page_name == 'group') echo 'active';?><!--">-->
+<!--                <a href="--><?php //echo base_url();?><!--teacher/message/">-->
+<!--                  <div class="icon-w">-->
+<!--                    <div class="os-icon picons-thin-icon-thin-0322_mail_post_box"></div>-->
+<!--                  </div>-->
+<!--                  <span>--><?php //echo get_phrase('messages');?><!--</span></a>-->
+<!--              </li>-->
               <li class="main-menu <?php if($page_name == 'teachers') echo 'active';?>">
                 <a href="<?php echo base_url();?>teacher/teacher_list/">
                   <div class="icon-w">
@@ -258,27 +258,27 @@
                   </div>
                   <span><?php echo get_phrase('my_subjects');?></span></a>
               </li>			  
-              <li class="main-menu <?php if($page_name == 'my_routine' || $page_name == 'viendo_horarios') echo 'active';?>">
-                <a href="<?php echo base_url();?>teacher/my_routine/">
-                  <div class="icon-w">
-                    <div class="os-icon picons-thin-icon-thin-0024_calendar_month_day_planner_events"></div>
-                  </div>
-                  <span><?php echo get_phrase('my_routine');?></span></a>
-              </li>
-			         <li class="main-menu <?php if($page_name == 'online_exams' || $page_name == 'exam_room' || $page_name == 'exam_questions' || $page_name == 'exam_results' || $page_name == 'exam_edit' ||$page_name == 'homework' || $page_name == 'forum' || $page_name == 'study_material' || $page_name == 'unit_content' || $page_name == 'edit_forum' || $page_name == 'forum_room' || $page_name == 'homework_details' || $page_name == 'homework_edit' || $page_name == 'homework_room') echo 'active';?>">
-                <a href="<?php echo base_url();?>teacher/online_exams/">
-                  <div class="icon-w">
-                    <div class="os-icon picons-thin-icon-thin-0006_book_writing_reading_read_manual"></div>
-                  </div>
-                  <span><?php echo get_phrase('academic');?></span></a>
-              </li>
-              <li class="main-menu <?php if($page_name == 'view_report' || $page_name == 'student_report') echo 'active';?>">
-                <a href="<?php echo base_url();?>teacher/student_report/">
-                  <div class="icon-w">
-                    <div class="os-icon picons-thin-icon-thin-0389_gavel_hammer_law_judge_court"></div>
-                  </div>
-                  <span><?php echo get_phrase('behavior');?></span></a>
-              </li>
+<!--              <li class="main-menu --><?php //if($page_name == 'my_routine' || $page_name == 'viendo_horarios') echo 'active';?><!--">-->
+<!--                <a href="--><?php //echo base_url();?><!--teacher/my_routine/">-->
+<!--                  <div class="icon-w">-->
+<!--                    <div class="os-icon picons-thin-icon-thin-0024_calendar_month_day_planner_events"></div>-->
+<!--                  </div>-->
+<!--                  <span>--><?php //echo get_phrase('my_routine');?><!--</span></a>-->
+<!--              </li>-->
+<!--			         <li class="main-menu --><?php //if($page_name == 'online_exams' || $page_name == 'exam_room' || $page_name == 'exam_questions' || $page_name == 'exam_results' || $page_name == 'exam_edit' ||$page_name == 'homework' || $page_name == 'forum' || $page_name == 'study_material' || $page_name == 'unit_content' || $page_name == 'edit_forum' || $page_name == 'forum_room' || $page_name == 'homework_details' || $page_name == 'homework_edit' || $page_name == 'homework_room') echo 'active';?><!--">-->
+<!--                <a href="--><?php //echo base_url();?><!--teacher/online_exams/">-->
+<!--                  <div class="icon-w">-->
+<!--                    <div class="os-icon picons-thin-icon-thin-0006_book_writing_reading_read_manual"></div>-->
+<!--                  </div>-->
+<!--                  <span>--><?php //echo get_phrase('academic');?><!--</span></a>-->
+<!--              </li>-->
+<!--              <li class="main-menu --><?php //if($page_name == 'view_report' || $page_name == 'student_report') echo 'active';?><!--">-->
+<!--                <a href="--><?php //echo base_url();?><!--teacher/student_report/">-->
+<!--                  <div class="icon-w">-->
+<!--                    <div class="os-icon picons-thin-icon-thin-0389_gavel_hammer_law_judge_court"></div>-->
+<!--                  </div>-->
+<!--                  <span>--><?php //echo get_phrase('behavior');?><!--</span></a>-->
+<!--              </li>-->
               <li class="main-menu <?php if($page_name == 'upload_marks' || $page_name == 'marks_upload' || $page_name == 'tab_sheet') echo 'active';?>">
                 <a href="<?php echo base_url();?>teacher/upload_marks/">
                   <div class="icon-w">
@@ -293,34 +293,34 @@
                   </div>
                   <span><?php echo get_phrase('attendance');?></span></a>
               </li>
-               <li class="main-menu <?php if($page_name == 'circulares' || $page_name == 'read') echo 'active';?>">
-                <a href="<?php echo base_url();?>teacher/noticeboard/">
-                  <div class="icon-w">
-                    <div class="os-icon picons-thin-icon-thin-0010_newspaper_reading_news"></div>
-                  </div>
-                  <span><?php echo get_phrase('noticeboard');?></span></a>
-              </li>
-              <li class="main-menu <?php if($page_name == 'library') echo 'active';?>">
-                <a href="<?php echo base_url();?>teacher/library/">
-                  <div class="icon-w">
-                    <div class="os-icon picons-thin-icon-thin-0017_office_archive"></div>
-                  </div>
-                  <span><?php echo get_phrase('library');?></span></a>
-              </li>
-              <li class="main-menu <?php if($page_name == 'request') echo 'active';?>">
-                <a href="<?php echo base_url();?>teacher/request/">
-                  <div class="icon-w">
-                    <div class="os-icon picons-thin-icon-thin-0015_fountain_pen"></div>
-                  </div>
-                  <span><?php echo get_phrase('premissions');?></span></a>
-              </li>
-              <li class="main-menu <?php if($page_name == 'files') echo 'active';?>">
-                <a href="<?php echo base_url();?>teacher/files/">
-                  <div class="icon-w">
-                    <div class="os-icon picons-thin-icon-thin-0111_folder_files_documents"></div>
-                  </div>
-                  <span><?php echo get_phrase('teacher_files');?></span></a>
-              </li>
+<!--               <li class="main-menu --><?php //if($page_name == 'circulares' || $page_name == 'read') echo 'active';?><!--">-->
+<!--                <a href="--><?php //echo base_url();?><!--teacher/noticeboard/">-->
+<!--                  <div class="icon-w">-->
+<!--                    <div class="os-icon picons-thin-icon-thin-0010_newspaper_reading_news"></div>-->
+<!--                  </div>-->
+<!--                  <span>--><?php //echo get_phrase('noticeboard');?><!--</span></a>-->
+<!--              </li>-->
+<!--              <li class="main-menu --><?php //if($page_name == 'library') echo 'active';?><!--">-->
+<!--                <a href="--><?php //echo base_url();?><!--teacher/library/">-->
+<!--                  <div class="icon-w">-->
+<!--                    <div class="os-icon picons-thin-icon-thin-0017_office_archive"></div>-->
+<!--                  </div>-->
+<!--                  <span>--><?php //echo get_phrase('library');?><!--</span></a>-->
+<!--              </li>-->
+<!--              <li class="main-menu --><?php //if($page_name == 'request') echo 'active';?><!--">-->
+<!--                <a href="--><?php //echo base_url();?><!--teacher/request/">-->
+<!--                  <div class="icon-w">-->
+<!--                    <div class="os-icon picons-thin-icon-thin-0015_fountain_pen"></div>-->
+<!--                  </div>-->
+<!--                  <span>--><?php //echo get_phrase('premissions');?><!--</span></a>-->
+<!--              </li>-->
+<!--              <li class="main-menu --><?php //if($page_name == 'files') echo 'active';?><!--">-->
+<!--                <a href="--><?php //echo base_url();?><!--teacher/files/">-->
+<!--                  <div class="icon-w">-->
+<!--                    <div class="os-icon picons-thin-icon-thin-0111_folder_files_documents"></div>-->
+<!--                  </div>-->
+<!--                  <span>--><?php //echo get_phrase('teacher_files');?><!--</span></a>-->
+<!--              </li>-->
             </ul>
           </div>
 </div>
