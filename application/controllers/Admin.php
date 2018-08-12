@@ -2599,7 +2599,20 @@ class Admin extends CI_Controller
             $laboocho = $this->input->post('lab_ocho_'.$row['mark_id']);
             $comment = $this->input->post('comment_'.$row['mark_id']);
             $labonueve = $this->input->post('lab_nueve_'.$row['mark_id']);
-            $labototal = $obtained_marks + $labouno + $labodos + $labotres + $labocuatro + $labocinco + $laboseis + $labosiete + $laboocho + $labonueve;
+            
+            $nm = 0;
+            $sum = 0;
+            
+            foreach ([$obtained_marks, $labouno, $labodos, $labotres, $labocuatro, $labocinco, $laboseis, $labosiete, $laboocho, $labonueve] as $value) {
+                if (!$value) {
+                    continue;
+                }
+                $sum +=$value;
+                $nm++;
+            }
+            
+            $labototal = $nm ? round($sum/$nm,2) : 0;
+
             $this->db->where('mark_id' , $row['mark_id']);
             $this->db->update('mark' , array('mark_obtained' => $obtained_marks , 'labuno' => $labouno
             , 'labdos' => $labodos, 'labtres' => $labotres, 'labcuatro' => $labocuatro, 'labcinco' => $labocinco, 'labseis' => $laboseis

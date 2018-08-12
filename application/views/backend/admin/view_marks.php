@@ -3,7 +3,7 @@
 <div class="content-w">
  <ul class="breadcrumb hidden-xs-down hidden-sm-down">
 	<div class="back hidden-sm-down">		
-	<a href="<?php echo base_url();?>admin/students_area/"><i class="os-icon os-icon-common-07"></i></a>	
+	<a href="<?php echo base_url();?>admin/students/"><i class="os-icon os-icon-common-07"></i></a>
 </div></ul>   
    <div class="content-i">
     <div class="content-box">
