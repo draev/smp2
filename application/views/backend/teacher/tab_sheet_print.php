@@ -65,7 +65,7 @@
 						$this->db->where('year' , $running_year);
 						$this->db->from('subject');
 						$total_subjects = $this->db->count_all_results();
-						echo ($total_marks / $total_subjects); echo "%";
+						echo (round($total_marks / $total_subjects,2));
 					?>
 				</td>
 				</tr>
