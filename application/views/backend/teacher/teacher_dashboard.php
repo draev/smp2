@@ -57,26 +57,26 @@
             <div class="content-box">     
               <div class="row">
                 <div class="col-sm-12">
-                  <div id="myCarousel" class="carousel slide m-b" data-ride="carousel">
-                    <ol class="carousel-indicators hidden-xs-down">
-                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                      <li data-target="#myCarousel" data-slide-to="1"></li>
-                      <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
-                  <div class="carousel-inner">
-                    <div class="item active">
-                      <img src="<?php echo base_url();?>uploads/slider/slider1.png" alt="Slider 1" style="width:100%;">
-                    </div>
-                    <div class="item">
-                      <img src="<?php echo base_url();?>uploads/slider/slider2.png" alt="Slider 2" style="width:100%;">
-                    </div>
-                    <div class="item">
-                      <img src="<?php echo base_url();?>uploads/slider/slider3.png" alt="Slider 3" style="width:100%;">
-                    </div>            
-                    <a class="left carousel-control" href="#myCarousel" data-slide="prev"></a>
-                    <a class="right carousel-control" href="#myCarousel" data-slide="next"></a>
-                  </div>
-                </div>
+<!--                  <div id="myCarousel" class="carousel slide m-b" data-ride="carousel">-->
+<!--                    <ol class="carousel-indicators hidden-xs-down">-->
+<!--                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
+<!--                      <li data-target="#myCarousel" data-slide-to="1"></li>-->
+<!--                      <li data-target="#myCarousel" data-slide-to="2"></li>-->
+<!--                    </ol>-->
+<!--                  <div class="carousel-inner">-->
+<!--                    <div class="item active">-->
+<!--                      <img src="--><?php //echo base_url();?><!--uploads/slider/slider1.png" alt="Slider 1" style="width:100%;">-->
+<!--                    </div>-->
+<!--                    <div class="item">-->
+<!--                      <img src="--><?php //echo base_url();?><!--uploads/slider/slider2.png" alt="Slider 2" style="width:100%;">-->
+<!--                    </div>-->
+<!--                    <div class="item">-->
+<!--                      <img src="--><?php //echo base_url();?><!--uploads/slider/slider3.png" alt="Slider 3" style="width:100%;">-->
+<!--                    </div>            -->
+<!--                    <a class="left carousel-control" href="#myCarousel" data-slide="prev"></a>-->
+<!--                    <a class="right carousel-control" href="#myCarousel" data-slide="next"></a>-->
+<!--                  </div>-->
+<!--                </div>-->
           
                       <div class="row">
             <div class="col-sm-3">
@@ -124,10 +124,10 @@
               <i class="os-icon picons-thin-icon-thin-0703_users_profile_group_two"></i>
               </div>
                             <div class="value">
-                              <?php echo $this->db->count_all_results('parent');?>
+                              <?php echo $this->db->count_all_results('class');?>
                             </div>
               <div class="label">
-                              <?php echo get_phrase('parents');?>
+                              <?php echo get_phrase('classes');?>
                             </div>
                           </div>
                         </div>
@@ -136,47 +136,47 @@
                 </div>
                 
               <div class="row m-t">
-              <div class="col-sm-8">
+              <!--<div class="col-sm-8">
         <div class="element-wrapper">
         <div class="pipeline white lined-primary">
           <div class="pipeline-header">
-          <h5 class="pipeline-name"><?php echo get_phrase('noticeboard');?></h5>
-          </div>  
+          <h5 class="pipeline-name"><?php /*echo get_phrase('noticeboard');*/?></h5>
+          </div>
         <div class="row">
-         	<?php 
-               	$this->db->limit(6);
+         	<?php
+/*               	$this->db->limit(6);
                	$this->db->order_by('news_id', 'desc');
                	$news = $this->db->get('news')->result_array();
-	           	foreach($news as $new):?>
+	           	foreach($news as $new):*/?>
                   <div class="col-sm-6">
-                   <a href="<?php echo base_url();?>teacher/read/<?php echo $new['news_code'];?>"> <div class="pipeline white lined-<?php if($new['type'] == 'event') echo 'primary'; else echo 'success';?>" style="padding:0px;-webkit-animation:none;">
-          <div style="margin:0px;padding:0px;top:0px;background-image:url(<?php echo base_url();?>uploads/news_images/<?php echo $new['news_code'];?>.jpg);background-size:cover;background-repeat:no-repeat;height:150px;"></div>
+                   <a href="<?php /*echo base_url();*/?>teacher/read/<?php /*echo $new['news_code'];*/?>"> <div class="pipeline white lined-<?php /*if($new['type'] == 'event') echo 'primary'; else echo 'success';*/?>" style="padding:0px;-webkit-animation:none;">
+          <div style="margin:0px;padding:0px;top:0px;background-image:url(<?php /*echo base_url();*/?>uploads/news_images/<?php /*echo $new['news_code'];*/?>.jpg);background-size:cover;background-repeat:no-repeat;height:150px;"></div>
                       <div class="pipeline-header" style="margin-top:-7rem;padding:1.5rem;">
-                        <h5 class="pipeline-name" style="background:rgba(0, 0, 0, 0.4);color:white"><?php echo $new['title'];?></h5>
+                        <h5 class="pipeline-name" style="background:rgba(0, 0, 0, 0.4);color:white"><?php /*echo $new['title'];*/?></h5>
                         <div class="pipeline-header-numbers" >
-                          <div class="pipeline-count" style="background:rgba(0, 0, 0, 0.4);color:white"><?php echo $new['date'];?></div>
+                          <div class="pipeline-count" style="background:rgba(0, 0, 0, 0.4);color:white"><?php /*echo $new['date'];*/?></div>
               				<div class="text-right">
-	                            <?php if($new['type'] == "news"):?>
-	                            	<a class="btn btn-round btn-sm btn-success text-left" style="text-transform:uppercase;color:white;"><?php echo get_phrase('news');?></a>
-                        		<?php endif;?>
-                        		<?php if($new['type'] == "event"):?>
-		                        	<a class="btn btn-round btn-sm btn-primary text-left" style="text-transform:uppercase;color:white;"><?php echo get_phrase('events');?></a>
-                        		<?php endif;?>
+	                            <?php /*if($new['type'] == "news"):*/?>
+	                            	<a class="btn btn-round btn-sm btn-success text-left" style="text-transform:uppercase;color:white;"><?php /*echo get_phrase('news');*/?></a>
+                        		<?php /*endif;*/?>
+                        		<?php /*if($new['type'] == "event"):*/?>
+		                        	<a class="btn btn-round btn-sm btn-primary text-left" style="text-transform:uppercase;color:white;"><?php /*echo get_phrase('events');*/?></a>
+                        		<?php /*endif;*/?>
                           </div>
                         </div>
                       </div>
               <div style="padding:0 1.5rem 1.5rem 1.5rem;">
-              <p><?php echo substr($new['description'], 0, 70) . '...';?></p>
+              <p><?php /*echo substr($new['description'], 0, 70) . '...';*/?></p>
               </div>
             </div></a>
           </div>
-      	<?php endforeach;?>      
-            </div><div class="legendy"><span><a class="btn btn-rounded btn-sm btn-primary" style="text-transform:uppercase;color:white;" href="<?php echo base_url();?>teacher/noticeboard/"><?php echo get_phrase('view_more');?></a></span></div>
+      	<?php /*endforeach;*/?>
+            </div><div class="legendy"><span><a class="btn btn-rounded btn-sm btn-primary" style="text-transform:uppercase;color:white;" href="<?php /*echo base_url();*/?>teacher/noticeboard/"><?php /*echo get_phrase('view_more');*/?></a></span></div>
            </div>
            </div>
-           </div>
+           </div>-->
            
-           <div class="col-sm-4">
+           <div class="col-sm-12">
            <div class="element-wrapper">
 					<div class="pipeline white lined-success">
 						<div class="pipeline-header">
@@ -244,12 +244,12 @@
 									  			<?php endif;?>
 											</div>
 							  			</div>			  
-										<div class="user-action min">
-											<?php $data = $row['type'] ."-".$row['id_usuario'];
-												  $send_data = base64_encode($data);
-											?>
-											<a href="<?php echo base_url();?>teacher/message/message_new/<?php echo $send_data;?>"><i class="os-icon picons-thin-icon-thin-0319_email_mail_post_card" style="font-weight:bold"></i></a>
-							  			</div>
+<!--										<div class="user-action min">-->
+<!--											--><?php //$data = $row['type'] ."-".$row['id_usuario'];
+//												  $send_data = base64_encode($data);
+//											?>
+<!--											<a href="--><?php //echo base_url();?><!--teacher/message/message_new/--><?php //echo $send_data;?><!--"><i class="os-icon picons-thin-icon-thin-0319_email_mail_post_card" style="font-weight:bold"></i></a>-->
+<!--							  			</div>-->
 									</div>
 								<?php endforeach;?>
 						  		</div>
