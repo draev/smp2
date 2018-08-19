@@ -376,7 +376,7 @@
           </div>		  
 		  <div class="footy padded">
 			<div class="schoollogo">
-			  <img alt="" src="<?php echo base_url();?>style/cms/img/school1.png"><span><?php echo $this->db->get_where('settings', array('type' => 'system_name'))->row()->description;?></span>
+			  <img alt="" src="<?php echo base_url();?>uploads/logo.png"><span><?php echo $this->db->get_where('settings', array('type' => 'system_name'))->row()->description;?></span>
 			</div>
 			<div class="schoolinfo">
 			  <span><?php echo $this->db->get_where('settings', array('type' => 'system_email'))->row()->description;?></span><span><?php echo $this->db->get_where('settings', array('type' => 'phone'))->row()->description;?></span><a href="<?php echo $this->db->get_where('settings', array('type' => 'facebook'))->row()->description;?>" target="_blank"><i class="picons-social-icon-facebook"></i></a><a href="<?php echo $this->db->get_where('settings', array('type' => 'twitter'))->row()->description;?>" target="_blank"><i class="picons-social-icon-twitter"></i></a><a href="<?php echo $this->db->get_where('settings', array('type' => 'instagram'))->row()->description;?>" target="_blank"><i class="picons-social-icon-instagram"></i></a><a href="<?php echo $this->db->get_where('settings', array('type' => 'youtube'))->row()->description;?>" target="_blank"><i class="picons-social-icon-youtube"></i></a>

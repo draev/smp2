@@ -12,9 +12,9 @@
 				<li class="nav-item">
 				  <a class="nav-link" href="<?php echo base_url();?>admin/section/"><i class="os-icon picons-thin-icon-thin-0002_write_pencil_new_edit"></i><span><?php echo get_phrase('sections'); ?></span></a>
 				</li>
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 				  <a class="nav-link" href="<?php echo base_url();?>admin/grade/"><i class="os-icon picons-thin-icon-thin-0729_student_degree_science_university_school_graduate"></i><span><?php echo get_phrase('grades'); ?></span></a>
-				</li>
+				</li> -->
 				<li class="nav-item">
 				  <a class="nav-link" href="<?php echo base_url();?>admin/courses/"><i class="picons-thin-icon-thin-0004_pencil_ruler_drawing"></i><span><?php echo get_phrase('subjects'); ?></span></a>
 				</li>
@@ -41,6 +41,17 @@
 					<i class="picons-thin-icon-thin-0656_medal_award_rating_prize_achievement"></i>
 				</div>
 			  <input class="form-control" placeholder="61" required="" name="minium_mark" value="<?php echo $this->db->get_where('academic_settings' , array('type' =>'minium_mark'))->row()->description;?>" type="text">
+			  </div>
+			</div>
+			</div>
+			<div class="form-group row">
+			<label class="col-form-label col-sm-3" for=""> <?php echo get_phrase('Procent Teza');?></label>
+			  <div class="col-sm-4">
+			  <div class="input-group">
+				<div class="input-group-addon">
+					<i class="picons-thin-icon-thin-0656_medal_award_rating_prize_achievement"></i>
+				</div>
+			  <input class="form-control" placeholder="0.6" required="" name="procent_teza" value="<?php echo $this->db->get_where('academic_settings' , array('type' =>'procent_teza'))->row()->description;?>" type="text">
 			  </div>
 			</div>
 			</div>

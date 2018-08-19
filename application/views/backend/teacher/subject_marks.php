@@ -33,71 +33,71 @@
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td><?php echo $this->db->get_where('subject' , array('subject_id' => $explode_data[2]))->row()->la1;?></td>
-					  <td><a class="btn nc btn-rounded btn-sm btn-secondary" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->mark_obtained == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->mark_obtained; ?></a></td>
+                      <td><?php echo get_phrase('Nota 1');?></td>
+            <td><a class="btn btn-rounded btn-sm btn-info" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labuno == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labuno; ?></a></td>
                     </tr>
                     <tr>
                       <td>2</td>
-                      <td><?php echo $this->db->get_where('subject' , array('subject_id' => $explode_data[2]))->row()->la2;?></td>
-					  <td><a class="btn nc btn-rounded btn-sm btn-secondary" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labuno == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labuno; ?></a></td>
+                      <td><?php echo get_phrase('Nota 2');?></td>
+            <td><a class="btn btn-rounded btn-sm btn-info" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labdos == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labdos; ?></a></td>
                     </tr>
                     <tr>
                       <td>3</td>
-                      <td><?php echo $this->db->get_where('subject' , array('subject_id' => $explode_data[2]))->row()->la3;?></td>
-					  <td><a class="btn nc btn-rounded btn-sm btn-secondary" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labdos == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labdos; ?></a></td>
+                      <td><?php echo get_phrase('Nota 3');?></td>
+            <td><a class="btn btn-rounded btn-sm btn-info" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labtres == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labtres; ?></a></td>
                     </tr>
                     <tr>
                       <td>4</td>
-                      <td><?php echo $this->db->get_where('subject' , array('subject_id' => $explode_data[2]))->row()->la4;?></td>
-					  <td><a class="btn nc btn-rounded btn-sm btn-secondary" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labtres == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labtres; ?></a></td>
+                      <td><?php echo get_phrase('Nota 4');?></td>
+            <td><a class="btn btn-rounded btn-sm btn-info" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labcuatro == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labcuatro; ?></a></td>
                     </tr>
                     <tr>
                       <td>5</td>
-                      <td><?php echo $this->db->get_where('subject' , array('subject_id' => $explode_data[2]))->row()->la5;?></td>
-					  <td><a class="btn nc btn-rounded btn-sm btn-secondary" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labcuatro == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labcuatro; ?></a></td>
+                      <td><?php echo get_phrase('Nota 5');?></td>
+            <td><a class="btn btn-rounded btn-sm btn-info" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labcinco == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labcinco; ?></a></td>
                     </tr>
                     <tr>
                       <td>6</td>
-                      <td><?php echo $this->db->get_where('subject' , array('subject_id' => $explode_data[2]))->row()->la6;?></td>
-					  <td><a class="btn nc btn-rounded btn-sm btn-secondary" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labcinco == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labcinco; ?></a></td>
+                      <td><?php echo get_phrase('Nota 6');?></td>
+            <td><a class="btn btn-rounded btn-sm btn-info" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labseis == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labseis; ?></a></td>
                     </tr>
                     <tr>
                       <td>7</td>
-                      <td><?php echo $this->db->get_where('subject' , array('subject_id' => $explode_data[2]))->row()->la7;?></td>
-					  <td><a class="btn nc btn-rounded btn-sm btn-secondary" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labseis == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labseis; ?></a></td>
+                      <td><?php echo get_phrase('Nota 7');?></td>
+            <td><a class="btn btn-rounded btn-sm btn-info" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labsiete == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labsiete; ?></a></td>
                     </tr>
                     <tr>
                       <td>8</td>
-                      <td><?php echo $this->db->get_where('subject' , array('subject_id' => $explode_data[2]))->row()->la8;?></td>
-					  <td><a class="btn nc btn-rounded btn-sm btn-secondary" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labsiete == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labsiete; ?></a></td>
+                      <td><?php echo get_phrase('Nota 8');?></td>
+            <td><a class="btn btn-rounded btn-sm btn-info" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labocho == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labocho; ?></a></td>
                     </tr>
                     <tr>
                       <td>9</td>
-                      <td><?php echo $this->db->get_where('subject' , array('subject_id' => $explode_data[2]))->row()->la9;?></td>
-					  <td><a class="btn nc btn-rounded btn-sm btn-secondary" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labocho == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labocho; ?></a></td>
+                      <td><?php echo get_phrase('Nota 9');?></td>
+            <td><a class="btn btn-rounded btn-sm btn-info" style="color:white"><?php  if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labnueve == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labnueve;?></a></td>
                     </tr>
                     <tr>
                       <td>10</td>
-                      <td><?php echo $this->db->get_where('subject' , array('subject_id' => $explode_data[2]))->row()->la10;?></td>
-					  <td><a class="btn nc btn-rounded btn-sm btn-secondary" style="color:white"><?php  if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labnueve == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labnueve;?></a></td>
+                      <td><?php echo get_phrase('Nota Teza');?></td>
+            <td><a class="btn btn-rounded btn-sm btn-info" style="color:white"><?php if($this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->mark_obtained == "") echo '0'; else echo $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->mark_obtained; ?></a></td>
                     </tr>
                     <tr style="border-top: solid #a5a5a5;">
                       <td>
                         -
                       </td>
                       <td>
-                        <?php echo get_phrase('total');?>
+                        Total
                       </td>
-					  <td>
-					  <?php $mark = $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labtotal;?>
-					  <?php if($mark < $min || $mark == ""):?>
-					  	<a class="btn nc btn-rounded btn-sm btn-danger" style="color:white"><?php if($mark == "") echo '0'; else echo $mark;?></a>
-					  <?php endif;?>
-					  <?php if($mark >= $min):?>
-					  	<a class="btn nc btn-rounded btn-sm btn-success" style="color:white"><?php echo $mark;?></a>
-					  <?php endif;?>
-					  </td>
-                    </tr>	
+            <td>
+            <?php $mark = $this->db->get_where('mark' , array('subject_id' => $explode_data[2], 'exam_id' => $explode_data[0], 'student_id' => $explode_data[1], 'year' => $running_year))->row()->labtotal;?>
+            <?php if($mark < $min || $mark == ""):?>
+              <a class="btn btn-rounded btn-sm btn-danger" style="color:white"><?php if($mark == "") echo '0'; else echo $mark;?></a>
+            <?php endif;?>
+            <?php if($mark >= $min):?>
+              <a class="btn btn-rounded btn-sm btn-success" style="color:white"><?php echo $mark;?></a>
+            <?php endif;?>
+            </td>
+                    </tr> 
                   </tbody>
                 </table>
               </div>
