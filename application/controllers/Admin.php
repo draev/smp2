@@ -2589,16 +2589,26 @@ class Admin extends CI_Controller
         foreach($marks_of_students as $row) 
         {
             $obtained_marks = $this->input->post('marks_obtained_'.$row['mark_id']);
+            $date_obtained_marks = $this->input->post('date_marks_obtained_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_marks_obtained_'.$row['mark_id']))):NULL;
             $labouno = $this->input->post('lab_uno_'.$row['mark_id']);
+            $date_labouno = $this->input->post('date_lab_uno_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_uno_'.$row['mark_id']))):NULL;
             $labodos = $this->input->post('lab_dos_'.$row['mark_id']);
+            $date_labodos = $this->input->post('date_lab_dos_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_dos_'.$row['mark_id']))):NULL;
             $labotres = $this->input->post('lab_tres_'.$row['mark_id']);
+            $date_labotres = $this->input->post('date_lab_tres_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_tres_'.$row['mark_id']))):NULL;
             $labocuatro = $this->input->post('lab_cuatro_'.$row['mark_id']);
+            $date_labocuatro = $this->input->post('date_lab_cuatro_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_cuatro_'.$row['mark_id']))):NULL;
             $labocinco = $this->input->post('lab_cinco_'.$row['mark_id']);
+            $date_labocinco = $this->input->post('date_lab_cinco_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_cinco_'.$row['mark_id']))):NULL;
             $laboseis = $this->input->post('lab_seis_'.$row['mark_id']);
+            $date_laboseis = $this->input->post('date_lab_seis_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_seis_'.$row['mark_id']))):NULL;
             $labosiete = $this->input->post('lab_siete_'.$row['mark_id']);
+            $date_labosiete = $this->input->post('date_lab_siete_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_siete_'.$row['mark_id']))):NULL;
             $laboocho = $this->input->post('lab_ocho_'.$row['mark_id']);
+            $date_laboocho = $this->input->post('date_lab_ocho_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_ocho_'.$row['mark_id']))):NULL;
             $comment = $this->input->post('comment_'.$row['mark_id']);
             $labonueve = $this->input->post('lab_nueve_'.$row['mark_id']);
+            $date_labonueve = $this->input->post('date_lab_nueve_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_nueve_'.$row['mark_id']))):NULL;
             
             $nm = 0;
             $sum = 0;
@@ -2614,11 +2624,32 @@ class Admin extends CI_Controller
             $labototal = $nm ? round($sum/$nm,2) : 0;
 
             $this->db->where('mark_id' , $row['mark_id']);
-            $this->db->update('mark' , array('mark_obtained' => $obtained_marks , 'labuno' => $labouno
-            , 'labdos' => $labodos, 'labtres' => $labotres, 'labcuatro' => $labocuatro, 'labcinco' => $labocinco, 'labseis' => $laboseis
-                , 'labsiete' => $labosiete, 'labocho' => $laboocho, 'labnueve' => $labonueve, 'labtotal' => $labototal, 'comment' => $comment));
+            $this->db->update('mark' , array(
+                'mark_obtained' => $obtained_marks, 
+                'labuno' => $labouno, 
+                'labdos' => $labodos, 
+                'labtres' => $labotres, 
+                'labcuatro' => $labocuatro, 
+                'labcinco' => $labocinco, 
+                'labseis' => $laboseis, 
+                'labsiete' => $labosiete, 
+                'labocho' => $laboocho, 
+                'labnueve' => $labonueve, 
+                'labtotal' => $labototal, 
+                'comment' => $comment,
+                'date_mark_obtained' => $date_obtained_marks, 
+                'date_labuno' => $date_labouno, 
+                'date_labdos' => $date_labodos, 
+                'date_labtres' => $date_labotres, 
+                'date_labcuatro' => $date_labocuatro, 
+                'date_labcinco' => $date_labocinco, 
+                'date_labseis' => $date_laboseis, 
+                'date_labsiete' => $date_labosiete, 
+                'date_labocho' => $date_laboocho, 
+                'date_labnueve' => $date_labonueve
+            ));
         }
-            $this->session->set_flashdata('flash_message' , get_phrase('successfully_updated'));
+        $this->session->set_flashdata('flash_message' , get_phrase('successfully_updated'));
         redirect(base_url().'admin/marks_upload/'.$exam_id.'/'.$class_id.'/'.$section_id.'/'.$subject_id , 'refresh');
     }
 
@@ -3795,18 +3826,20 @@ class Admin extends CI_Controller
             $data['description'] = $this->input->post('skin');
             $this->db->where('type' , 'skin');
             $this->db->update('settings' , $data);
-
-            move_uploaded_file($_FILES['slide1']['tmp_name'], 'uploads/slider/slider1.png');
-            move_uploaded_file($_FILES['slide2']['tmp_name'], 'uploads/slider/slider2.png');
-            move_uploaded_file($_FILES['slide3']['tmp_name'], 'uploads/slider/slider3.png');
-            move_uploaded_file($_FILES['favicon']['tmp_name'], 'uploads/favicon.png');
-            move_uploaded_file($_FILES['logow']['tmp_name'], 'uploads/logo-white.png');
-            move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/logo.png');
-            move_uploaded_file($_FILES['avatar']['tmp_name'], 'uploads/user.jpg');
-            move_uploaded_file($_FILES['bglogin']['tmp_name'], 'uploads/bglogin.jpg');
-            move_uploaded_file($_FILES['logocolor']['tmp_name'], 'uploads/logo-color.png');
-            move_uploaded_file($_FILES['icon_white']['tmp_name'], 'uploads/logo-icon.png');
-            
+            try {
+                move_uploaded_file($_FILES['slide1']['tmp_name'], 'uploads/slider/slider1.png');
+                move_uploaded_file($_FILES['slide2']['tmp_name'], 'uploads/slider/slider2.png');
+                move_uploaded_file($_FILES['slide3']['tmp_name'], 'uploads/slider/slider3.png');
+                move_uploaded_file($_FILES['favicon']['tmp_name'], 'uploads/favicon.png');
+                move_uploaded_file($_FILES['logow']['tmp_name'], 'uploads/logo-white.png');
+                move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/logo.png');
+                move_uploaded_file($_FILES['avatar']['tmp_name'], 'uploads/user.jpg');
+                move_uploaded_file($_FILES['bglogin']['tmp_name'], 'uploads/bglogin.jpg');
+                move_uploaded_file($_FILES['logocolor']['tmp_name'], 'uploads/logo-color.png');
+                move_uploaded_file($_FILES['icon_white']['tmp_name'], 'uploads/logo-icon.png');
+            } catch (\Error $e) {
+                echo $e->getMessage();
+            }
            $this->crud_model->clear_cache();
 
             $this->session->set_flashdata('flash_message' , get_phrase('successfully_updated'));

@@ -419,7 +419,7 @@ class Teacher extends CI_Controller
         $this->load->view('backend/index', $page_data);
     }
 
-    function students_area($id)
+    function students_area($id = '')
     {
         if ($this->session->userdata('teacher_login') != 1)
         {
@@ -524,21 +524,53 @@ class Teacher extends CI_Controller
         foreach($marks_of_students as $row) 
         {
             $obtained_marks = $this->input->post('marks_obtained_'.$row['mark_id']);
+            $date_obtained_marks = $this->input->post('date_marks_obtained_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_marks_obtained_'.$row['mark_id']))):NULL;
             $labouno = $this->input->post('lab_uno_'.$row['mark_id']);
+            $date_labouno = $this->input->post('date_lab_uno_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_uno_'.$row['mark_id']))):NULL;
             $labodos = $this->input->post('lab_dos_'.$row['mark_id']);
+            $date_labodos = $this->input->post('date_lab_dos_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_dos_'.$row['mark_id']))):NULL;
             $labotres = $this->input->post('lab_tres_'.$row['mark_id']);
+            $date_labotres = $this->input->post('date_lab_tres_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_tres_'.$row['mark_id']))):NULL;
             $labocuatro = $this->input->post('lab_cuatro_'.$row['mark_id']);
+            $date_labocuatro = $this->input->post('date_lab_cuatro_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_cuatro_'.$row['mark_id']))):NULL;
             $labocinco = $this->input->post('lab_cinco_'.$row['mark_id']);
+            $date_labocinco = $this->input->post('date_lab_cinco_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_cinco_'.$row['mark_id']))):NULL;
             $laboseis = $this->input->post('lab_seis_'.$row['mark_id']);
+            $date_laboseis = $this->input->post('date_lab_seis_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_seis_'.$row['mark_id']))):NULL;
             $labosiete = $this->input->post('lab_siete_'.$row['mark_id']);
+            $date_labosiete = $this->input->post('date_lab_siete_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_siete_'.$row['mark_id']))):NULL;
             $laboocho = $this->input->post('lab_ocho_'.$row['mark_id']);
-            $labonueve = $this->input->post('lab_nueve_'.$row['mark_id']);
+            $date_laboocho = $this->input->post('date_lab_ocho_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_ocho_'.$row['mark_id']))):NULL;
             $comment = $this->input->post('comment_'.$row['mark_id']);
+            $labonueve = $this->input->post('lab_nueve_'.$row['mark_id']);
+            $date_labonueve = $this->input->post('date_lab_nueve_'.$row['mark_id'])?date('Y-m-d', strtotime($this->input->post('date_lab_nueve_'.$row['mark_id']))):NULL;
+
             $labototal = $obtained_marks + $labouno + $labodos + $labotres + $labocuatro + $labocinco + $laboseis + $labosiete + $laboocho + $labonueve + $labfinal;
             $this->db->where('mark_id' , $row['mark_id']);
-            $this->db->update('mark' , array('mark_obtained' => $obtained_marks , 'labuno' => $labouno
-            , 'labdos' => $labodos, 'labtres' => $labotres, 'labcuatro' => $labocuatro, 'labcinco' => $labocinco, 'labseis' => $laboseis
-                , 'labsiete' => $labosiete, 'labocho' => $laboocho, 'labnueve' => $labonueve, 'labtotal' => $labototal, 'comment' => $comment));
+            $this->db->update('mark' , array(
+                'mark_obtained' => $obtained_marks, 
+                'labuno' => $labouno, 
+                'labdos' => $labodos, 
+                'labtres' => $labotres, 
+                'labcuatro' => $labocuatro, 
+                'labcinco' => $labocinco, 
+                'labseis' => $laboseis, 
+                'labsiete' => $labosiete, 
+                'labocho' => $laboocho, 
+                'labnueve' => $labonueve, 
+                'labtotal' => $labototal, 
+                'comment' => $comment,
+                'date_mark_obtained' => $date_obtained_marks, 
+                'date_labuno' => $date_labouno, 
+                'date_labdos' => $date_labodos, 
+                'date_labtres' => $date_labotres, 
+                'date_labcuatro' => $date_labocuatro, 
+                'date_labcinco' => $date_labocinco, 
+                'date_labseis' => $date_laboseis, 
+                'date_labsiete' => $date_labosiete, 
+                'date_labocho' => $date_laboocho, 
+                'date_labnueve' => $date_labonueve
+            ));
         }
         $notify['notify'] = "<strong>". $this->session->userdata('name')."</strong>". " ". get_phrase('marks_notify'). " <b>".$this->db->get_where('subject', array('subject_id' => $subject_id))->row()->name."</b>";
         $students = $this->db->get_where('enroll', array('class_id' =>  $class_id, 'section_id' => $section_id))->result_array();
@@ -883,7 +915,7 @@ class Teacher extends CI_Controller
         $this->load->view('backend/index', $data);
     }
 
-    function manage_attendance($class_id)
+    function manage_attendance($class_id = '')
     {
         if($this->session->userdata('teacher_login')!=1)
         {

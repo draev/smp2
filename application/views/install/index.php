@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome to the installation wizard | EduAppGT</title>
+    <title>Welcome to the installation wizard | Catalog Scolar</title>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -41,7 +41,7 @@
         <div class="alert alert-danger">An error occurred during the installation, verify that the credentials of your database and purchase data are correct</div>
       <?php endif;?>
       <p>
-        Thank you for purchasing EduAppGT, we are sure that we will be the tool to help you improve your school's processes. <br> <br> Before starting the installation process, please verify that you fulfill all the following conditions . <b> All are required</b> 
+        Thank you for purchasing Catalog Scolar, we are sure that we will be the tool to help you improve your school's processes. <br> <br> Before starting the installation process, please verify that you fulfill all the following conditions . <b> All are required</b> 
       </p>
       <div class="table-responsive" style="margin: 0 auto; text-align:left">
       <table class="table table-lightbor table-lightfont">

@@ -1458,7 +1458,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`settings_id`, `type`, `description`) VALUES
-(1, 'system_name', 'EduAppGT PRO V5.0'),
+(1, 'system_name', 'Catalog Scolar PRO V5.0'),
 (2, 'system_title', 'School Management System'),
 (3, 'address', 'Quetzaltenango, Guatemala.'),
 (4, 'phone', '(+502) 7777 6666'),

@@ -1,5 +1,14 @@
 <?php $allowed = $this->db->get_where('academic_settings' , array('type' =>'allowed_marks'))->row()->description; ?>
 <?php $running_year = $this->db->get_where('settings' , array('type' => 'running_year'))->row()->description; ?>
+<?php
+ function showDate($date)
+ {
+    if ($date) {
+      return date('d-m-Y', strtotime($date));
+    }
+    return "";
+ }
+?>
 <div class="content-w">
       <div class="os-tabs-w menu-shad">
         <div class="os-tabs-controls">
@@ -87,7 +96,7 @@
             <?php echo form_close();?>
             <div class="element-box">
               <center><h5 class="form-header"><?php echo get_phrase('marks');?> <strong><?php echo $this->db->get_where('class', array('class_id' => $class_id))->row()->name;?></strong></h5></center>
-              <center><button class="btn btn-secondary btn-rounded pull-right" style="margin-bottom:15px;" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_mark/<?php echo $subject_id;?>/<?php echo $exam_id;?>/<?php echo $section_id;?>');" type="button"><i class="picons-thin-icon-thin-0102_notebook_to_do_bullets_list"></i> <?php echo get_phrase('update_activities');?></button></center>
+              <!-- <center><button class="btn btn-secondary btn-rounded pull-right" style="margin-bottom:15px;" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_mark/<?php echo $subject_id;?>/<?php echo $exam_id;?>/<?php echo $section_id;?>');" type="button"><i class="picons-thin-icon-thin-0102_notebook_to_do_bullets_list"></i> <?php echo get_phrase('update_activities');?></button></center> -->
               <br>
               <?php echo form_open(base_url() . 'teacher/marks_update/'.$exam_id.'/'.$class_id.'/'.$section_id.'/'.$subject_id);?>
               <div class="table-responsive">
@@ -95,17 +104,18 @@
                   <thead>
                       <tr>
                           <th style="text-align: center;"><?php echo get_phrase('student');?></th>
-                          <th style="text-align: center;"><?php echo $this->db->get_where('subject' , array('subject_id' => $subject_id))->row()->la1;?></th>
-                          <th style="text-align: center;"><?php echo $this->db->get_where('subject' , array('subject_id' => $subject_id))->row()->la2;?></th>
-                          <th style="text-align: center;"><?php echo $this->db->get_where('subject' , array('subject_id' => $subject_id))->row()->la3;?></th>
-                          <th style="text-align: center;"><?php echo $this->db->get_where('subject' , array('subject_id' => $subject_id))->row()->la4;?></th>
-                          <th style="text-align: center;"><?php echo $this->db->get_where('subject' , array('subject_id' => $subject_id))->row()->la5;?></th>
-                          <th style="text-align: center;"><?php echo $this->db->get_where('subject' , array('subject_id' => $subject_id))->row()->la6;?></th>
-                          <th style="text-align: center;"><?php echo $this->db->get_where('subject' , array('subject_id' => $subject_id))->row()->la7;?></th>
-                          <th><?php echo $this->db->get_where('subject' , array('subject_id' => $subject_id))->row()->la8;?></th>
-                          <th style="text-align: center;"><?php echo $this->db->get_where('subject' , array('subject_id' => $subject_id))->row()->la9;?></th>
-                          <th style="text-align: center;"><?php echo $this->db->get_where('subject' , array('subject_id' => $subject_id))->row()->la10;?></th>
-                          <th style="text-align: center;"><?php echo get_phrase('comment');?></th>
+                          <th style="text-align: center;"><?php echo get_phrase('Nota 1');?></th>
+                          <th style="text-align: center;"><?php echo get_phrase('Nota 2');?></th>
+                          <th style="text-align: center;"><?php echo get_phrase('Nota 3');?></th>
+                          <th style="text-align: center;"><?php echo get_phrase('Nota 4');?></th>
+                          <th style="text-align: center;"><?php echo get_phrase('Nota 5');?></th>
+                          <th style="text-align: center;"><?php echo get_phrase('Nota 6');?></th>
+                          <th style="text-align: center;"><?php echo get_phrase('Nota 7');?></th>
+                          <th><?php echo get_phrase('Nota 8');?></th>
+                          <th style="text-align: center;"><?php echo get_phrase('Nota 9');?></th>
+                          <th style="text-align: center;">
+                            <?php echo get_phrase('Nota Teza');?>
+                          </th>
                       </tr>
                   </thead>
                   <tbody>
@@ -119,37 +129,44 @@
                         <img alt="" src="<?php echo $this->crud_model->get_image_url('student', $row['student_id']);?>" width="25px" style="border-radius: 10px;margin-right:5px;"> <?php echo $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->name;?>
                       </td>
                       <td>
-                          <input type="text" name="marks_obtained_<?php echo $row['mark_id'];?>" placeholder="0" style="width:45px; border: 0; text-align: center;" value="<?php echo $row['mark_obtained'];?>">  
-                      </td>
-                      <td>
-                        <input type="text" name="lab_uno_<?php echo $row['mark_id'];?>" placeholder="0" style="width:45px; border: 0; text-align: center;" value="<?php echo $row['labuno'];?>">  
+                        <input type="text" name="lab_uno_<?php echo $row['mark_id'];?>" placeholder="0" style="width:45px; border: 0; text-align: center;" value="<?php echo $row['labuno'];?>">
+                        <input type="text" name="date_lab_uno_<?php echo $row['mark_id'];?>" placeholder="<?php echo date('d-m-Y');?>" style="width:90px; border: 0; text-align: center; font-size:10px;" value="<?php echo showDate($row['date_labuno']);?>">
                       </td>
                       <td>
                         <input type="text" name="lab_dos_<?php echo $row['mark_id'];?>" placeholder="0" style="width:45px; border: 0; text-align: center;" value="<?php echo $row['labdos'];?>">  
+                        <input type="text" name="date_lab_dos_<?php echo $row['mark_id'];?>" placeholder="<?php echo date('d-m-Y');?>" style="width:90px; border: 0; text-align: center; font-size:10px;" value="<?php echo showDate($row['date_labdos']);?>">
                       </td>
-                      <td>  
+                      <td> 
                         <input type="text" name="lab_tres_<?php echo $row['mark_id'];?>" placeholder="0" style="width:45px; border: 0; text-align: center;" value="<?php echo $row['labtres'];?>">  
+                        <input type="text" name="date_lab_tres_<?php echo $row['mark_id'];?>" placeholder="<?php echo date('d-m-Y');?>" style="width:90px; border: 0; text-align: center; font-size:10px;" value="<?php echo showDate($row['date_labtres']);?>"> 
                       </td>
                       <td>
                         <input type="text" name="lab_cuatro_<?php echo $row['mark_id'];?>" placeholder="0" placeholder="0" style="width:45px; border: 0; text-align: center;" value="<?php echo $row['labcuatro'];?>">  
+                        <input type="text" name="date_lab_cuatro_<?php echo $row['mark_id'];?>" placeholder="<?php echo date('d-m-Y');?>" style="width:90px; border: 0; text-align: center; font-size:10px;" value="<?php echo showDate($row['date_labcuatro']);?>">
                       </td>
                       <td>
                         <input type="text" name="lab_cinco_<?php echo $row['mark_id'];?>" placeholder="0" style="width:45px; border: 0; text-align: center;" value="<?php echo $row['labcinco'];?>"> 
+                        <input type="text" name="date_lab_cinco_<?php echo $row['mark_id'];?>" placeholder="<?php echo date('d-m-Y');?>" style="width:90px; border: 0; text-align: center; font-size:10px;" value="<?php echo showDate($row['date_labcinco']);?>"> 
                       </td>
                       <td>
                         <input type="text" name="lab_seis_<?php echo $row['mark_id'];?>" placeholder="0" style="width:45px; border: 0; text-align: center;" value="<?php echo $row['labseis'];?>" >  
+                        <input type="text" name="date_lab_seis_<?php echo $row['mark_id'];?>" placeholder="<?php echo date('d-m-Y');?>" style="width:90px; border: 0; text-align: center; font-size:10px;" value="<?php echo showDate($row['date_labseis']);?>"> 
                       </td>
                       <td>
                         <input type="text" name="lab_siete_<?php echo $row['mark_id'];?>" placeholder="0" style="width:45px; border: 0; text-align: center;" value="<?php echo $row['labsiete'];?>">  
+                        <input type="text" name="date_lab_siete_<?php echo $row['mark_id'];?>" placeholder="<?php echo date('d-m-Y');?>" style="width:90px; border: 0; text-align: center; font-size:10px;" value="<?php echo showDate($row['date_labsiete']);?>"> 
                       </td>
                       <td>
-                        <input type="text" name="lab_ocho_<?php echo $row['mark_id'];?>" placeholder="0" style="width:45px;  border: 0; text-align: center;" value="<?php echo $row['labocho'];?>">  
+                        <input type="text" name="lab_ocho_<?php echo $row['mark_id'];?>" placeholder="0" style="width:45px;  border: 0; text-align: center;" value="<?php echo $row['labocho'];?>"> 
+                        <input type="text" name="date_lab_ocho_<?php echo $row['mark_id'];?>" placeholder="<?php echo date('d-m-Y');?>" style="width:90px; border: 0; text-align: center; font-size:10px;" value="<?php echo showDate($row['date_labocho']);?>">  
                       </td>
                       <td>
                         <input type="text" name="lab_nueve_<?php echo $row['mark_id'];?>" placeholder="0" style="width:45px; border: 0; text-align: center;" value="<?php echo $row['labnueve'];?>">
+                        <input type="text" name="date_lab_nueve_<?php echo $row['mark_id'];?>" placeholder="<?php echo date('d-m-Y');?>" style="width:90px; border: 0; text-align: center; font-size:10px;" value="<?php echo showDate($row['date_labnueve']);?>"> 
                       </td>
                       <td>
-                        <input type="text" class="form-control" name="comment_<?php echo $row['mark_id'];?>" value="<?php echo $row['comment'];?>">
+                          <input type="text" name="marks_obtained_<?php echo $row['mark_id'];?>" placeholder="0" style="width:45px; border: 0; text-align: center;" value="<?php echo $row['mark_obtained'];?>">  
+                          <input type="text" name="date_marks_obtained_<?php echo $row['mark_id'];?>" placeholder="<?php echo date('d-m-Y');?>" style="width:90px; border: 0; text-align: center; font-size:10px;" value="<?php echo showDate($row['date_mark_obtained']);?>"> 
                       </td>
                     </tr>
                     <?php endforeach;?>

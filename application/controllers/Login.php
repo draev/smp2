@@ -65,7 +65,6 @@ class Login extends CI_Controller
         write_file('index.php', $status);
         redirect(base_url() . 'admin/panel/', 'refresh');
       }
-
       $query = $this->db->get_where('teacher', $credential);
       if ($query->num_rows() > 0) 
       {

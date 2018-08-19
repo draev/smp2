@@ -12,7 +12,7 @@
 <body style="margin:0px; background: #39a2d9; font-family: 'Rubik', sans-serif;">
 <div width="100%" style="background: #39a2d9; padding: 0px; line-height:28px; height:100%;  width: 100%; color: #606060; ">
   <div style="max-width: 700px; padding:0px;  margin: 2% auto; font-size: 14px; background: #fff; border-top: 5px solid #001b3d; border-radius: 4px;">
-  <div style="vertical-align: top; padding-bottom:50px;padding-top:50px;border-bottom: 1px solid rgba(0, 0, 0, 0.1);background: #001b3d;" align="center"><a href="#"><img src="<?php echo base_url();?>uploads/logo-white.png" alt="EduappGT | School System Management" style="border:none;max-width:75%"></a></div>
+  <div style="vertical-align: top; padding-bottom:50px;padding-top:50px;border-bottom: 1px solid rgba(0, 0, 0, 0.1);background: #001b3d;" align="center"><a href="#"><img src="<?php echo base_url();?>uploads/logo-white.png" alt="Catalog Scolar | School System Management" style="border:none;max-width:75%"></a></div>
     <div style="padding: 40px; background: #fff;">
       <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
         <tbody>

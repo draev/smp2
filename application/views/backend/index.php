@@ -12,7 +12,7 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="template language" name="keywords">
     <meta content="GuateApps" name="author">
-    <meta content="EduAppGT PRO - School Management System" name="description">
+    <meta content="Catalog Scolar - School Management System" name="description">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="<?php echo base_url();?>uploads/favicon.png" rel="shortcut icon">
     <?php if($skin == 'main'):?>
