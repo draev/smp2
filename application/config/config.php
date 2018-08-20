@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-$config['base_url'] = 'https://sms.dev/';
+$config['base_url'] = 'http://46.101.241.243/';
 $config['index_page'] = 'index.php';
 $config['uri_protocol']	= 'QUERY_STRING';
 $config['url_suffix'] = '';
