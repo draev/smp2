@@ -11704,7 +11704,7 @@ Contents:
 @media (max-width: 1650px) {
   body,
   body.auth-wrapper .all-wrapper {
-    padding: 40px; }
+    padding: 0; }
   .content-panel {
     padding: 2rem;
     width: 350px; }
@@ -11717,7 +11717,7 @@ Contents:
 @media (max-width: 1550px) {
   body,
   body.auth-wrapper .all-wrapper {
-    padding: 20px; }
+    padding: 0; }
   .menu-side-w ul.main-menu {
     padding: 1.5rem 1rem; }
   .menu-side-w ul.main-menu > li .icon-w {

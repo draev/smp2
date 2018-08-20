@@ -2,8 +2,8 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+session_start();
 	// The name of THIS file
-	session_start();
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'production');
 	switch (ENVIRONMENT)
 	{

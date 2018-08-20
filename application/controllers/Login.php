@@ -46,7 +46,6 @@ class Login extends CI_Controller
 
     function auth() 
     {
-      session_start();
       $username = $this->input->post('username');
       $password = $this->input->post('password');
       $credential = array('username' => $username, 'password' => sha1($password));
@@ -86,7 +85,6 @@ class Login extends CI_Controller
           $this->session->set_userdata('login_user_id', $row->student_id);
           $this->session->set_userdata('name', $row->name);
           $this->session->set_userdata('login_type', 'student');
-          die();
           redirect(base_url() . 'student/my_marks/', 'refresh');
       }
 

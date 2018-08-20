@@ -844,11 +844,11 @@ class Admin extends CI_Controller
         if ($param1 == 'update_phrase') 
         {
             $language   =   $param2;
-            $total_phrase   =   $this->input->post('total_phrase');
-            for($i = 1 ; $i < $total_phrase ; $i++)
+            $language_phrases   =   $this->db->query("SELECT `phrase_id` , `phrase` , `$language` FROM `language`")->result_array();
+            foreach($language_phrases as $phrase)
             {
-                $this->db->where('phrase_id' , $i);
-                $this->db->update('language' , array($language => $this->input->post('phrase'.$i)));
+                $this->db->where('phrase_id' , $phrase['phrase_id']);
+                $this->db->update('language' , array($language => $this->input->post('phrase'.$phrase['phrase_id'])));
             }
             $this->session->set_flashdata('flash_message' , get_phrase('successfully_updated'));
             redirect(base_url() . 'admin/translate/update/'.$language, 'refresh');

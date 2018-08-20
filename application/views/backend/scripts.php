@@ -22,11 +22,11 @@
     <script src="<?php echo base_url();?>style/cms/bower_components/dragula.js/dist/dragula.min.js"></script>
     <script src="<?php echo base_url();?>style/cms/bower_components/bootstrap/js/dist/modal.js"></script>
     <script src="<?php echo base_url();?>style/cms/js/custom-file-input.js"></script>
-    <script src="<?php echo base_url();?>style/cms/bower_components/bootstrap/js/dist/tooltip.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>style/cms/js/dataTables.bootstrap4.min.js"></script>
     <script src="<?php echo base_url();?>style/tinymce/tinymce.min.js"></script>
     <script src="<?php echo base_url();?>style/cms/bower_components/bootstrap-clockpicker/bootstrap-clockpicker.min.js"></script>
+    <script src="<?php echo base_url();?>style/cms/bower_components/bootstrap/js/dist/tooltip.js"></script>
 <script type="text/javascript">
 $('.clockpicker').clockpicker({
     placement: 'top',
