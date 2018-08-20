@@ -194,25 +194,25 @@
               </div>
             </div>
            </div>
-           <div class="form-group row">
-            <label class="col-form-label col-sm-3" for=""> <?php echo get_phrase('classroom');?></label>
-            <div class="col-sm-9">
-               <div class="input-group">
-               <div class="input-group-addon">
-                  <i class="picons-thin-icon-thin-0047_home_flat"></i>
-               </div>
-              <select class="form-control" name="dormitory_id">
-               <option value=""><?php echo get_phrase('select');?></option>
-               <?php 
-                  $classroom = $this->db->get('dormitory')->result_array();
-                  foreach($classroom as $room):
-               ?>
-                  <option value="<?php echo $room['dormitory_id'];?>"><?php echo $room['number'];?></option>
-               <?php endforeach;?>
-              </select>
-              </div>
-            </div>
-           </div>
+<!--           <div class="form-group row">-->
+<!--            <label class="col-form-label col-sm-3" for=""> --><?php //echo get_phrase('classroom');?><!--</label>-->
+<!--            <div class="col-sm-9">-->
+<!--               <div class="input-group">-->
+<!--               <div class="input-group-addon">-->
+<!--                  <i class="picons-thin-icon-thin-0047_home_flat"></i>-->
+<!--               </div>-->
+<!--              <select class="form-control" name="dormitory_id">-->
+<!--               <option value="">--><?php //echo get_phrase('select');?><!--</option>-->
+<!--               --><?php //
+//                  $classroom = $this->db->get('dormitory')->result_array();
+//                  foreach($classroom as $room):
+//               ?>
+<!--                  <option value="--><?php //echo $room['dormitory_id'];?><!--">--><?php //echo $room['number'];?><!--</option>-->
+<!--               --><?php //endforeach;?>
+<!--              </select>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--           </div>-->
 <!--           <div class="form-group row">-->
 <!--            <label class="col-form-label col-sm-3" for=""> --><?php //echo get_phrase('school_bus');?><!--</label>-->
 <!--            <div class="col-sm-9">-->
