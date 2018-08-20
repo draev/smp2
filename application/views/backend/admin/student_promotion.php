@@ -18,9 +18,9 @@
 			<li class="nav-item">
 			  <a class="nav-link" href="<?php echo base_url();?>admin/section/"><i class="os-icon picons-thin-icon-thin-0002_write_pencil_new_edit"></i><span><?php echo get_phrase('sections');?></span></a>
 			</li>
-      <li class="nav-item">
+<!--       <li class="nav-item">
           <a class="nav-link" href="<?php echo base_url();?>admin/grade/"><i class="os-icon picons-thin-icon-thin-0729_student_degree_science_university_school_graduate"></i><span><?php echo get_phrase('grades'); ?></span></a>
-        </li>
+        </li> -->
 			<li class="nav-item">
 			  <a class="nav-link" href="<?php echo base_url();?>admin/courses/"><i class="picons-thin-icon-thin-0004_pencil_ruler_drawing"></i><span><?php echo get_phrase('subjects');?></span></a>
 			</li>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-sm-3">
                   <div class="form-group">
-                    <label class="gi" for=""><?php echo get_phrase('section');?>:</label>
+                    <label class="gi" for=""><?php echo get_phrase('class');?>:</label>
                       <select name="promotion_to_class_id" id="to_class_id" class="form-control">
                         <option value=""><?php echo get_phrase('select');?></option>
                         <?php foreach($classes as $row):?>
@@ -100,7 +100,7 @@
         to_class_id     = $("#to_class_id").val();
         promotion_year  = $("#promotion_year").val();
         if (from_class_id == "" || to_class_id == "") {
-            toastr.error("Seleccionar grado")
+            toastr.error("<?php echo get_phrase('Selection required');?>")
             return false;
         }
         $.ajax({

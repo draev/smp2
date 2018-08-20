@@ -255,7 +255,7 @@ class Admin extends CI_Controller
         $this->load->view('backend/index', $page_data);
     }
 
-    function students($id)
+    function students($id = '')
     {
       if ($this->session->userdata('admin_login') != 1)
       {
@@ -2141,11 +2141,12 @@ class Admin extends CI_Controller
             {
                 $enroll_data['enroll_code']     =   substr(md5(rand(0, 1000000)), 0, 7);
                 $enroll_data['student_id']      =   $row['student_id'];
-                $enroll_data['class_id']        =   $this->input->post('promotion_status_'.$row['student_id']);
+                $enroll_data['class_id']        =   $this->input->post('promotion_status_'.$row['student_id'])?$this->input->post('promotion_status_'.$row['student_id']):$row['class_id'];
                 $enroll_data['year']            =   $this->input->post('promotion_year');
                 $enroll_data['date_added']      =   strtotime(date("Y-m-d H:i:s"));
                 $this->db->insert('enroll' , $enroll_data);
             } 
+            die();
             $this->session->set_flashdata('flash_message' , get_phrase('successfully_promoted'));
             redirect(base_url() . 'admin/student_promotion' , 'refresh');
         }
@@ -3902,6 +3903,11 @@ class Admin extends CI_Controller
             $data['description'] = $this->input->post('tabulation');
             $this->db->where('type' , 'tabulation');
             $this->db->update('academic_settings' , $data);
+
+            $data['description'] = $this->input->post('procent_teza');
+            $this->db->where('type' , 'procent_teza');
+            $this->db->update('academic_settings' , $data);
+
 
             $this->session->set_flashdata('flash_message' , get_phrase('successfully_updated'));
             redirect(base_url() . 'admin/academic_settings/', 'refresh');

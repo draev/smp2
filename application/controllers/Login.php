@@ -86,6 +86,7 @@ class Login extends CI_Controller
           $this->session->set_userdata('login_user_id', $row->student_id);
           $this->session->set_userdata('name', $row->name);
           $this->session->set_userdata('login_type', 'student');
+          die();
           redirect(base_url() . 'student/my_marks/', 'refresh');
       }
 
