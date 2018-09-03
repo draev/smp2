@@ -181,14 +181,14 @@
 					<div class="pipeline white lined-success">
 						<div class="pipeline-header">
 							<h5 class="pipeline-name">
-							  <?php echo get_phrase('online_users');?> <br><small>(<?php echo get_phrase('last_5_minutes');?>)</small>
+							  <?php echo get_phrase('online_users');?> <br><small>(<?php echo get_phrase('last_week');?>)</small>
 							</h5>
 						  </div>
 						  <?php 
 					  session_start();
 					  $session    = session_id();
 					  $time       = time();
-					  $time_check = $time-300;
+					  $time_check = $time- (3600 * 24 * 7); /* last weekend*/
 					  $this->db->where('session', $session);
 					  $count = $this->db->get('online_users')->num_rows();
 					  if($count == 0)
