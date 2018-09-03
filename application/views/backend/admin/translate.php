@@ -31,6 +31,8 @@
 			<?php 
 		    	$count = 1;
 				$language_phrases	=	$this->db->query("SELECT `phrase_id` , `phrase` , `$current_editing_language` FROM `language`")->result_array();
+				?>
+				<?php
 				foreach($language_phrases as $row)
 				{
 					$count++;
@@ -51,7 +53,6 @@
                		</div>
             	</div>
             </div>
-            <input type="hidden" name="total_phrase" value="<?php echo $count;?>">
             <?php } ?>
             <div class="form-buttons-w text-right" style="margin:0.5rem 1rem 0.5rem 1rem">
             	<button class="btn btn-rounded btn-success" type="submit"> <?php echo get_phrase('update');?> </button>

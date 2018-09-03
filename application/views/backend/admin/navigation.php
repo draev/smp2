@@ -239,7 +239,7 @@
                   <span><?php echo get_phrase('teacher_files');?></span></a>
               </li>
               <?php endif;?>
-              <?php if($class == 1):?>
+              <!-- <?php if($class == 1):?>
               <li class="main-menu <?php if($page_name == 'classroom') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/classrooms/">
                   <div class="icon-w">
@@ -247,7 +247,7 @@
                   </div>
                   <span><?php echo get_phrase('classrooms');?></span></a>
               </li>
-            <?php endif;?>
+            <?php endif;?> -->
             <?php if($school == 1 and false):?>
                <li class="main-menu <?php if($page_name == 'school_bus') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/school_bus/">
@@ -266,7 +266,7 @@
                   <span><?php echo get_phrase('polls');?></span></a>
               </li>
               <?php endif;?>
-              <?php if($settings == 1 and false):?>
+<!--               <?php if($settings == 1 and false):?>
               <li class="main-menu <?php if($page_name == 'system_settings' || $page_name == 'sms' || $page_name == 'email' || $page_name == 'translate' || $page_name == 'database') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/system_settings/">
                   <div class="icon-w">
@@ -274,7 +274,7 @@
                   </div>
                   <span><?php echo get_phrase('system_settings');?></span></a>
               </li>
-              <?php endif;?>
+              <?php endif;?> -->
               <?php if($academic_se == 1):?>
               <li class="main-menu <?php if($page_name == 'academic_settings' || $page_name == 'manage_class' || $page_name == 'section' || $page_name == 'coursess' || $page_name == 'semester' || $page_name == 'student_promotion' || $page_name == 'grade' || $page_name == 'grade') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/academic_settings/">
@@ -476,7 +476,7 @@
                   <span><?php echo get_phrase('teacher_files');?></span></a>
               </li>
             <?php endif;?>
-            <?php if($class == 1):?>
+            <!-- <?php if($class == 1):?>
               <li class="main-menu <?php if($page_name == 'classroom') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/classrooms/">
                   <div class="icon-w">
@@ -484,7 +484,7 @@
                   </div>
                   <span><?php echo get_phrase('classrooms');?></span></a>
               </li>
-            <?php endif;?>
+            <?php endif;?> -->
             <?php if($school == 1 && false):?>
                <li class="main-menu <?php if($page_name == 'school_bus') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/school_bus/">
@@ -503,7 +503,7 @@
                   <span><?php echo get_phrase('polls');?></span></a>
               </li>
             <?php endif;?>
-            <?php if($settings == 1):?>
+<!--             <?php if($settings == 1):?>
               <li class="main-menu <?php if($page_name == 'system_settings' || $page_name == 'sms' || $page_name == 'email' || $page_name == 'translate' || $page_name == 'database') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/system_settings/">
                   <div class="icon-w">
@@ -511,7 +511,7 @@
                   </div>
                   <span><?php echo get_phrase('system_settings');?></span></a>
               </li>
-            <?php endif;?>
+            <?php endif;?> -->
             <?php if($academic_se == 1):?>
               <li class="main-menu <?php if($page_name == 'academic_settings' || $page_name == 'manage_class' || $page_name == 'section' || $page_name == 'coursess' || $page_name == 'semester' || $page_name == 'student_promotion' || $page_name == 'grade' || $page_name == 'grade') echo 'active';?>">
                 <a href="<?php echo base_url();?>admin/academic_settings/">
