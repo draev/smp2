@@ -928,7 +928,7 @@ class Teacher extends CI_Controller
         $this->load->view('backend/index', $page_data);
     }
 
-    function manage_attendance_view($class_id = '' , $section_id = '' , $timestamp = '')
+    function manage_attendance_view($class_id = '' , $section_id = '' , $subject_id = '', $timestamp = '')
     {
         if($this->session->userdata('teacher_login')!=1)
         {
@@ -940,6 +940,7 @@ class Teacher extends CI_Controller
         $page_data['page_name'] = 'manage_attendance_view';
         $section_name = $this->db->get_where('section' , array('section_id' => $section_id))->row()->name;
         $page_data['section_id'] = $section_id;
+        $page_data['subject_id'] = $subject_id;
         $page_data['page_title'] = get_phrase('attendance') . ' ' . $class_name . ' : ' . get_phrase('section') . ' ' . $section_name;
         $this->load->view('backend/index', $page_data);
     }
@@ -952,11 +953,13 @@ class Teacher extends CI_Controller
         $newDate = date("d-m-Y", strtotime($originalDate));
         $data['timestamp']  = strtotime($newDate);
         $data['section_id'] = $this->input->post('section_id');
+        $data['subject_id'] = $this->input->post('subject_id');
             $query = $this->db->get_where('attendance' ,array(
                 'class_id'=>$data['class_id'],
                     'section_id'=>$data['section_id'],
-                        'year'=>$data['year'],
-                            'timestamp'=>$data['timestamp']));
+                        'subject_id'=>$data['subject_id'],
+                            'year'=>$data['year'],
+                                'timestamp'=>$data['timestamp']));
         if($query->num_rows() < 1) 
         {
             $students = $this->db->get_where('enroll' , array('class_id' => $data['class_id'] , 'section_id' => $data['section_id'] , 'year' => $data['year']))->result_array();
@@ -966,17 +969,18 @@ class Teacher extends CI_Controller
                 $attn_data['year']       = $data['year'];
                 $attn_data['timestamp']  = $data['timestamp'];
                 $attn_data['section_id'] = $data['section_id'];
+                $attn_data['subject_id'] = $data['subject_id'];
                 $attn_data['student_id'] = $row['student_id'];
                 $this->db->insert('attendance' , $attn_data);  
             }
         }
-        redirect(base_url().'teacher/manage_attendance_view/'.$data['class_id'].'/'.$data['section_id'].'/'.$data['timestamp'],'refresh');
+        redirect(base_url().'teacher/manage_attendance_view/'.$data['class_id'].'/'.$data['section_id'].'/'.$data['subject_id'].'/'.$data['timestamp'],'refresh');
     }
 
-    function attendance_update($class_id = '' , $section_id = '' , $timestamp = '')
+    function attendance_update($class_id = '' , $section_id = '' , $subject_id = '',  $timestamp = '')
     {
         $running_year = $this->db->get_where('settings' , array('type' => 'running_year'))->row()->description;
-        $attendance_of_students = $this->db->get_where('attendance' , array('class_id'=>$class_id,'section_id'=>$section_id,'year'=>$running_year,'timestamp'=>$timestamp))->result_array();
+        $attendance_of_students = $this->db->get_where('attendance' , array('class_id'=>$class_id,'section_id'=>$section_id, 'subject_id' => $subject_id, 'year'=>$running_year,'timestamp'=>$timestamp))->result_array();
         foreach($attendance_of_students as $row) 
         {
             $attendance_status = $this->input->post('status_'.$row['attendance_id']);
@@ -984,7 +988,7 @@ class Teacher extends CI_Controller
             $this->db->update('attendance' , array('status' => $attendance_status));
         }
             $this->session->set_flashdata('flash_message' , get_phrase('successfully_updated'));
-        redirect(base_url().'teacher/manage_attendance_view/'.$class_id.'/'.$section_id.'/'.$timestamp , 'refresh');
+        redirect(base_url().'teacher/manage_attendance_view/'.$class_id.'/'.$section_id.'/'.$subject_id.'/'.$timestamp , 'refresh');
     }
     
     function study_material($task = "", $document_id = "")
