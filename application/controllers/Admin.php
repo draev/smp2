@@ -2278,7 +2278,7 @@ class Admin extends CI_Controller
         {
             $class = $this->db->get('class')->first_row()->class_id;
         }
-        $page_data['class']   = $class;
+        $page_data['class_id']   = $class;
         $page_data['subjects']   = $this->db->get_where('subject' , array('class_id' => $param1))->result_array();
         $page_data['page_name']  = 'coursess';
         $page_data['page_title'] = get_phrase('subjects');
@@ -2398,7 +2398,8 @@ class Admin extends CI_Controller
         }
         $page_data['page_name']  = 'section';
         $page_data['page_title'] = get_phrase('sections');
-        $page_data['class']   = $class;
+        $page_data['class_id']   = $class;
+
         $this->load->view('backend/index', $page_data);    
     }
 

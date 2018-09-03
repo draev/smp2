@@ -52,7 +52,7 @@
         <option value=""><?php echo get_phrase('select');?></option>
         <?php $cl = $this->db->get('class')->result_array();
             foreach($cl as $row): ?>
-            <option value="<?php echo $row['class_id'];?>" <?php if($class == $row['class_id']) echo 'selected';?>><?php echo $row['name'];?></option>
+            <option value="<?php echo $row['class_id'];?>" <?php if($class_id == $row['class_id']) echo 'selected';?>><?php echo $row['name'];?></option>
         <?php endforeach;?>
       </select>
       </div>
@@ -63,7 +63,7 @@
     <?php echo form_close();?>
   <div class="element-wrapper">
     <div class="element-box lined-primary shadow">
-      <h6 class="form-header"><?php echo $this->db->get_where('class', array('class_id' => $class))->row()->name;?></h6>
+      <h6 class="form-header"><?php echo $this->db->get_where('class', array('class_id' => $class_id))->row()->name;?></h6>
       <div class="table-responsive">
       <table id="dataTable1" width="100%" class="table table-striped table-lightfont">
       <thead>
@@ -74,7 +74,7 @@
         </tr>
       </thead>
       <tbody>
-      <?php $subjects = $this->db->get_where('subject', array('class_id' => $class))->result_array();
+      <?php $subjects = $this->db->get_where('subject', array('class_id' => $class_id))->result_array();
       foreach($subjects as $row):
       ?>
         <tr>
