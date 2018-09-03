@@ -556,11 +556,13 @@ class Admin extends CI_Controller
         $newDate = date("d-m-Y", strtotime($originalDate));
         $data['timestamp']  = strtotime($newDate);
         $data['section_id'] = $this->input->post('section_id');
+        $data['subject_id'] = $this->input->post('subject_id');
             $query = $this->db->get_where('attendance' ,array(
                 'class_id'=>$data['class_id'],
                     'section_id'=>$data['section_id'],
-                        'year'=>$data['year'],
-                            'timestamp'=>$data['timestamp']));
+                        'subject_id'=>$data['subject_id'],
+                            'year'=>$data['year'],
+                                'timestamp'=>$data['timestamp']));
         if($query->num_rows() < 1) 
         {
             $students = $this->db->get_where('enroll' , array('class_id' => $data['class_id'] , 'section_id' => $data['section_id'] , 'year' => $data['year']))->result_array();
@@ -569,14 +571,15 @@ class Admin extends CI_Controller
                 $attn_data['year']       = $data['year'];
                 $attn_data['timestamp']  = $data['timestamp'];
                 $attn_data['section_id'] = $data['section_id'];
+                $attn_data['subject_id'] = $data['subject_id'];
                 $attn_data['student_id'] = $row['student_id'];
                 $this->db->insert('attendance' , $attn_data);  
             }
         }
-        redirect(base_url().'admin/manage_attendance/'.$data['class_id'].'/'.$data['section_id'].'/'.$data['timestamp'],'refresh');
+        redirect(base_url().'admin/manage_attendance/'.$data['class_id'].'/'.$data['section_id'].'/'.$data['subject_id'].'/'.$data['timestamp'],'refresh');
     }
     
-    function attendance_update($class_id = '' , $section_id = '' , $timestamp = '')
+    function attendance_update($class_id = '' , $section_id = '' , $subject_id = '', $timestamp = '')
     {        
         require_once 'smsGateway.php';
         $email = $this->db->get_where('settings' , array('type' => 'android_email'))->row()->description;
@@ -589,7 +592,7 @@ class Admin extends CI_Controller
         $notify = $this->db->get_where('settings' , array('type' => 'absences'))->row()->description;
 
         $running_year = $this->db->get_where('settings' , array('type' => 'running_year'))->row()->description;
-        $attendance_of_students = $this->db->get_where('attendance' , array('class_id'=>$class_id,'section_id'=>$section_id,'year'=>$running_year,'timestamp'=>$timestamp))->result_array();
+        $attendance_of_students = $this->db->get_where('attendance' , array('class_id'=>$class_id,'section_id'=>$section_id,'subject_id' => $subject_id, 'year'=>$running_year,'timestamp'=>$timestamp))->result_array();
         foreach($attendance_of_students as $row) 
         {
             $attendance_status = $this->input->post('status_'.$row['attendance_id']);
@@ -621,7 +624,7 @@ class Admin extends CI_Controller
             }
         }
             $this->session->set_flashdata('flash_message' , get_phrase('successfully_updated'));
-        redirect(base_url().'admin/manage_attendance/'.$class_id.'/'.$section_id.'/'.$timestamp , 'refresh');
+        redirect(base_url().'admin/manage_attendance/'.$class_id.'/'.$section_id.'/'.$subject_id.'/.'.$timestamp , 'refresh');
     }
 
     function update_news($code)

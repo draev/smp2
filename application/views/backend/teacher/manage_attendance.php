@@ -34,6 +34,13 @@
 			</select>
 		  </div>
 		</div>
+          <div class="col-sm-3">
+              <div class="form-group"> <label class="gi" for=""><?php echo get_phrase('subject');?>:</label>
+                  <select class="form-control" name="subject_id" required id="subject_holder">
+                      <option value=""><?php echo get_phrase('select');?></option>
+                  </select>
+              </div>
+          </div>
 		<div class="col-sm-3">
 		  <div class="form-group"> <label class="gi" for=""><?php echo get_phrase('date');?>:</label> 
 		  <input class="single-daterange form-control" placeholder="Date" required="" name="timestamp" type="text" value=""> </div>
@@ -58,6 +65,14 @@
             success:function (response)
             {
                 jQuery('#section_holder').html(response);
+            }
+        });
+
+        $.ajax({
+            url: '<?php echo base_url(); ?>admin/get_subject/' + class_id,
+            success:function (response)
+            {
+                jQuery('#subject_holder').html(response);
             }
         });
     }
