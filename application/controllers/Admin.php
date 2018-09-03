@@ -624,7 +624,7 @@ class Admin extends CI_Controller
             }
         }
             $this->session->set_flashdata('flash_message' , get_phrase('successfully_updated'));
-        redirect(base_url().'admin/manage_attendance/'.$class_id.'/'.$section_id.'/'.$subject_id.'/.'.$timestamp , 'refresh');
+        redirect(base_url().'admin/manage_attendance/'.$class_id.'/'.$section_id.'/'.$subject_id.'/'.$timestamp , 'refresh');
     }
 
     function update_news($code)
@@ -2884,7 +2884,7 @@ class Admin extends CI_Controller
         $this->load->view('backend/index', $page_data);
     }
 
-    function manage_attendance($class_id = '' , $section_id = '' , $timestamp = '')
+    function manage_attendance($class_id = '' , $section_id = '', $subject_id = '', $timestamp = '')
     {
         if($this->session->userdata('admin_login')!=1)
         {
@@ -2896,6 +2896,7 @@ class Admin extends CI_Controller
         $page_data['page_name'] = 'manage_attendance';
         $section_name = $this->db->get_where('section' , array('section_id' => $section_id))->row()->name;
         $page_data['section_id'] = $section_id;
+        $page_data['subject_id'] = $subject_id;
         $page_data['page_title'] = get_phrase('attendance');
         $this->load->view('backend/index', $page_data);
     }

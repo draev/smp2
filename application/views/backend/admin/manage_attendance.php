@@ -37,7 +37,7 @@
         </div>
         <div class="col-sm-3">
           <div class="form-group"> <label class="gi" for=""><?php echo get_phrase('section');?>:</label> 
-            <select name="section_id" id="section_id" class="form-control">
+            <select name="section_id" id="section_holder" class="form-control">
                 <?php $sections = $this->db->get_where('section', array('class_id' => $class_id))->result_array();
                 foreach ($sections as $row): ?>
                     <option value="<?php echo $row['section_id']; ?>" 
@@ -48,6 +48,19 @@
             </select>
           </div>
         </div>
+          <div class="col-sm-3">
+              <div class="form-group"> <label class="gi" for=""><?php echo get_phrase('subject');?>:</label>
+                  <select name="subject_id" id="subject_holder" class="form-control">
+                      <?php $subjects = $this->db->get_where('subject', array('class_id' => $class_id))->result_array();
+                      foreach ($subjects as $row): ?>
+                          <option value="<?php echo $row['subject_id']; ?>"
+                              <?php if ($subject_id == $row['subject_id']) echo 'selected'; ?>>
+                              <?php echo $row['name']; ?>
+                          </option>
+                      <?php endforeach; ?>
+                  </select>
+              </div>
+          </div>
         <div class="col-sm-3">
           <div class="form-group"> <label class="gi" for=""><?php echo get_phrase('date');?>:</label> 
           <input class="single-daterange form-control" placeholder="Date" required="" name="timestamp" type="text" value="<?php echo date("m/d/Y", $timestamp); ?>"> </div>
@@ -59,7 +72,7 @@
       <input type="hidden" name="year" value="<?php echo $running_year;?>">
     <?php echo form_close();?>
     <div class="element-box lined-primary shadow">
-    <?php echo form_open(base_url() . 'admin/attendance_update/' . $class_id . '/' . $section_id . '/' . $timestamp); ?>
+    <?php echo form_open(base_url() . 'admin/attendance_update/' . $class_id . '/' . $section_id . '/' . $subject_id. '/'.$timestamp); ?>
       <h5 class="form-header"><?php echo get_phrase('attendance');?></h5><br>
       <div class="table-responsive">
         <table class="table table-lightborder">
@@ -76,6 +89,7 @@
                 $attendance_of_students = $this->db->get_where('attendance', array(
                     'class_id' => $class_id,
                     'section_id' => $section_id,
+                    'subject_id' => $subject_id,
                     'year' => $running_year,
                     'timestamp' => $timestamp
                 ))->result_array();
@@ -116,6 +130,14 @@
             success:function (response)
             {
                 jQuery('#section_holder').html(response);
+            }
+        });
+
+        $.ajax({
+            url: '<?php echo base_url(); ?>admin/get_subject/' + class_id,
+            success:function (response)
+            {
+                jQuery('#subject_holder').html(response);
             }
         });
     }
