@@ -580,7 +580,7 @@ class Admin extends CI_Controller
     }
     
     function attendance_update($class_id = '' , $section_id = '' , $subject_id = '', $timestamp = '')
-    {        
+    {
         require_once 'smsGateway.php';
         $email = $this->db->get_where('settings' , array('type' => 'android_email'))->row()->description;
         $pass   = $this->db->get_where('settings' , array('type' => 'android_password'))->row()->description;    
@@ -596,32 +596,36 @@ class Admin extends CI_Controller
         foreach($attendance_of_students as $row) 
         {
             $attendance_status = $this->input->post('status_'.$row['attendance_id']);
+            if (!$attendance_status) {
+                continue;
+            }
+            
             $this->db->where('attendance_id' , $row['attendance_id']);
             $this->db->update('attendance' , array('status' => $attendance_status));
-            if ($attendance_status == 2) 
-            {
-                $student_name   = $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->name;
-                $parent_id      = $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->parent_id;
-                $parent_em      = $this->db->get_where('parent' , array('parent_id' => $parent_id))->row()->email;
-                $receiver       = $this->db->get_where('parent' , array('parent_id' => $parent_id))->row()->phone;
-                $message        = 'Su hijo' . ' ' . $student_name . ' esta ausente el día de hoy.';
-               if($notify == 1)
-               {
-                if ($sms_status == 'android') 
-                {
-                    $result = $object->sendMessageToNumber($receiver, $message, $device);
-                }
-                else if ($sms_status == 'twilio') 
-                {
-                     $this->crud_model->twilio($message,"".$receiver."");
-                }
-                else if ($sms_status == 'clickatell') 
-                {
-                    $this->crud_model->clickatell($message,$receiver);
-                }
-              }
-              $this->crud_model->attendance($student_name, "".$parent_em."");
-            }
+//            if ($attendance_status == 2)
+//            {
+//                $student_name   = $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->name;
+//                $parent_id      = $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->parent_id;
+//                $parent_em      = $this->db->get_where('parent' , array('parent_id' => $parent_id))->row()->email;
+//                $receiver       = $this->db->get_where('parent' , array('parent_id' => $parent_id))->row()->phone;
+//                $message        = 'Su hijo' . ' ' . $student_name . ' esta ausente el día de hoy.';
+//               if($notify == 1)
+//               {
+//                if ($sms_status == 'android')
+//                {
+//                    $result = $object->sendMessageToNumber($receiver, $message, $device);
+//                }
+//                else if ($sms_status == 'twilio')
+//                {
+//                     $this->crud_model->twilio($message,"".$receiver."");
+//                }
+//                else if ($sms_status == 'clickatell')
+//                {
+//                    $this->crud_model->clickatell($message,$receiver);
+//                }
+//              }
+//              $this->crud_model->attendance($student_name, "".$parent_em."");
+//            }
         }
             $this->session->set_flashdata('flash_message' , get_phrase('successfully_updated'));
         redirect(base_url().'admin/manage_attendance/'.$class_id.'/'.$section_id.'/'.$subject_id.'/'.$timestamp , 'refresh');
