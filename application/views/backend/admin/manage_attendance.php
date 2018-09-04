@@ -50,7 +50,7 @@
         </div>
           <div class="col-sm-3">
               <div class="form-group"> <label class="gi" for=""><?php echo get_phrase('subject');?>:</label>
-                  <select name="subject_id" id="subject_holder" class="form-control">
+                  <select name="subject_id" id="subject_holder" class="form-control" required>
                       <?php $subjects = $this->db->get_where('subject', array('class_id' => $class_id))->result_array();
                       foreach ($subjects as $row): ?>
                           <option value="<?php echo $row['subject_id']; ?>"

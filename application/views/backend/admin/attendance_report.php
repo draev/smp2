@@ -44,6 +44,14 @@
                       </select> 
                   </div>
                 </div>
+                  <div class="col-sm-3">
+                      <div class="form-group">
+                          <label class="gi" for=""><?php echo get_phrase('subject');?>:</label>
+                          <select class="form-control" name="subject_id" required="" id="subject_holder">
+                              <option value=""><?php echo get_phrase('select');?></option>
+                          </select>
+                      </div>
+                  </div>
                 <div class="col-sm-2">
                   <div class="form-group"> <label class="gi" for=""><?php echo get_phrase('month');?>:</label> 
                     <select name="month" class="form-control" id="month" onchange="show_year()">
@@ -117,5 +125,13 @@
                 jQuery('#section_holder').html(response);
             }
         });
+
+       $.ajax({
+           url: '<?php echo base_url(); ?>admin/get_subject/' + class_id,
+           success:function (response)
+           {
+               jQuery('#subject_holder').html(response);
+           }
+       });
    }
     </script>
