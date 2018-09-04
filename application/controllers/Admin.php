@@ -2445,7 +2445,6 @@ class Admin extends CI_Controller
     function get_class_section($class_id)
     {
         $sections = $this->db->get_where('section' , array('class_id' => $class_id))->result_array();
-        echo '<option value="">' . get_phrase('select') . '</option>';
         foreach ($sections as $row) 
         {
             echo '<option value="' . $row['section_id'] . '">' . $row['name'] . '</option>';
@@ -2928,7 +2927,7 @@ class Admin extends CI_Controller
          $this->load->view('backend/index',$page_data);
      }
 
-     function report_attendance_view($class_id = '' , $section_id = '', $month = '', $year = '') 
+     function report_attendance_view($class_id = '' , $section_id = '', $subject_id = '', $month = '', $year = '')
      {
         if($this->session->userdata('admin_login')!=1)
         {
@@ -2941,6 +2940,7 @@ class Admin extends CI_Controller
         $page_data['page_name'] = 'report_attendance_view';
         $section_name = $this->db->get_where('section' , array('section_id' => $section_id))->row()->name;
         $page_data['section_id'] = $section_id;
+        $page_data['subject_id'] = $subject_id;
         $page_data['page_title'] = get_phrase('attendance_report');
         $this->load->view('backend/index', $page_data);
      }
@@ -3335,7 +3335,8 @@ class Admin extends CI_Controller
         $data['year']       = $this->input->post('year');
         $data['month']  = $this->input->post('month');
         $data['section_id'] = $this->input->post('section_id');
-        redirect(base_url().'admin/report_attendance_view/'.$data['class_id'].'/'.$data['section_id'].'/'.$data['month'].'/'.$data['year'],'refresh');
+        $data['subject_id'] = $this->input->post('subject_id');
+        redirect(base_url().'admin/report_attendance_view/'.$data['class_id'].'/'.$data['section_id'].'/'.$data['subject_id'].'/'.$data['month'].'/'.$data['year'],'refresh');
     }
 
     function read($code = "")

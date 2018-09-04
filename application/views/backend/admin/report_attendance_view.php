@@ -50,6 +50,20 @@
                       </select> 
                   </div>
                 </div>
+                  <div class="col-sm-3">
+                      <div class="form-group">
+                          <label class="gi" for=""><?php echo get_phrase('subject');?>:</label>
+                          <select class="form-control" name="subject_id" required="" id="subject_holder">
+                              <option value=""><?php echo get_phrase('select');?></option>
+                              <?php
+                              $subjects = $this->db->get_where('subject', array('class_id' => $class_id))->result_array();
+                              foreach ($subjects as $row): ?>
+                                  <option value="<?php echo $row['subject_id']; ?>"
+                                      <?php if ($subject_id == $row['subject_id']) echo 'selected'; ?>><?php echo $row['name']; ?></option>
+                              <?php endforeach; ?>
+                          </select>
+                      </div>
+                  </div>
                 <div class="col-sm-3">
                   <div class="form-group"> <label class="gi" for=""><?php echo get_phrase('month');?>:</label> 
                     <select name="month" class="form-control" id="month" onchange="show_year()">
@@ -140,6 +154,7 @@
                         ?>
                             <td style="text-align: center;"><?php echo $i; ?></td>
                         <?php } ?>
+                        <td style="text-align: center;">Total</td>
                     </tr>
                   </thead>
                   <tbody>
@@ -149,12 +164,12 @@
                     <tr>
                       <td nowrap> <img alt="" src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" width="20px" style="border-radius:20px;margin-right:5px;"> <?php echo $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->name; ?> </td>
                         <?php
-                                $status = 0;
+                                $status = 0; $absent_count = 0;
                                 for ($i = 1; $i <= $days; $i++) 
                                 {
                                     $timestamps = strtotime($i . '-' . $month . '-' . $year);
                                     $this->db->group_by('timestamp');
-                                    $attendance = $this->db->get_where('attendance', array('section_id' => $section_id, 'class_id' => $class_id, 'year' => $running_year, 'timestamp' => $timestamps, 'student_id' => $row['student_id']))->result_array();
+                                    $attendance = $this->db->get_where('attendance', array('section_id' => $section_id, 'class_id' => $class_id, 'subject_id' => $subject_id, 'year' => $running_year, 'timestamp' => $timestamps, 'student_id' => $row['student_id']))->result_array();
                                     foreach ($attendance as $row1):
                                     $month_dummy = date('d', $row1['timestamp']);
                                     if ($i == $month_dummy)
@@ -163,13 +178,14 @@
                            <td class="text-center">
                             <?php if ($status == 1) { ?>
                                 <div class="status-pilli green" data-title="Present" data-toggle="tooltip"></div>
-                            <?php  } if($status == 2)  { ?>
+                            <?php  } if($status == 2)  { $absent_count++; ?>
                                         <div class="status-pilli red" data-title="Unmotivated" data-toggle="tooltip"></div>
-                            <?php  } if($status == 3)  { ?>
+                            <?php  } if($status == 3)  { $absent_count++; ?>
                                         <div class="status-pilli yellow" data-title="Motivated" data-toggle="tooltip"></div>
                              <?php  } $status =0;?>
                       </td>
                       <?php } ?>
+                        <td style="text-align: center;"><?= $absent_count;?></td>
                     <?php endforeach; ?>
                     </tr>                 
                   </tbody>
@@ -192,5 +208,13 @@
                 jQuery('#section_holder').html(response);
             }
         });
+
+       $.ajax({
+           url: '<?php echo base_url(); ?>admin/get_class_subject/' + class_id,
+           success:function (response)
+           {
+               jQuery('#subject_holder').html(response);
+           }
+       });
    }
 </script>

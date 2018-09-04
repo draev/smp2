@@ -127,7 +127,7 @@
         });
 
        $.ajax({
-           url: '<?php echo base_url(); ?>admin/get_subject/' + class_id,
+           url: '<?php echo base_url(); ?>admin/get_class_subject/' + class_id,
            success:function (response)
            {
                jQuery('#subject_holder').html(response);
