@@ -128,7 +128,7 @@
 			<div class="pi-info">
 			  <div class="h6 pi-name">
 				 <?php echo $this->db->get_where('student' , array('student_id' => $explode_data[1]))->row()->name;?><br>
-				<small><?php echo get_phrase('roll');?>: 2017-2587</small>
+				<small><?php echo get_phrase('roll');?>: <?php echo $this->db->get_where('enroll' , array('student_id' => $explode_data[1]))->row()->roll; ?></small>
 			  </div>
 			  <?php $class_id = $this->db->get_where('subject', array('subject_id' => $explode_data[2]))->row()->class_id;?>
 			  <?php $section_id = $this->db->get_where('section', array('class_id' => $class_id))->row()->section_id;?>

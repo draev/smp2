@@ -29,7 +29,9 @@
       <div class="pi-info">
         <div class="h6 pi-name">
         <?php echo $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->name;?><br>
-        <small><?php echo get_phrase('roll');?>: 2017-2587</small>
+        <small><?php echo get_phrase('roll');?>:
+            <?php echo $this->db->get_where('enroll' , array('student_id' => $row['student_id']))->row()->roll; ?>
+        </small>
         </div>
         <div class="pi-sub">
         <?php echo get_phrase('class');?>: <?php echo $this->crud_model->get_class_name($row['class_id']); ?><br>
