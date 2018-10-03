@@ -177,11 +177,11 @@
                                     endforeach;?>
                            <td class="text-center">
                             <?php if ($status == 1) { ?>
-                                <div class="status-pilli green" data-title="Present" data-toggle="tooltip"></div>
+                                <div class="status-pilli green" data-title="prezent" data-toggle="tooltip"></div>
                             <?php  } if($status == 2)  { $absent_count++; ?>
-                                        <div class="status-pilli red" data-title="Unmotivated" data-toggle="tooltip"></div>
+                                        <div class="status-pilli red" data-title="absent nemotivat" data-toggle="tooltip"></div>
                             <?php  } if($status == 3)  { $absent_count++; ?>
-                                        <div class="status-pilli yellow" data-title="Motivated" data-toggle="tooltip"></div>
+                                        <div class="status-pilli yellow" data-title="absent" data-toggle="tooltip"></div>
                              <?php  } $status =0;?>
                       </td>
                       <?php } ?>

@@ -432,7 +432,7 @@ $(document).ready(function(){
                               { 
                                 if (data == "success") 
                                 {            
-                                    texto = "<b style='color:#ff214f'>El usuario ya existe, por favor elige otro.</b>"; 
+                                    texto = "<b style='color:#ff214f'>Utilizatorul există deja, vă rugăm să alegeți altul.</b>";
                                     $("#result5").html(texto);
                                     $('button[type="submit"]').attr('disabled','disabled');
                                 }

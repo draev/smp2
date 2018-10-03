@@ -102,11 +102,11 @@
                                 endforeach; ?>
                                     <td class="text-center">
                                       <?php if ($status == 1) { ?>
-                                        <div class="status-pilli green" data-title="Present" data-toggle="tooltip"></div>
+                                        <div class="status-pilli green" data-title="prezent" data-toggle="tooltip"></div>
                                    <?php  } if($status == 2)  { ?>
-                                        <div class="status-pilli red" data-title="Absent" data-toggle="tooltip"></div>
+                                        <div class="status-pilli red" data-title="absent nemotivat" data-toggle="tooltip"></div>
                                     <?php  } if($status == 3)  { ?>
-                                        <div class="status-pilli yellow" data-title="Late" data-toggle="tooltip"></div>
+                                        <div class="status-pilli yellow" data-title="absent" data-toggle="tooltip"></div>
                                     <?php  } $status =0;?>
                                     </td>                      
                                  <?php } ?>

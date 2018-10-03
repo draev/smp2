@@ -36,7 +36,7 @@
 			  <a class="nav-link active" data-toggle="tab" href="#class"><?php echo get_phrase('classes');?></a>
 			</li>
 			<li class="nav-item">
-			  <a class="nav-link" data-toggle="tab" href="#new"><?php echo get_phrase('new');?></a>
+			  <a class="nav-link" data-toggle="tab" href="#new"><?php echo get_phrase('new_class');?></a>
 			</li>
 		  </ul>
 		</div>
@@ -80,9 +80,9 @@
 	<div class="element-wrapper">
 	  <div class="element-box lined-primary shadow">
 		<?php echo form_open(base_url() . 'admin/manage_classes/create/', array('enctype' => 'multipart/form-data')); ?>
-		  <h5 class="form-header"><?php echo get_phrase('add');?></h5><br>
+		  <h5 class="form-header"><?php echo get_phrase('add_class');?></h5><br>
 		  <div class="form-group row">
-			  <label class="col-sm-3 col-form-label" for=""> <?php echo get_phrase('name');?></label>
+			  <label class="col-sm-3 col-form-label" for=""> <?php echo get_phrase('class_name');?></label>
 			  <div class="col-sm-9">
 			  <div class="input-group">
 				<div class="input-group-addon">
@@ -93,7 +93,7 @@
 			  </div>
 			</div>
 		  <div class="form-group row">
-			<label class="col-form-label col-sm-3" for=""> <?php echo get_phrase('teacher');?></label>
+			<label class="col-form-label col-sm-3" for=""> <?php echo get_phrase('class_teacher');?></label>
 			<div class="col-sm-9">
 				<div class="input-group">
 				<div class="input-group-addon">

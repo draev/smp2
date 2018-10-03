@@ -36,7 +36,7 @@
         <a class="nav-link active" data-toggle="tab" href="#subjects"><?php echo get_phrase('subjects');?></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#new"><?php echo get_phrase('new');?></a>
+        <a class="nav-link" data-toggle="tab" href="#new"><?php echo get_phrase('new_course');?></a>
       </li>
       </ul>
     </div>
@@ -99,7 +99,7 @@
   <div class="element-wrapper">
     <div class="element-box lined-primary shadow">
     <?php echo form_open(base_url() . 'admin/courses/create/');?>
-      <h5 class="form-header"><?php echo get_phrase('add');?></h5><br>
+      <h5 class="form-header"><?php echo get_phrase('add_course');?></h5><br>
       <div class="form-group row">
         <label class="col-sm-3 col-form-label" for=""> <?php echo get_phrase('subject');?></label>
         <div class="col-sm-9">
