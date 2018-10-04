@@ -6,6 +6,9 @@
 			<li class="nav-item">
 			  <a class="nav-link active"><i class="os-icon picons-thin-icon-thin-0729_student_degree_science_university_school_graduate"></i><span><?php echo get_phrase('attendance');?></span></a>
 			</li>
+              <li class="nav-item">
+                  <a class="nav-link" href="<?php echo base_url();?>teacher/attendance_report/"><i class="os-icon picons-thin-icon-thin-0386_graph_line_chart_statistics"></i><span><?php echo get_phrase('student_attendance_report');?></span></a>
+              </li>
 		  </ul>
 		</div>
 	  </div>

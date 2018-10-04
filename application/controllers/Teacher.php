@@ -1553,4 +1553,56 @@ class Teacher extends CI_Controller
             $this->crud_model->create_post_message($this->input->post('post_code'));
         }
     }
+    
+    function attendance_report()
+    {
+        $page_data['month']        = date('m');
+        $page_data['page_name']    = 'attendance_report';
+        $page_data['page_title']   = get_phrase('attendance_report');
+        $this->load->view('backend/index',$page_data);
+    }
+    
+    function attendance_report_selector()
+    {
+        if ($this->session->userdata('teacher_login') != 1)
+        {
+            $this->session->set_userdata('last_page', current_url());
+            redirect(base_url(), 'refresh');
+        }
+        
+        $data['class_id']   = $this->input->post('class_id');
+        $data['year']       = $this->input->post('year');
+        $data['month']  = $this->input->post('month');
+        $data['section_id'] = $this->input->post('section_id');
+        $data['subject_id'] = $this->input->post('subject_id');
+        redirect(base_url().'teacher/report_attendance_view/'.$data['class_id'].'/'.$data['section_id'].'/'.$data['subject_id'].'/'.$data['month'].'/'.$data['year'],'refresh');
+    }
+    
+    function report_attendance_view($class_id = '' , $section_id = '', $subject_id = '', $month = '', $year = '')
+    {
+        if($this->session->userdata('teacher_login') !=1 ) {
+            redirect(base_url() , 'refresh');
+        }
+//        $teacherId = $this->session->userdata('teacher_id');
+//
+//        $class = $this->db->get_where('class',
+//            array('class_id' => $class_id, 'teacher_id' => $teacherId)
+//        )->row()->name;
+//        $section = $this->db->get_where('section',
+//            array('section_id' => $section_id, 'teacher_id' => $teacherId)
+//        )->row()->name;
+//
+//        if(!$class || !$section) {
+//            redirect(base_url() , 'refresh');
+//        }
+        
+        $page_data['class_id'] = $class_id;
+        $page_data['month']    = $month;
+        $page_data['year']    = $year;
+        $page_data['page_name'] = 'report_attendance_view';
+        $page_data['section_id'] = $section_id;
+        $page_data['subject_id'] = $subject_id;
+        $page_data['page_title'] = get_phrase('attendance_report');
+        $this->load->view('backend/index', $page_data);
+    }
 }
