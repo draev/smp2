@@ -191,6 +191,13 @@
                   </tbody>
                 </table>
               </div>
+                <br/>
+                <div class="status-pilli green"></div> <?php echo get_phrase('prezent');?>
+                <br/>
+                <div class="status-pilli yellow"></div> <?php echo get_phrase('motivated');?>
+                <br/>
+                <div class="status-pilli red"></div> <?php echo get_phrase('unmotivated');?>
+                <br/>
             </div>
             <?php endif;?>
           </div>

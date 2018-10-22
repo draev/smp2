@@ -69,7 +69,7 @@
                     </div>            
                 <?php echo form_close();?>
                 <?php if ($class_id != '' && $section_id != '' && $month != '' && $year != ''): ?>
-                <div class="element-box lined-primary shadow">              
+                <br class="element-box lined-primary shadow">
                     <div class="row">                
                         <div class="col-7 text-left">                  
                             <h5 class="form-header"><?php echo get_phrase('attendance_report');?></h5>
@@ -113,8 +113,16 @@
                                 </tr>                                      
                             </tbody>                
                         </table>             
-                    </div>           
-                </div>  
+                    </div>
+
+                    <br/>
+                    <div class="status-pilli green"></div> <?php echo get_phrase('prezent');?>
+                    <br/>
+                    <div class="status-pilli yellow"></div> <?php echo get_phrase('motivated');?>
+                    <br/>
+                    <div class="status-pilli red"></div> <?php echo get_phrase('unmotivated');?>
+                    <br/>
+                </div>
                 <?php endif;?>       
             </div>        
         </div>      
