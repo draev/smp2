@@ -41,7 +41,7 @@
                $sections = $query->result_array();
                foreach ($sections as $rows):?>
 			<li class="nav-item">
-			  <a class="nav-link" data-toggle="tab" href="#tab<?php echo $rows['section_id'];?>"><?php echo get_phrase('section');?> <?php echo $rows['name'];?></a>
+			  <a class="nav-link" data-toggle="tab" href="#tab<?php echo $rows['section_id'];?>"><?php echo get_phrase('class');?> <?php echo $rows['name'];?></a>
 			</li>
 			<?php endforeach;?>
 			<?php endif;?>
