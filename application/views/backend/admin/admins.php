@@ -431,8 +431,9 @@ $(document).ready(function(){
                               success: function(data)
                               { 
                                 if (data == "success") 
-                                {            
-                                    texto = "<b style='color:#ff214f'>Utilizatorul există deja, vă rugăm să alegeți altul.</b>";
+                                {
+                                    var msg = <?php echo json_encode(get_phrase('already_exists')); ?>;
+                                    texto = "<b style='color:#ff214f'>" + msg +"</b>";
                                     $("#result5").html(texto);
                                     $('button[type="submit"]').attr('disabled','disabled');
                                 }
