@@ -27,7 +27,7 @@
 	<div class="content-box">
 	<div class="col-lg-12">		
 	<div class="back hidden-sm-down" style="margin-top:-20px;margin-bottom:10px">		
-	<a href="<?php echo base_url();?>teacher/forum/"><i class="os-icon os-icon-common-07"></i></a>	
+	<a href="javascript:history.go(-1)"><i class="os-icon os-icon-common-07"></i></a>
 	</div>	
 	<div class="element-wrapper">	
 		<div class="element-box lined-primary shadow">

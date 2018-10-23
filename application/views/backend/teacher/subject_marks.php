@@ -8,7 +8,7 @@
 <div class="content-w">
 <ul class="breadcrumb hidden-xs-down hidden-sm-down">
 	<div class="back">
-		<a href="<?php echo base_url();?>teacher/students_area/"><i class="os-icon os-icon-common-07"></i></a>
+		<a href="javascript:history.go(-1)"><i class="os-icon os-icon-common-07"></i></a>
 	</div>
 </ul>
 	 

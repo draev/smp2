@@ -22,7 +22,7 @@
   <div class="content-i">
     <div class="content-box">
 	<div class="back hidden-sm-down" style="margin-top:-20px;margin-bottom:10px">		
-	<a href="<?php echo base_url();?>teacher/homework/"><i class="os-icon os-icon-common-07"></i></a>	
+	<a href="javascript:history.go(-1)"><i class="os-icon os-icon-common-07"></i></a>
 	</div>	
 	<div class="row">
 	<div class="col-sm-8">

@@ -1,6 +1,7 @@
 <?php $running_year = $this->db->get_where('settings' , array('type' => 'running_year'))->row()->description; ?>
 <?php $min = $this->db->get_where('academic_settings' , array('type' =>'minium_mark'))->row()->description;?>
-<div class="content-w"><ul class="breadcrumb hidden-xs-down hidden-sm-down">	<div class="back">		<a href="<?php echo base_url();?>teacher/students_area/"><i class="os-icon os-icon-common-07"></i></a>	</div></ul>
+<div class="content-w"><ul class="breadcrumb hidden-xs-down hidden-sm-down">	<div class="back">
+            <a href="javascript:history.go(-1)"><i class="os-icon os-icon-common-07"></i></a>	</div></ul>
    <div class="content-i">
     <div class="content-box">
 
