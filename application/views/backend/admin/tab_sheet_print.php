@@ -37,7 +37,7 @@
         </thead>
         <tbody>
         <?php
-        $students = $this->db->get_where('enroll' , array('class_id' => $class_id, 'section_id' => $section_id , 'year' => $running_year))->result_array();
+        $students = $this->db->get_where('enroll' , array('class_id' => $class_id, 'year' => $running_year))->result_array();
         foreach($students as $row):
             ?>
     
@@ -59,7 +59,7 @@
                 <?php foreach($subjects as $subject): ?>
                     <td style="text-align: center; padding: 0;">
                         <?php $marks = $this->db->get_where('mark' , array('class_id' => $class_id ,'exam_id' => $exam_id ,
-                                                                           'subject_id' => $subject['subject_id'] , 'section_id' => $section_id,'student_id' => $row['student_id'],'year' => $running_year));
+                                                                           'subject_id' => $subject['subject_id'] , 'student_id' => $row['student_id'],'year' => $running_year));
                         if ($marks->row()->{$property}) {
                             echo $marks->row()->{$property};
                         } else {
@@ -83,7 +83,7 @@
                 <?php $total_marks = 0;  foreach($subjects as $row2): ?>
                     <td style="text-align: center;">
                         <?php $marks =  $this->db->get_where('mark' , array('class_id' => $class_id ,'exam_id' => $exam_id ,
-                                                                            'subject_id' => $row2['subject_id'] , 'section_id' => $section_id,'student_id' => $row['student_id'],'year' => $running_year));
+                                                                            'subject_id' => $row2['subject_id'],'student_id' => $row['student_id'],'year' => $running_year));
                         if($marks->num_rows() > 0)
                         {
                             $obtained_marks = (int)$marks->row()->labtotal;
@@ -99,7 +99,10 @@
                     $this->db->where('year' , $running_year);
                     $this->db->from('subject');
                     $total_subjects = $this->db->count_all_results();
-                    echo 'MEDIA GENERALA ' .number_format(($total_marks / count($subjects)));
+                    echo 'MEDIA GENERALA ';
+                    if(count($subjects)) {
+                        echo number_format(($total_marks / count($subjects)));
+                    }
                     ?>
                 </td>
             </tr>

@@ -35,7 +35,9 @@
             </div>
               <div class="company-name"><?php echo $this->db->get_where('student' , array('student_id' => $student_id))->row()->name;?></div>
               <div class="company-address">
-                <?php echo get_phrase('roll');?>: <?php echo $this->db->get_where('enroll', array('student_id' => $student_id))->row()->roll;?><br/><?php echo $this->db->get_where('class', array('class_id' => $class_id))->row()->name;?><br/><?php echo $this->db->get_where('section' , array('class_id' => $class_id))->row()->name;?>
+                <?php echo get_phrase('roll');?>: <?php echo $this->db->get_where('enroll', array('student_id' => $student_id))->row()->roll;?><br/><?php echo $this->db->get_where('class', array('class_id' => $class_id))->row()->name;?>
+<!--                  <br/>-->
+<!--                  --><?php //echo $this->db->get_where('section' , array('class_id' => $class_id))->row()->name;?>
               </div>
             </div>
           </div>

@@ -36,20 +36,7 @@
                     </select> 
                   </div>
                 </div>
-                <div class="col-sm-3">
-                  <div class="form-group"> 
-                    <label class="gi" for=""><?php echo get_phrase('section');?>:</label> 
-                      <select class="form-control" name="section_id" required="" id="section_holder">   
-                        <option value=""><?php echo get_phrase('select');?></option>   
-                        <?php 
-                        $sections = $this->db->get_where('section', array('class_id' => $class_id))->result_array();
-                        foreach ($sections as $row): ?>
-                            <option value="<?php echo $row['section_id']; ?>"
-                                    <?php if ($section_id == $row['section_id']) echo 'selected'; ?>><?php echo $row['name']; ?></option>
-                        <?php endforeach; ?>
-                      </select> 
-                  </div>
-                </div>
+
                   <div class="col-sm-3">
                       <div class="form-group">
                           <label class="gi" for=""><?php echo get_phrase('subject');?>:</label>
@@ -124,7 +111,7 @@
               </div>
                 
             <?php echo form_close();?>
-            <?php if ($class_id != '' && $section_id != '' && $month != '' && $year != ''): ?>
+            <?php if ($class_id != '' && $month != '' && $year != ''): ?>
             <div class="element-box lined-primary shadow">
               <div class="row">
                 <div class="col-7 text-left">
@@ -159,7 +146,7 @@
                   </thead>
                   <tbody>
                   <?php $data = array();
-                            $students = $this->db->get_where('enroll', array('class_id' => $class_id, 'year' => $running_year, 'section_id' => $section_id))->result_array();
+                            $students = $this->db->get_where('enroll', array('class_id' => $class_id, 'year' => $running_year))->result_array();
                             foreach ($students as $row): ?>
                     <tr>
                       <td nowrap> <img alt="" src="<?php echo $this->crud_model->get_image_url('student',$row['student_id']);?>" width="20px" style="border-radius:20px;margin-right:5px;"> <?php echo $this->db->get_where('student', array('student_id' => $row['student_id']))->row()->name; ?> </td>
@@ -169,7 +156,7 @@
                                 {
                                     $timestamps = strtotime($i . '-' . $month . '-' . $year);
                                     $this->db->group_by('timestamp');
-                                    $attendance = $this->db->get_where('attendance', array('section_id' => $section_id, 'class_id' => $class_id, 'subject_id' => $subject_id, 'year' => $running_year, 'timestamp' => $timestamps, 'student_id' => $row['student_id']))->result_array();
+                                    $attendance = $this->db->get_where('attendance', array( 'class_id' => $class_id, 'subject_id' => $subject_id, 'year' => $running_year, 'timestamp' => $timestamps, 'student_id' => $row['student_id']))->result_array();
                                     foreach ($attendance as $row1):
                                     $month_dummy = date('d', $row1['timestamp']);
                                     if ($i == $month_dummy)
@@ -208,13 +195,13 @@
 <script type="text/javascript">
        function get_sections(class_id) 
    {
-      $.ajax({
-            url: '<?php echo base_url();?>admin/get_class_section/' + class_id ,
-            success: function(response)
-            {
-                jQuery('#section_holder').html(response);
-            }
-        });
+      //$.ajax({
+      //      url: '<?php //echo base_url();?>//admin/get_class_section/' + class_id ,
+      //      success: function(response)
+      //      {
+      //          jQuery('#section_holder').html(response);
+      //      }
+      //  });
 
        $.ajax({
            url: '<?php echo base_url(); ?>admin/get_class_subject/' + class_id,

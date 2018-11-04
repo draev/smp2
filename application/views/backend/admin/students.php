@@ -30,24 +30,24 @@
 			  </div>
 	<?php echo form_close();?>
 	
-	<div class="os-tabs-w">
-		<div class="os-tabs-controls">
-		  <ul class="nav nav-tabs upper">
-			<li class="nav-item">
-			  <a class="nav-link active" data-toggle="tab" href="#all"><?php echo get_phrase('all');?></a>
-			</li>
-			<?php $query = $this->db->get_where('section' , array('class_id' => $id)); 
-               if ($query->num_rows() > 0):
-               $sections = $query->result_array();
-               foreach ($sections as $rows):?>
-			<li class="nav-item">
-			  <a class="nav-link" data-toggle="tab" href="#tab<?php echo $rows['section_id'];?>"><?php echo get_phrase('class');?> <?php echo $rows['name'];?></a>
-			</li>
-			<?php endforeach;?>
-			<?php endif;?>
-		  </ul>
-		</div>
-	  </div>
+<!--	<div class="os-tabs-w">-->
+<!--		<div class="os-tabs-controls">-->
+<!--		  <ul class="nav nav-tabs upper">-->
+<!--			<li class="nav-item">-->
+<!--			  <a class="nav-link active" data-toggle="tab" href="#all">--><?php //echo get_phrase('all');?><!--</a>-->
+<!--			</li>-->
+<!--			--><?php //$query = $this->db->get_where('section' , array('class_id' => $id));
+//               if ($query->num_rows() > 0):
+//               $sections = $query->result_array();
+//               foreach ($sections as $rows):?>
+<!--			<li class="nav-item">-->
+<!--			  <a class="nav-link" data-toggle="tab" href="#tab--><?php //echo $rows['section_id'];?><!--">--><?php //echo get_phrase('class');?><!-- --><?php //echo $rows['name'];?><!--</a>-->
+<!--			</li>-->
+<!--			--><?php //endforeach;?>
+<!--			--><?php //endif;?>
+<!--		  </ul>-->
+<!--		</div>-->
+<!--	  </div>-->
 	 
 	<div class="tab-content">
 	<div class="tab-pane active" id="all">
@@ -57,7 +57,7 @@
               <th><?php echo get_phrase('name');?></th>
               <th><?php echo get_phrase('roll');?></th>
               <th><?php echo get_phrase('class');?></th>
-              <th><?php echo get_phrase('section');?></th>
+<!--              <th>--><?php //echo get_phrase('section');?><!--</th>-->
 <!--              <th>--><?php //echo get_phrase('profile');?><!--</th>-->
               <th><?php echo get_phrase('options');?></th>
             </tr>
@@ -73,11 +73,11 @@
                   <a class="btn nc btn-secondary btn-sm btn-rounded"><font color="white"><?php echo $this->db->get_where('class' , array('class_id' => $id))->row()->name;?></font></a>
                 </div>
               </td>
-              <td style="text-align: center;">
-                <div class="pt-btn">
-                  <a class="btn nc btn-success btn-sm btn-rounded"><font color="white"><?php echo $this->db->get_where('section' , array('section_id' => $row['section_id']))->row()->name;?></font></a>
-                </div>
-              </td>
+<!--              <td style="text-align: center;">-->
+<!--                <div class="pt-btn">-->
+<!--                  <a class="btn nc btn-success btn-sm btn-rounded"><font color="white">--><?php //echo $this->db->get_where('section' , array('section_id' => $row['section_id']))->row()->name;?><!--</font></a>-->
+<!--                </div>-->
+<!--              </td>-->
 <!--              <td><a href="--><?php //echo base_url();?><!--admin/student_portal/--><?php //echo $row['student_id'];?><!--/"><button class="btn btn-primary btn-rounded btn-sm"><i class="os-icon os-icon-user-male-circle"></i> --><?php //echo get_phrase('profile');?><!--</button></a></td>-->
               <td>
                   <a href="<?php echo base_url();?>admin/student_portal/<?php echo $row['student_id'];?>/"><button class="btn btn-primary btn-rounded btn-sm"><i class="os-icon os-icon-user-male-circle"></i> <?php echo get_phrase('edit');?></button></a>

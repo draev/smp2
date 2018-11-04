@@ -55,7 +55,7 @@
       <tr>
       <th style="text-align: left;"><?php echo get_phrase('subject');?></th>
       <th style="text-align: center;"><?php echo get_phrase('class');?></th>
-      <th style="text-align: center;"><?php echo get_phrase('section');?></th>
+<!--      <th style="text-align: center;">--><?php //echo get_phrase('section');?><!--</th>-->
       <th style="text-align: center;"><?php echo get_phrase('students');?></th>
       </tr>
       </thead>
@@ -65,7 +65,7 @@
         <tr>
           <td style="text-align: left;"><?php echo $subject['name'];?></td>
           <td style="text-align: center;"><a class="btn btn-rounded btn-sm btn-primary" style="color:white"><?php echo $this->db->get_where('class', array('class_id' => $subject['class_id']))->row()->name;?></a></td>
-          <td style="text-align: center;"><a class="btn btn-rounded btn-sm btn-purple" style="color:white"><?php echo $this->db->get_where('section', array('class_id' => $subject['class_id']))->row()->name;?></a></td>
+<!--          <td style="text-align: center;"><a class="btn btn-rounded btn-sm btn-purple" style="color:white">--><?php //echo $this->db->get_where('section', array('class_id' => $subject['class_id']))->row()->name;?><!--</a></td>-->
           <td style="text-align: center;"><a class="btn btn-rounded btn-sm btn-success" style="color:white"><?php $this->db->where('class_id', $subject['class_id']); echo $this->db->count_all_results('enroll');?></a></td>
         </tr>
       <?php endforeach;?>

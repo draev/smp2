@@ -11,7 +11,7 @@
 			<thead align="center">
 				<tr>
 					<td align="center"><strong><?php echo get_phrase('name');?></strong></td >
-					<td align="center"><strong><?php echo get_phrase('section');?></strong></td >
+<!--					<td align="center"><strong>--><?php //echo get_phrase('section');?><!--</strong></td >-->
 					<td align="center"><strong><?php echo get_phrase('roll');?></strong></td >
 					<td align="center"><strong><?php echo get_phrase('options');?></strong></td >
 				</tr>
@@ -26,11 +26,11 @@
 					<td align="center">
 						<?php echo $this->db->get_where('student' , array('student_id' => $row['student_id']))->row()->name;?>
 					</td>
-					<td align="center">
-						<?php if($row['section_id'] != '' && $row['section_id'] != 0)
-								echo $this->db->get_where('section' , array('section_id' => $row['section_id']))->row()->name;
-						?>
-					</td>
+<!--					<td align="center">-->
+<!--						--><?php //if($row['section_id'] != '' && $row['section_id'] != 0)
+//								echo $this->db->get_where('section' , array('section_id' => $row['section_id']))->row()->name;
+//						?>
+<!--					</td>-->
 					<td align="center"><?php echo $row['roll'];?></td>
 					<td>
 						<?php if($query->num_rows() < 1):?>

@@ -131,10 +131,10 @@
                   </small>
 			  </div>
 			  <?php $class_id = $this->db->get_where('subject', array('subject_id' => $explode_data[2]))->row()->class_id;?>
-			  <?php $section_id = $this->db->get_where('section', array('class_id' => $class_id))->row()->section_id;?>
+<!--			  --><?php //$section_id = $this->db->get_where('section', array('class_id' => $class_id))->row()->section_id;?>
 			  <div class="pi-sub">
 				<?php echo get_phrase('class');?>: <?php echo $this->crud_model->get_class_name($class_id); ?><br>
-        		<?php echo get_phrase('section');?>: <?php echo $this->db->get_where('section' , array('section_id' => $section_id))->row()->name; ?>
+<!--        		--><?php //echo get_phrase('section');?><!--: --><?php //echo $this->db->get_where('section' , array('section_id' => $section_id))->row()->name; ?>
 			  </div>
 			</div>
 		  </div>

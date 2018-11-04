@@ -181,19 +181,19 @@
               </div>
             </div>
            </div>
-           <div class="form-group row">
-            <label class="col-form-label col-sm-3" for=""> <?php echo get_phrase('section');?></label>
-            <div class="col-sm-9">
-               <div class="input-group">
-               <div class="input-group-addon">
-                  <i class="picons-thin-icon-thin-0002_write_pencil_new_edit"></i>
-               </div>
-              <select class="form-control" id="section_selector_holder" name="section_id" required>
-                  <option value=""><?php echo get_phrase('select');?></option>
-              </select>
-              </div>
-            </div>
-           </div>
+<!--           <div class="form-group row">-->
+<!--            <label class="col-form-label col-sm-3" for=""> --><?php //echo get_phrase('section');?><!--</label>-->
+<!--            <div class="col-sm-9">-->
+<!--               <div class="input-group">-->
+<!--               <div class="input-group-addon">-->
+<!--                  <i class="picons-thin-icon-thin-0002_write_pencil_new_edit"></i>-->
+<!--               </div>-->
+<!--              <select class="form-control" id="section_selector_holder" name="section_id" required>-->
+<!--                  <option value="">--><?php //echo get_phrase('select');?><!--</option>-->
+<!--              </select>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--           </div>-->
 <!--           <div class="form-group row">-->
 <!--            <label class="col-form-label col-sm-3" for=""> --><?php //echo get_phrase('classroom');?><!--</label>-->
 <!--            <div class="col-sm-9">-->
@@ -267,10 +267,10 @@
                   <option value="<?php echo $cl['class_id'];?>"><?php echo $cl['name'];?></option>
                <?php endforeach;?>
          </select>
-         <label class="col-form-label" for=""> <?php echo get_phrase('section');?></label>
-         <select class="form-control rounded bulk" name="section_id" required="" id="section_holder">
-           <option value=""><?php echo get_phrase('select');?></option>
-         </select>
+<!--         <label class="col-form-label" for=""> --><?php //echo get_phrase('section');?><!--</label>-->
+<!--         <select class="form-control rounded bulk" name="section_id" required="" id="section_holder">-->
+<!--           <option value="">--><?php //echo get_phrase('select');?><!--</option>-->
+<!--         </select>-->
 
    <div id="bulk_add_form">
       <div id="student_entry">
@@ -336,17 +336,18 @@
               </select>
               </div>
          </div>
-         <div class="col-sm-4">
-         <label class="col-form-label" for=""> <?php echo get_phrase('section');?></label>
-            <div class="input-group">
-            <div class="input-group-addon">
-               <i class="icon-pencil"></i>
-            </div>
-           <select class="form-control" id="section_sele_holder" required name="section_id">
-               <option value=""><?php echo get_phrase('select');?></option>
-           </select>
-           </div>
-        </div></div>
+<!--         <div class="col-sm-4">-->
+<!--         <label class="col-form-label" for=""> --><?php //echo get_phrase('section');?><!--</label>-->
+<!--            <div class="input-group">-->
+<!--            <div class="input-group-addon">-->
+<!--               <i class="icon-pencil"></i>-->
+<!--            </div>-->
+<!--           <select class="form-control" id="section_sele_holder" required name="section_id">-->
+<!--               <option value="">--><?php //echo get_phrase('select');?><!--</option>-->
+<!--           </select>-->
+<!--           </div>-->
+<!--         </div>-->
+        </div>
       <div class="form-buttons-w">
           <button class="btn btn-primary btn-rounded" type="submit"><?php echo get_phrase('import');?></button>
       </div>

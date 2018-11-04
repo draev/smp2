@@ -34,31 +34,7 @@
                     </select>
 	               </div>
               </div>
-              <?php if($section_id == ""):?>
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                        <label class="gi" for=""><?php echo get_phrase('section');?>:</label>
-                          <select class="form-control" required="" id="section_selector_holder" name="section_id">
-                            <option value=""><?php echo get_phrase('select');?></option>
-                          </select>
-                      </div>
-                    </div>
-                  <?php else:?>
-                  <div class="col-sm-3">
-                     <div class="form-group">
-                       <label class="gi" for=""><?php echo get_phrase('section');?>:</label>
-                        <select class="form-control" required="" name="section_id">
-                          <option value=""><?php echo get_phrase('select');?></option>
-                          <?php 
-                            $sections = $this->db->get_where('section', array('class_id' => $class_id))->result_array();
-                            foreach($sections as $r):
-                          ?>
-                            <option value="<?php echo $r['section_id'];?>" <?php if($r['section_id'] == $section_id) echo "selected";?>><?php echo $r['name'];?></option>
-                          <?php endforeach;?>
-                        </select>
-                     </div>
-                  </div>
-                <?php endif;?>
+              
 	             <div class="col-sm-3">
 	               <div class="form-group">
 	                   <label class="gi" for=""><?php echo get_phrase('semester');?>:</label>
@@ -84,7 +60,7 @@
                </div>
 	         </div>
 	       <?php echo form_close();?>
-	       <?php if ($class_id != '' && $exam_id != '' && $section_id != ''):?>
+	       <?php if ($class_id != '' && $exam_id != ''):?>
          <div class="element-box lined-primary shadow">
             <h5 class="form-header"><?php echo get_phrase('tabulation_sheet');?></h5>
               <div class="table-responsive">
@@ -103,7 +79,7 @@
                       </thead>
                       <tbody>
                       <?php
-                          $students = $this->db->get_where('enroll' , array('class_id' => $class_id, 'section_id' => $section_id , 'year' => $running_year))->result_array();
+                          $students = $this->db->get_where('enroll' , array('class_id' => $class_id , 'year' => $running_year))->result_array();
                           foreach($students as $row):
                         ?>
 
@@ -125,7 +101,7 @@
                             <?php foreach($subjects as $subject): ?>
                                 <td style="text-align: center; padding: 0;">
                                     <?php $marks = $this->db->get_where('mark' , array('class_id' => $class_id ,'exam_id' => $exam_id ,
-                                                                                        'subject_id' => $subject['subject_id'] , 'section_id' => $section_id,'student_id' => $row['student_id'],'year' => $running_year));
+                                                                                        'subject_id' => $subject['subject_id'] , 'student_id' => $row['student_id'],'year' => $running_year));
                                     if ($marks->row()->{$property}) {
                                         echo $marks->row()->{$property};
                                     } else {
@@ -149,7 +125,7 @@
                           <?php $total_marks = 0;  foreach($subjects as $row2): ?>
                           <td style="text-align: center;">
                               <?php $marks =  $this->db->get_where('mark' , array('class_id' => $class_id ,'exam_id' => $exam_id ,
-                                                                                  'subject_id' => $row2['subject_id'] , 'section_id' => $section_id,'student_id' => $row['student_id'],'year' => $running_year));
+                                                                                  'subject_id' => $row2['subject_id'] , 'student_id' => $row['student_id'],'year' => $running_year));
                               if($marks->num_rows() > 0)
                               {
                                   $obtained_marks = (int)$marks->row()->labtotal;
@@ -165,7 +141,10 @@
                               $this->db->where('year' , $running_year);
                               $this->db->from('subject');
                               $total_subjects = $this->db->count_all_results();
-                              echo 'MEDIA GENERALA ' .number_format(($total_marks / count($subjects)));
+                              echo 'MEDIA GENERALA ';
+                              if(count($subjects)) {
+                                   echo number_format(($total_marks / count($subjects)));
+                              }
                               ?>
                           </td>
                       </tr>
@@ -173,7 +152,7 @@
                       </tbody>
                   </table>
                   <div class="form-buttons-w text-center">
-                      <a href="<?php echo base_url();?>admin/tab_sheet_print/<?php echo $class_id;?>/<?php echo $exam_id;?>/<?php echo $section_id;?>"><button class="btn btn-success btn-rounded" type="submit"><i class="picons-thin-icon-thin-0333_printer"></i>  <?php echo get_phrase('print');?></button></a>
+                      <a href="<?php echo base_url();?>admin/tab_sheet_print/<?php echo $class_id;?>/<?php echo $exam_id;?>/<?php echo '';?>"><button class="btn btn-success btn-rounded" type="submit"><i class="picons-thin-icon-thin-0333_printer"></i>  <?php echo get_phrase('print');?></button></a>
                   </div>
               </div>
         </div>
@@ -190,12 +169,12 @@
       <script type="text/javascript">
     function get_class_sections(class_id) 
     {
-        $.ajax({
-            url: '<?php echo base_url();?>teacher/get_class_section/' + class_id ,
-            success: function(response)
-            {
-                jQuery('#section_selector_holder').html(response);
-            }
-        });
+        //$.ajax({
+        //    url: '<?php //echo base_url();?>//teacher/get_class_section/' + class_id ,
+        //    success: function(response)
+        //    {
+        //        jQuery('#section_selector_holder').html(response);
+        //    }
+        //});
     }
 </script>

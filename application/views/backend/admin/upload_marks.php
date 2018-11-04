@@ -44,14 +44,14 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-sm-2">
-                  <div class="form-group">
-                    <label class="gi" for=""><?php echo get_phrase('section');?>:</label>
-                     <select class="form-control" id="section_selector_holder" required="" name="section_id">
-	                     <option value=""><?php echo get_phrase('select');?></option>
-	                   </select>
-                  </div>
-                </div>
+<!--                <div class="col-sm-2">-->
+<!--                  <div class="form-group">-->
+<!--                    <label class="gi" for="">--><?php //echo get_phrase('section');?><!--:</label>-->
+<!--                     <select class="form-control" id="section_selector_holder" required="" name="section_id">-->
+<!--	                     <option value="">--><?php //echo get_phrase('select');?><!--</option>-->
+<!--	                   </select>-->
+<!--                  </div>-->
+<!--                </div>-->
                 <div class="col-sm-3">
                   <div class="form-group">
                     <label class="gi" for=""><?php echo get_phrase('subject');?>:</label>

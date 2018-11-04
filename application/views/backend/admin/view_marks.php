@@ -34,8 +34,9 @@
         </small>
         </div>
         <div class="pi-sub">
-        <?php echo get_phrase('class');?>: <?php echo $this->crud_model->get_class_name($row['class_id']); ?><br>
-        <?php echo get_phrase('section');?>: <?php echo $this->db->get_where('section' , array('section_id' => $row['section_id']))->row()->name; ?>
+        <?php echo get_phrase('class');?>: <?php echo $this->crud_model->get_class_name($row['class_id']); ?>
+            <br>
+<!--        --><?php //echo get_phrase('section');?><!--: --><?php //echo $this->db->get_where('section' , array('section_id' => $row['section_id']))->row()->name; ?>
         </div>
       </div>
       </div>

@@ -36,13 +36,13 @@
 			</select>
 		  </div>
 		</div>
-		<div class="col-sm-3">
-		  <div class="form-group"> <label class="gi" for=""><?php echo get_phrase('section');?>:</label> 
-		  	<select class="form-control" name="section_id" required id="section_holder">
-            	<option value=""><?php echo get_phrase('select');?></option>
-			</select>
-		  </div>
-		</div>
+<!--		<div class="col-sm-3">-->
+<!--		  <div class="form-group"> <label class="gi" for="">--><?php //echo get_phrase('section');?><!--:</label> -->
+<!--		  	<select class="form-control" name="section_id" required id="section_holder">-->
+<!--            	<option value="">--><?php //echo get_phrase('select');?><!--</option>-->
+<!--			</select>-->
+<!--		  </div>-->
+<!--		</div>-->
           <div class="col-sm-3">
               <div class="form-group"> <label class="gi" for=""><?php echo get_phrase('subject');?>:</label>
                   <select class="form-control" name="subject_id" required id="subject_holder">

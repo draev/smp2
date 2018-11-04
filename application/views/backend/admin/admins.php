@@ -340,15 +340,7 @@
 <!--          </div>-->
 <!--        </div>-->
 <!--        </div>-->
-        <div class="col-sm-6">
-        <div class="form-group">
-          <div class="input-group">
-          <div class="form-check">
-            <label class="form-check-label"><input class="form-check-input" name="classrooms" value="1" type="checkbox"><?php echo get_phrase('classrooms');?></label>
-          </div>
-          </div>
-        </div>
-        </div>
+<!--        -->
       </div>
 
 <!--        <div class="row">-->
