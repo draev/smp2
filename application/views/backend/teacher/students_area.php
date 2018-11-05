@@ -30,24 +30,6 @@
 			  </div>
 	<?php echo form_close();?>
 	
-	<div class="os-tabs-w">
-		<div class="os-tabs-controls">
-		  <ul class="nav nav-tabs upper">
-			<li class="nav-item">
-			  <a class="nav-link active" data-toggle="tab" href="#all"><?php echo get_phrase('all');?></a>
-			</li>
-			<?php $query = $this->db->get_where('section' , array('class_id' => $id)); 
-               if ($query->num_rows() > 0):
-               $sections = $query->result_array();
-               foreach ($sections as $rows):?>
-			<li class="nav-item">
-			  <a class="nav-link" data-toggle="tab" href="#tab<?php echo $rows['section_id'];?>"><?php echo get_phrase('class');?> <?php echo $rows['name'];?></a>
-			</li>
-			<?php endforeach;?>
-			<?php endif;?>
-		  </ul>
-		</div>
-	  </div>
 	  
 	
 	<div class="tab-content">
@@ -86,7 +68,7 @@
 			  </div>
 			  <div class="pi-sub">
 				<?php echo $this->db->get_where('class' , array('class_id' => $id))->row()->name;?><br>
-				<?php echo get_phrase('section');?>: <?php echo $this->db->get_where('section' , array('section_id' => $row['section_id']))->row()->name;?>
+<!--				--><?php //echo get_phrase('section');?><!--: --><?php //echo $this->db->get_where('section' , array('section_id' => $row['section_id']))->row()->name;?>
 			  </div>
 			</div>
 		  </div>
@@ -100,7 +82,7 @@
         foreach ($sections as $row): ?>
 	<div class="tab-pane" id="tab<?php echo $row['section_id'];?>">
 	<div class="row">
-		<?php $students = $this->db->get_where('enroll' , array('class_id'=> $id , 'section_id' => $row['section_id'] , 'year' => $running_year))->result_array();
+		<?php $students = $this->db->get_where('enroll' , array('class_id'=> $id , 'year' => $running_year))->result_array();
                 foreach($students as $row2):?>
 		<div class="col-sm-4 m-b">
 		<div class="pipeline-item">
@@ -132,7 +114,7 @@
 			  </div>
 			  <div class="pi-sub">
 				<?php echo $this->db->get_where('class' , array('class_id' => $id))->row()->name;?><br>
-				<?php echo get_phrase('section');?>: <?php echo $this->db->get_where('section' , array('section_id' => $row2['section_id']))->row()->name;?>
+<!--				--><?php //echo get_phrase('section');?><!--: --><?php //echo $this->db->get_where('section' , array('section_id' => $row2['section_id']))->row()->name;?>
 			  </div>
 			</div>
 		  </div>

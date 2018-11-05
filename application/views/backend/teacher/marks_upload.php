@@ -54,21 +54,6 @@
 					</select>
                   </div>
                 </div>
-                <div class="col-sm-2">
-                  <div class="form-group">
-                    <label class="gi" for=""><?php echo get_phrase('section');?>:</label>
-                    	<select name="section_id" class="form-control" id="section_selector_holder">
-					<?php  $sections = $this->db->get_where('section' , array('class_id' => $class_id ))->result_array();
-						foreach($sections as $row):
-					?>
-					<option value="<?php echo $row['section_id'];?>" 
-						<?php if($section_id == $row['section_id']) echo 'selected';?>>
-							<?php echo $row['name'];?>
-					</option>
-					<?php endforeach;?>
-				</select>
-                  </div>
-                </div>
                 <div class="col-sm-3">
                   <div class="form-group">
                     <label class="gi" for=""><?php echo get_phrase('subject');?>:</label>
@@ -96,9 +81,9 @@
             <?php echo form_close();?>
             <div class="element-box">
               <center><h5 class="form-header"><?php echo get_phrase('marks');?> <strong><?php echo $this->db->get_where('class', array('class_id' => $class_id))->row()->name;?></strong></h5></center>
-              <!-- <center><button class="btn btn-secondary btn-rounded pull-right" style="margin-bottom:15px;" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_mark/<?php echo $subject_id;?>/<?php echo $exam_id;?>/<?php echo $section_id;?>');" type="button"><i class="picons-thin-icon-thin-0102_notebook_to_do_bullets_list"></i> <?php echo get_phrase('update_activities');?></button></center> -->
+              <!-- <center><button class="btn btn-secondary btn-rounded pull-right" style="margin-bottom:15px;" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/modal_mark/<?php echo $subject_id;?>/<?php echo $exam_id;?>/<?php echo '';?>');" type="button"><i class="picons-thin-icon-thin-0102_notebook_to_do_bullets_list"></i> <?php echo get_phrase('update_activities');?></button></center> -->
               <br>
-              <?php echo form_open(base_url() . 'teacher/marks_update/'.$exam_id.'/'.$class_id.'/'.$section_id.'/'.$subject_id);?>
+              <?php echo form_open(base_url() . 'teacher/marks_update/'.$exam_id.'/'.$class_id.'/'.$subject_id);?>
               <div class="table-responsive">
                 <table class="table table table-bordered">
                   <thead>
@@ -121,7 +106,7 @@
                   <tbody>
                  <?php
                     $count = 1;
-                  $marks_of_students = $this->db->get_where('mark' , array('class_id' => $class_id, 'section_id' => $section_id ,'year' => $running_year,'subject_id' => $subject_id,'exam_id' => $exam_id))->result_array();
+                  $marks_of_students = $this->db->get_where('mark' , array('class_id' => $class_id,'year' => $running_year,'subject_id' => $subject_id,'exam_id' => $exam_id))->result_array();
                       foreach($marks_of_students as $row):
                     ?>
                     <tr>                    
@@ -188,13 +173,13 @@
     <script type="text/javascript">
     function get_class_sections(class_id) 
     {
-        $.ajax({
-            url: '<?php echo base_url();?>teacher/get_class_section/' + class_id ,
-            success: function(response)
-            {
-                jQuery('#section_selector_holder').html(response);
-            }
-        });
+        // $.ajax({
+        //    url: '<?php //echo base_url();?>//teacher/get_class_section/' + class_id ,
+        //     success: function(response)
+        //     {
+        //         jQuery('#section_selector_holder').html(response);
+        //     }
+        // });
     }
 </script>
 

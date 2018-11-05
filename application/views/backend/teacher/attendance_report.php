@@ -36,14 +36,14 @@
                     </select> 
                   </div>
                 </div>
-                <div class="col-sm-3">
-                  <div class="form-group"> 
-                    <label class="gi" for=""><?php echo get_phrase('section');?>:</label> 
-                      <select class="form-control" name="section_id" required="" id="section_holder">	
-                        <option value=""><?php echo get_phrase('select');?></option>	
-                      </select> 
-                  </div>
-                </div>
+<!--                <div class="col-sm-3">-->
+<!--                  <div class="form-group"> -->
+<!--                    <label class="gi" for="">--><?php //echo get_phrase('section');?><!--:</label> -->
+<!--                      <select class="form-control" name="section_id" required="" id="section_holder">	-->
+<!--                        <option value="">--><?php //echo get_phrase('select');?><!--</option>	-->
+<!--                      </select> -->
+<!--                  </div>-->
+<!--                </div>-->
                   <div class="col-sm-3">
                       <div class="form-group">
                           <label class="gi" for=""><?php echo get_phrase('subject');?>:</label>
@@ -118,13 +118,13 @@
     <script type="text/javascript">
        function get_sections(class_id) 
    {
-      $.ajax({
-            url: '<?php echo base_url();?>admin/get_class_section/' + class_id ,
-            success: function(response)
-            {
-                jQuery('#section_holder').html(response);
-            }
-        });
+      //$.ajax({
+      //      url: '<?php //echo base_url();?>//admin/get_class_section/' + class_id ,
+      //      success: function(response)
+      //      {
+      //          jQuery('#section_holder').html(response);
+      //      }
+      //  });
 
        $.ajax({
            url: '<?php echo base_url(); ?>admin/get_class_subject/' + class_id,

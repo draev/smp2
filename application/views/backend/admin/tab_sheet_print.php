@@ -84,12 +84,14 @@
                     <td style="text-align: center;">
                         <?php $marks =  $this->db->get_where('mark' , array('class_id' => $class_id ,'exam_id' => $exam_id ,
                                                                             'subject_id' => $row2['subject_id'],'student_id' => $row['student_id'],'year' => $running_year));
+                        $obtained_marks = 0;
                         if($marks->num_rows() > 0)
                         {
                             $obtained_marks = (int)$marks->row()->labtotal;
-                            echo '<b>MEDIA ' .$obtained_marks . '</b>';
                             $total_marks += $obtained_marks;
                         }
+
+                        echo '<b>MEDIA ' .$obtained_marks . '</b>';
                         ?>
                     </td>
                 <?php endforeach;?>

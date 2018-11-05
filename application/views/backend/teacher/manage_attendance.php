@@ -30,13 +30,6 @@
 			</select>
 		  </div>
 		</div>
-		<div class="col-sm-3">
-		  <div class="form-group"> <label class="gi" for=""><?php echo get_phrase('section');?>:</label> 
-		  	<select class="form-control" name="section_id" required id="section_holder">
-            	<option value=""><?php echo get_phrase('select');?></option>
-			</select>
-		  </div>
-		</div>
           <div class="col-sm-3">
               <div class="form-group"> <label class="gi" for=""><?php echo get_phrase('subject');?>:</label>
                   <select class="form-control" name="subject_id" required id="subject_holder">
@@ -63,13 +56,13 @@
 <script type="text/javascript">
     function select_section(class_id) 
     {
-        $.ajax({
-            url: '<?php echo base_url(); ?>admin/get_sectionss/' + class_id,
-            success:function (response)
-            {
-                jQuery('#section_holder').html(response);
-            }
-        });
+        //$.ajax({
+        //    url: '<?php //echo base_url(); ?>//admin/get_sectionss/' + class_id,
+        //    success:function (response)
+        //    {
+        //        jQuery('#section_holder').html(response);
+        //    }
+        //});
 
         $.ajax({
             url: '<?php echo base_url(); ?>admin/get_subject/' + class_id,

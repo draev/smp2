@@ -273,7 +273,7 @@ class Teacher extends CI_Controller
         $this->load->view('backend/index', $page_data);
     }
 
-    function tab_sheet($class_id = '' , $exam_id = '', $section_id = '') 
+    function tab_sheet($class_id = '' , $exam_id = '')
     {
         if ($this->session->userdata('teacher_login') != 1)
         {
@@ -283,17 +283,17 @@ class Teacher extends CI_Controller
         if ($this->input->post('operation') == 'selection') 
         {
             $page_data['exam_id']    = $this->input->post('exam_id');
-            $page_data['section_id'] = $this->input->post('section_id');
+//            $page_data['section_id'] = $this->input->post('section_id');
             $page_data['class_id']   = $this->input->post('class_id');
             if ($page_data['exam_id'] > 0 && $page_data['class_id'] > 0) 
             {
-                redirect(base_url() . 'teacher/tab_sheet/' . $page_data['class_id'] . '/' . $page_data['exam_id'] . '/' . $page_data['section_id'] , 'refresh');
+                redirect(base_url() . 'teacher/tab_sheet/' . $page_data['class_id'] . '/' . $page_data['exam_id']  , 'refresh');
             } else {
                 redirect(base_url() . 'teacher/tab_sheet/', 'refresh');
             }
         }
         $page_data['exam_id']    = $exam_id;
-        $page_data['section_id'] = $section_id;
+//        $page_data['section_id'] = $section_id;
         $page_data['class_id']   = $class_id;
         $page_data['page_info']  = 'Exam marks';
         $page_data['page_name']  = 'tab_sheet';
@@ -301,7 +301,7 @@ class Teacher extends CI_Controller
         $this->load->view('backend/index', $page_data);
     }
 
-    function tab_sheet_print($class_id , $exam_id, $section_id) 
+    function tab_sheet_print($class_id , $exam_id)
     {
         if ($this->session->userdata('teacher_login') != 1)
         {
@@ -309,7 +309,7 @@ class Teacher extends CI_Controller
         }
         $page_data['class_id'] = $class_id;
         $page_data['exam_id']  = $exam_id;
-        $page_data['section_id']  = $section_id;
+//        $page_data['section_id']  = $section_id;
         $this->load->view('backend/teacher/tab_sheet_print' , $page_data);
     }
 
@@ -473,7 +473,7 @@ class Teacher extends CI_Controller
         $this->load->view('backend/index', $page_data);
     }
 
-    function marks_upload($exam_id = '' , $class_id = '' , $section_id = '' , $subject_id = '')
+    function marks_upload($exam_id = '' , $class_id = '' , $subject_id = '')
     {
         if ($this->session->userdata('teacher_login') != 1)
         {
@@ -482,7 +482,7 @@ class Teacher extends CI_Controller
         $page_data['exam_id']    =   $exam_id;
         $page_data['class_id']   =   $class_id;
         $page_data['subject_id'] =   $subject_id;
-        $page_data['section_id'] =   $section_id;
+//        $page_data['section_id'] =   $section_id;
         $page_data['page_name']  =   'marks_upload';
         $page_data['page_title'] = get_phrase('upload_marks');
         $this->load->view('backend/index', $page_data);
@@ -497,14 +497,14 @@ class Teacher extends CI_Controller
 
         $data['exam_id']    = $this->input->post('exam_id');
         $data['class_id']   = $this->input->post('class_id');
-        $data['section_id'] = $this->input->post('section_id');
+//        $data['section_id'] = $this->input->post('section_id');
         $data['subject_id'] = $this->input->post('subject_id');
         $data['year']       = $this->db->get_where('settings' , array('type'=>'running_year'))->row()->description;
 
-        $students = $this->db->get_where('enroll' , array('class_id' => $data['class_id'] , 'section_id' => $data['section_id'] , 'year' => $data['year']))->result_array();
+        $students = $this->db->get_where('enroll' , array('class_id' => $data['class_id'] , 'year' => $data['year']))->result_array();
         foreach($students as $row) 
         {
-            $verify_data = array('exam_id' => $data['exam_id'],'class_id' => $data['class_id'],'section_id' => $data['section_id'],
+            $verify_data = array('exam_id' => $data['exam_id'],'class_id' => $data['class_id'],
             'student_id' => $row['student_id'],'subject_id' => $data['subject_id'], 'year' => $data['year']);
 
             $query = $this->db->get_where('mark' , $verify_data);
@@ -514,13 +514,13 @@ class Teacher extends CI_Controller
                     $this->db->insert('mark' , $data);
             }
         }
-        redirect(base_url() . 'teacher/marks_upload/' . $data['exam_id'] . '/' . $data['class_id'] . '/' . $data['section_id'] . '/' . $data['subject_id'], 'refresh');
+        redirect(base_url() . 'teacher/marks_upload/' . $data['exam_id'] . '/' . $data['class_id'] . '/' . $data['subject_id'], 'refresh');
     }
 
-    function marks_update($exam_id = '' , $class_id = '' , $section_id = '' , $subject_id = '')
+    function marks_update($exam_id = '' , $class_id = '' , $subject_id = '')
     {
         $running_year = $this->db->get_where('settings' , array('type' => 'running_year'))->row()->description;
-        $marks_of_students = $this->db->get_where('mark' , array('exam_id' => $exam_id, 'class_id' => $class_id,'section_id' => $section_id, 'year' => $running_year,'subject_id' => $subject_id))->result_array();
+        $marks_of_students = $this->db->get_where('mark' , array('exam_id' => $exam_id, 'class_id' => $class_id, 'year' => $running_year,'subject_id' => $subject_id))->result_array();
         foreach($marks_of_students as $row) 
         {
             $obtained_marks = $this->input->post('marks_obtained_'.$row['mark_id']);
@@ -573,7 +573,7 @@ class Teacher extends CI_Controller
             ));
         }
         $notify['notify'] = "<strong>". $this->session->userdata('name')."</strong>". " ". get_phrase('marks_notify'). " <b>".$this->db->get_where('subject', array('subject_id' => $subject_id))->row()->name."</b>";
-        $students = $this->db->get_where('enroll', array('class_id' =>  $class_id, 'section_id' => $section_id))->result_array();
+        $students = $this->db->get_where('enroll', array('class_id' =>  $class_id))->result_array();
         foreach($students as $row1)
         {
             $data1 = base64_encode($exam_id."-".$row1['student_id']."-".$subject_id);
@@ -590,7 +590,7 @@ class Teacher extends CI_Controller
         }
 
         $this->session->set_flashdata('flash_message' , get_phrase('successfully_updated'));
-        redirect(base_url().'teacher/marks_upload/'.$exam_id.'/'.$class_id.'/'.$section_id.'/'.$subject_id , 'refresh');
+        redirect(base_url().'teacher/marks_upload/'.$exam_id.'/'.$class_id.'/'.$subject_id , 'refresh');
     }
 
     function subject_marks($data) 
@@ -921,14 +921,14 @@ class Teacher extends CI_Controller
         {
             redirect(base_url() , 'refresh');
         }
-        $class_name = $this->db->get_where('class' , array('class_id' => $class_id))->row()->name;
+//        $class_name = $this->db->get_where('class' , array('class_id' => $class_id))->row()->name;
         $page_data['page_name']  =  'manage_attendance';
         $page_data['class_id']   =  $class_id;
         $page_data['page_title'] =  get_phrase('attendance');
         $this->load->view('backend/index', $page_data);
     }
 
-    function manage_attendance_view($class_id = '' , $section_id = '' , $subject_id = '', $timestamp = '')
+    function manage_attendance_view($class_id = '' , $subject_id = '', $timestamp = '')
     {
         if($this->session->userdata('teacher_login')!=1)
         {
@@ -938,10 +938,9 @@ class Teacher extends CI_Controller
         $page_data['class_id'] = $class_id;
         $page_data['timestamp'] = $timestamp;
         $page_data['page_name'] = 'manage_attendance_view';
-        $section_name = $this->db->get_where('section' , array('section_id' => $section_id))->row()->name;
-        $page_data['section_id'] = $section_id;
+//        $page_data['section_id'] = $section_id;
         $page_data['subject_id'] = $subject_id;
-        $page_data['page_title'] = get_phrase('attendance') . ' ' . $class_name . ' : ' . get_phrase('section') . ' ' . $section_name;
+        $page_data['page_title'] = get_phrase('attendance') . ' ' . $class_name;
         $this->load->view('backend/index', $page_data);
     }
 
@@ -952,35 +951,35 @@ class Teacher extends CI_Controller
         $originalDate =$this->input->post('timestamp');
         $newDate = date("d-m-Y", strtotime($originalDate));
         $data['timestamp']  = strtotime($newDate);
-        $data['section_id'] = $this->input->post('section_id');
+//        $data['section_id'] = $this->input->post('section_id');
         $data['subject_id'] = $this->input->post('subject_id');
             $query = $this->db->get_where('attendance' ,array(
                 'class_id'=>$data['class_id'],
-                    'section_id'=>$data['section_id'],
+//                    'section_id'=>$data['section_id'],
                         'subject_id'=>$data['subject_id'],
                             'year'=>$data['year'],
                                 'timestamp'=>$data['timestamp']));
         if($query->num_rows() < 1) 
         {
-            $students = $this->db->get_where('enroll' , array('class_id' => $data['class_id'] , 'section_id' => $data['section_id'] , 'year' => $data['year']))->result_array();
+            $students = $this->db->get_where('enroll' , array('class_id' => $data['class_id'] , 'year' => $data['year']))->result_array();
             foreach($students as $row) 
             {
                 $attn_data['class_id']   = $data['class_id'];
                 $attn_data['year']       = $data['year'];
                 $attn_data['timestamp']  = $data['timestamp'];
-                $attn_data['section_id'] = $data['section_id'];
+//                $attn_data['section_id'] = $data['section_id'];
                 $attn_data['subject_id'] = $data['subject_id'];
                 $attn_data['student_id'] = $row['student_id'];
                 $this->db->insert('attendance' , $attn_data);  
             }
         }
-        redirect(base_url().'teacher/manage_attendance_view/'.$data['class_id'].'/'.$data['section_id'].'/'.$data['subject_id'].'/'.$data['timestamp'],'refresh');
+        redirect(base_url().'teacher/manage_attendance_view/'.$data['class_id'].'/'.$data['subject_id'].'/'.$data['timestamp'],'refresh');
     }
 
-    function attendance_update($class_id = '' , $section_id = '' , $subject_id = '',  $timestamp = '')
+    function attendance_update($class_id = '' , $subject_id = '',  $timestamp = '')
     {
         $running_year = $this->db->get_where('settings' , array('type' => 'running_year'))->row()->description;
-        $attendance_of_students = $this->db->get_where('attendance' , array('class_id'=>$class_id,'section_id'=>$section_id, 'subject_id' => $subject_id, 'year'=>$running_year,'timestamp'=>$timestamp))->result_array();
+        $attendance_of_students = $this->db->get_where('attendance' , array('class_id'=>$class_id, 'subject_id' => $subject_id, 'year'=>$running_year,'timestamp'=>$timestamp))->result_array();
         foreach($attendance_of_students as $row) 
         {
             $attendance_status = $this->input->post('status_'.$row['attendance_id']);
@@ -988,7 +987,7 @@ class Teacher extends CI_Controller
             $this->db->update('attendance' , array('status' => $attendance_status));
         }
             $this->session->set_flashdata('flash_message' , get_phrase('successfully_updated'));
-        redirect(base_url().'teacher/manage_attendance_view/'.$class_id.'/'.$section_id.'/'.$subject_id.'/'.$timestamp , 'refresh');
+        redirect(base_url().'teacher/manage_attendance_view/'.$class_id.'/'.$subject_id.'/'.$timestamp , 'refresh');
     }
     
     function study_material($task = "", $document_id = "")
@@ -1573,12 +1572,12 @@ class Teacher extends CI_Controller
         $data['class_id']   = $this->input->post('class_id');
         $data['year']       = $this->input->post('year');
         $data['month']  = $this->input->post('month');
-        $data['section_id'] = $this->input->post('section_id');
+      //  $data['section_id'] = $this->input->post('section_id');
         $data['subject_id'] = $this->input->post('subject_id');
-        redirect(base_url().'teacher/report_attendance_view/'.$data['class_id'].'/'.$data['section_id'].'/'.$data['subject_id'].'/'.$data['month'].'/'.$data['year'],'refresh');
+        redirect(base_url().'teacher/report_attendance_view/'.$data['class_id'].'/'.$data['subject_id'].'/'.$data['month'].'/'.$data['year'],'refresh');
     }
     
-    function report_attendance_view($class_id = '' , $section_id = '', $subject_id = '', $month = '', $year = '')
+    function report_attendance_view($class_id = '' , $subject_id = '', $month = '', $year = '')
     {
         if($this->session->userdata('teacher_login') !=1 ) {
             redirect(base_url() , 'refresh');
@@ -1600,7 +1599,7 @@ class Teacher extends CI_Controller
         $page_data['month']    = $month;
         $page_data['year']    = $year;
         $page_data['page_name'] = 'report_attendance_view';
-        $page_data['section_id'] = $section_id;
+      //  $page_data['section_id'] = $section_id;
         $page_data['subject_id'] = $subject_id;
         $page_data['page_title'] = get_phrase('attendance_report');
         $this->load->view('backend/index', $page_data);
